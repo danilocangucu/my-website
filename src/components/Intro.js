@@ -1,4 +1,4 @@
-import danilovideo from './danilovideo.mp4';
+// import danilovideo from './danilovideo.mp4';
 
 const animStr = () =>`fadeIn 1000ms ease-out ${1000 * (Math.random())}ms forwards`;
 
@@ -33,7 +33,7 @@ const Video = () => {
   <>
   <div id="danilo-video" className='danilo-video'>
   <video
-    src={danilovideo}
+    src="https://github.com/danilocangucu/my-website/blob/main/src/components/danilovideo.mp4"
     autoPlay muted loop/>
   </div>
   </>
