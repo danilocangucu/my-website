@@ -1,42 +1,23 @@
 import './App.css';
+import Intro from './components/Intro'
 
-function LoadIntroText(){
-  return (
-    <>
-    I am a text that contains a short description
-    </>
-  )
-}
+const animStr = () =>`fadeIn 1000ms ease-out ${1000 * (Math.random())}ms forwards`;
 
-const SomeComponent = ({ item }) => {
-  const duration = 200; //ms
-  const delay = 600; //ms
-  const animStr = () =>`fadeIn ${duration}ms ease-out ${delay * (Math.random())}ms forwards`;
-  let characters = item.split('')
-  console.log(characters)
-  return (
-  <>
-  <div style={{ display: "block", position: "relative" }}>
-  {characters.map(char => <div className="animate" style={{display: "inline-block", animation: animStr()}}>{char}</div> )}
-  </div>
-  </>
-  )
+const ArrowDown = () => {
+  const arrowDown = document.getElementsByClassName('arrow-down')
+  setTimeout(() => {
+    arrowDown[0].textContent = '↓'
+    arrowDown[0].style.animation = animStr()
+  }, 1500)
+  return <div className='arrow-down'></div>
+
 }
 
 function App() {
-  const text = "Hello! I am Danilo Canguçu, an aspiring front-end developer."
-  let textSplit = text.split(' ')
-  console.log(Math.random())
-
   return (
     <div className="App">
-      <header className="App-header">
-          <div>
-            {textSplit.map((word, i) =>
-              <SomeComponent key={i} item={word}/>
-            )}
-          </div>
-      </header>
+      <Intro />
+      <ArrowDown />
     </div>
   );
 }
