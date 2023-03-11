@@ -34,7 +34,7 @@ const Video = () => {
   <div id="danilo-video" className='danilo-video'>
   <video
     src="https://github.com/danilocangucu/my-website/blob/53b59a2efb3dda32f8fb757202d9efa78d0db6ed/src/components/danilovideo.mp4?raw=true"
-    autoPlay muted loop playsinline type="video/mp4"/>
+    autoPlay muted loop playsInline type="video/mp4"/>
   </div>
   </>
   )
