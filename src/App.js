@@ -22,10 +22,10 @@ const BioHeader = () => {
 }
 
 const Paragraphs = () => {
-  let P1 = "In my life, I've designed numerous websites.\
+  let P1 = `In my life, I've designed numerous websites.\
   As a teenager, I created personal blogs, a blog with schoolmates, and a fotolog.\
   Later, as a photographer and cultural worker, I built portfolios with my artwork\
-  and pages for my ex-theater company."
+  and pages for my ex-theater company.`
   let P2 = `Now, I am ready to start working as a professional front-end developer with you!\
   I began learning to code in 2021 with online courses and tutorials.\
   Last year, I enrolled as a student at Grit:Lab in the Åland Islands to advance my skills.`
