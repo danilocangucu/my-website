@@ -257,9 +257,6 @@ body h1{
 .project-video {
   width: 100% !important;
   height: 100% !important;
-  max-width: 300px;
-  min-width: 250px;
-  min-height: 100px;
 }
 
 @media only screen and (max-width: 992px){

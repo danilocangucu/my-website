@@ -1,5 +1,5 @@
-import videopacman from './pacman.mp4'
-import githublogo from './github-mark-white.png'
+// import videopacman from './pacman.mp4'
+// import githublogo from './github-mark-white.png'
 
 const Header = () => {
     const text = "Selected Projects".toUpperCase()
@@ -16,8 +16,8 @@ const Projects = () => (
         name="Pacman"
         tech="JavaScript, HTML and CSS"
         role="JavaScript logics and DOM manipulation, CSS and HTML"
-        video={videopacman}
-        github=""/>
+        video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
+        github="https://github.com/danilocangucu/pacman"/>
     </div>
 )
 
@@ -31,13 +31,12 @@ const Project = ({ name, tech, role, video, github }) => {
             <h2>{name}</h2>
             Duo project for desktop.
             <br/>Made with {tech}.
-            <br/>I was responsible for {role}.
-            <br/><img src={githublogo} height="13"></img> Repo
+            I was responsible for {role}.
+            <br/><br/><img src="https://github.com/danilocangucu/my-website/raw/main/src/components/github-mark-white.png"
+            height="13"></img> <a href={github}>GitHub repository</a>
         </div>
     )
 }
-    
-
 
 const SelectedProjects = () => {
     return (
