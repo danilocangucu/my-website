@@ -1,3 +1,5 @@
+// import danilovideo from './danilovideo.mp4';
+
 const animStr = () =>`fadeIn 1000ms ease-out ${1000 * (Math.random())}ms forwards`;
 
 const Hello = () => 
