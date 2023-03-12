@@ -1,6 +1,7 @@
 import './App.css';
 import Intro from './components/Intro'
 import Bio from './components/Bio'
+import SelectedProjects from './components/SelectedProjects'
 
 const animStr = () =>`fadeIn 1000ms ease-out ${1000 * (Math.random())}ms forwards`;
 
@@ -19,6 +20,7 @@ function App() {
       <Intro />
       <ArrowDown />
       <Bio />
+      <SelectedProjects />
     </div>
   );
 }

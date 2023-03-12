@@ -2,8 +2,14 @@
 
 body {
   background-color: #FFC0CB;
-  color: #272838;
+  color: white;
+  font-family: 'Martel', serif;
   overflow-y: scroll;
+}
+
+body h1{
+  font-family: 'Prompt', sans-serif;
+  font-size: 7vh;
 }
 
 /* SECTION INTRO */
@@ -15,6 +21,7 @@ body {
   flex-direction: row;
   height: 55vh;
   justify-content: center;
+  color: #272838
 }
 
 .intro-left{
@@ -38,7 +45,6 @@ body {
 }
 
 .short-description-wrapper{
-  font-family: 'Martel', serif;
   width: 90%;
   display: block;
   position: relative;
@@ -71,7 +77,7 @@ body {
   }
 }
 
-video {
+.intro video {
   width: 100% !important;
   height: 100% !important;
   /* border: 5px solid #7d6b91; */
@@ -122,7 +128,7 @@ video {
     float: right;
   }
 
-  video{
+  intro video{
     max-width: 250px;
     min-width: 200px;
     min-height: 150px;
@@ -139,12 +145,6 @@ video {
   background-color: #FFBECB;
   background-image:
   linear-gradient(#FFBECB, #7D6B91 30%);
-}
-
-.bio-body h1{
-  font-family: 'Prompt', sans-serif;
-  font-size: 7vh;
-  color: white;
 }
 
 .paragraphs {
@@ -216,7 +216,10 @@ video {
 
   .pages-videos video {
     max-width: 250px;
+    min-width: 200px;
+    min-height: 150px;
   }
+
 }
 
 @media only screen and (max-width: 530px){
@@ -239,7 +242,28 @@ video {
   
   .video2 {
     margin-left: 15%;
-    right: 300px;
     margin-top: -15%
+  }
+}
+
+/* SELECTED PROJECTS */
+
+.selected-projects-body {
+  color: white;
+  background-color: #7D6B91;
+  padding: 10%;
+}
+
+.project-video {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 300px;
+  min-width: 250px;
+  min-height: 100px;
+}
+
+@media only screen and (max-width: 992px){
+  .selected-projects-body h1{
+    font-size: 5vh;
   }
 }

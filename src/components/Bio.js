@@ -1,5 +1,5 @@
 const BioHeader = () => {
-    let text = "I am passionate about creating beautiful websites.".toUpperCase()
+    let text = "I am passionate about creating beautiful websites".toUpperCase()
     return (
     <h1>{text}</h1>
     )
