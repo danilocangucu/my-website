@@ -181,6 +181,7 @@ body h1{
   padding-top: 3%;
   padding-bottom: 3%;
   align-items: center;
+  border: 1px solid red
 }
 
 .pages-videos video {
@@ -234,6 +235,7 @@ body h1{
 
   .pages-videos video {
     max-width: 150px;
+    border: 1px solid black
   }
 
   .video1{
