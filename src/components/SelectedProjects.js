@@ -11,6 +11,7 @@ const Header = () => {
 }
 
 const Projects = () => (
+    <>
     <div className="projects">
         <Project
         name="Pacman"
@@ -18,22 +19,50 @@ const Projects = () => (
         role="JavaScript logics and DOM manipulation, CSS and HTML"
         video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
         github="https://github.com/danilocangucu/pacman"/>
+        <Project
+        name="Pacman"
+        tech="JavaScript, HTML and CSS"
+        role="JavaScript logics and DOM manipulation, CSS and HTML"
+        video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
+        github="https://github.com/danilocangucu/pacman"/>
     </div>
+    <div className="projects">
+        <Project
+        name="Pacman"
+        tech="JavaScript, HTML and CSS"
+        role="JavaScript logics and DOM manipulation, CSS and HTML"
+        video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
+        github="https://github.com/danilocangucu/pacman"/>
+        <Project
+        name="Pacman"
+        tech="JavaScript, HTML and CSS"
+        role="JavaScript logics and DOM manipulation, CSS and HTML"
+        video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
+        github="https://github.com/danilocangucu/pacman"/>
+    </div>
+    </>
 )
 
 const Project = ({ name, tech, role, video, github }) => {
     return (
-        <div>
-            <video
-            className='project-video'
-            src={video}
-            autoPlay muted loop playsInline type="video/mp4"/>
-            <h2>{name}</h2>
-            Duo project for desktop.
-            <br/>Made with {tech}.
-            I was responsible for {role}.
-            <br/><br/><img src="https://github.com/danilocangucu/my-website/raw/main/src/components/github-mark-white.png"
-            height="13" alt="GitHub logo"></img> <a href={github}>GitHub repository</a>
+        <div className="project">
+            <div className="project-video-container">
+                <video
+                className='project-video'
+                src={video}
+                autoPlay muted loop playsInline type="video/mp4"/>
+            </div>
+            <div className="project-text">
+                <h2>{name}</h2>
+                Duo project for desktop.
+                <br/>Made with {tech}.
+                I was responsible for {role}.
+                <br/><br/>
+                    <a href={github}>
+                    <img
+                    src="https://github.com/danilocangucu/my-website/raw/main/src/components/github-mark-white.png"
+                    height="13" alt="GitHub logo"></img> Repository</a> <a href="http://">View</a>  
+            </div>
         </div>
     )
 }
