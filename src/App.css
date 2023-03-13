@@ -277,7 +277,7 @@ a:hover {
 
 @media only screen and (max-width: 530px){
   .bio-body h1{
-    font-size: 3vh;
+    font-size: 4vh;
   }
   
   .paragraphs {
@@ -353,7 +353,7 @@ a:hover {
 
 @media only screen and (max-width: 530px){
   .selected-projects-body h1{
-    font-size: 3vh;
+    font-size: 4vh;
   }
   
   .projects {
@@ -377,7 +377,7 @@ a:hover {
   padding-right: 10%;
   background-image: 
   linear-gradient(#7D6B91, #5D536B 30%);
-  height: 60vh;
+  /* height: 60vh; */
   /* border: 1px solid white */
 }
 
@@ -447,6 +447,11 @@ a:hover {
   animation: javascript 2s ease-out;
 }
 
+.liquid {
+  width: 20%;
+  animation: javascript 2s ease-out;
+}
+
 @keyframes html { 
   0%  { width:0px;} 
   100%{ width:85%;}  
@@ -475,4 +480,9 @@ a:hover {
 @keyframes react { 
   0%  { width:0px;} 
   100%{ width:55%;}  
+}
+
+@keyframes liquid { 
+  0%  { width:0px;} 
+  100%{ width:20%;}  
 }

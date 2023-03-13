@@ -10,7 +10,9 @@ const Skills = () => {
                 <Skill skill="go"/>
                 <Skill skill="sql"/>
                 <Skill skill="react"/>
+                <Skill skill="liquid"/>
             </div>
+            <span>a</span>
         </div>
     )
 }
