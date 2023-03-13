@@ -234,18 +234,17 @@ body h1{
   }
 
   .pages-videos video {
-    width: 100%;
-    height: 100%;
-    border: 1px solid green
+    max-width: 200px;
+    min-width: 50px;
   }
 
   .video1{
-    margin-left: 0
+    margin-left: -30px;
   }
   
   .video2 {
-    margin-left: 0;
-    margin-top: 0
+    margin-left: 30px;
+    margin-top: -20px
   }
 }
 
