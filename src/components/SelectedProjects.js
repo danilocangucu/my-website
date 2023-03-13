@@ -33,7 +33,7 @@ const Project = ({ name, tech, role, video, github }) => {
             <br/>Made with {tech}.
             I was responsible for {role}.
             <br/><br/><img src="https://github.com/danilocangucu/my-website/raw/main/src/components/github-mark-white.png"
-            height="13" alt="Pacman game being played"></img> <a href={github}>GitHub repository</a>
+            height="13"></img> <a href={github}>GitHub repository</a>
         </div>
     )
 }
