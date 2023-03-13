@@ -38,6 +38,7 @@ const PageVideos = () => {
             src="https://github.com/danilocangucu/my-website/blob/main/src/components/page1.mov?raw=true"
             autoPlay muted loop playsInline type="video/mp4"/>
         </div>
+        <span></span>
         <div>
         <video
             className='page-video video2'

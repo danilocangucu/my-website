@@ -12,12 +12,6 @@ body h1{
   font-size: 7vh;
 }
 
-video {
-  border: 1px solid white;
-  width: 100% !important;
-  height: 100% !important;
-}
-
 /* SECTION INTRO */
 
 .intro{
@@ -239,17 +233,16 @@ video {
   }
 
   .pages-videos video {
-    max-width: 200px;
-    min-width: 50px;
+    max-width: 150px;
   }
 
   .video1{
-    margin-left: -30px;
+    margin-left: -15%
   }
   
   .video2 {
-    margin-left: 30px;
-    margin-top: -20px
+    margin-left: 15%;
+    margin-top: -15%
   }
 }
 
