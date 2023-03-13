@@ -234,18 +234,19 @@ body h1{
   }
 
   .pages-videos video {
-    max-width: 150px;
-    border: 1px solid black
+    width: 100%;
+    height: 100%;
+    border: 1px solid green
   }
 
-  /* .video1{
-    margin-left: -15%
-  } */
+  .video1{
+    margin-left: 0
+  }
   
-  /* .video2 {
-    margin-left: 15%;
-    margin-top: -15%
-  } */
+  .video2 {
+    margin-left: 0;
+    margin-top: 0
+  }
 }
 
 /* SELECTED PROJECTS */
