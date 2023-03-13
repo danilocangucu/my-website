@@ -34,14 +34,13 @@ const PageVideos = () => {
         <div className='pages-videos'>
         <div>
         <video
-            className='video1'
+            className='page-video video1'
             src="https://github.com/danilocangucu/my-website/blob/main/src/components/page1.mov?raw=true"
             autoPlay muted loop playsInline type="video/mp4"/>
         </div>
-        <span></span>
         <div>
         <video
-            className='video2'
+            className='page-video video2'
             src="https://github.com/danilocangucu/my-website/blob/main/src/components/page2.mov?raw=true"
             autoPlay muted loop playsInline type="video/mp4"/>
         </div>
