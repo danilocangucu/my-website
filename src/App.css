@@ -12,6 +12,12 @@ body h1{
   font-size: 7vh;
 }
 
+video {
+  border: 1px solid white;
+  width: 100% !important;
+  height: 100% !important;
+}
+
 /* SECTION INTRO */
 
 .intro{
