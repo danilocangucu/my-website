@@ -5,7 +5,6 @@ body {
   color: white;
   font-family: 'Martel', serif;
   overflow-y: scroll;
-  /* padding: 10% */
 }
 
 body h1{
@@ -38,7 +37,6 @@ a:hover {
 /* SECTION INTRO */
 
 .intro{
-  /* border: 2px solid white; */
   display: flex;
   flex-direction: row;
   height: 55vh;
@@ -50,13 +48,11 @@ a:hover {
 .intro-left{
   position: relative;
   order: 2;
-  /* border: 2px red solid; */
   width: 40%;
 }
 
 .intro-right{
   order: 1;
-  /* border: 2px green solid; */
   height: 50%;
 }
 
@@ -64,14 +60,12 @@ a:hover {
   font-size: 6vh;
   opacity: 0;
   display: inline-block;
-  /* border: 2px yellow solid */
 }
 
 .short-description-wrapper{
   width: 90%;
   display: block;
   position: relative;
-  /* border: 1px solid white */
 }
 
 @keyframes fadeIn {
@@ -104,7 +98,6 @@ a:hover {
 .intro video {
   width: 100% !important;
   height: 100% !important;
-  /* border: 5px solid #7d6b91; */
   max-width: 300px;
   min-width: 250px;
   min-height: 100px;
@@ -114,7 +107,6 @@ a:hover {
   position: absolute;
   transform: translate(0,0) scale(0);
   transition-duration: 0.1s;
-  /* border: 2px solid black; */
   max-width: 100%;
   max-height: 100%;
   bottom: 0;
@@ -185,7 +177,6 @@ a:hover {
 }
 
 .paragraphs {
-  /* border: 1px solid black; */
   display: flex;
   flex-direction: row;
   font-size: 2.5vh;
@@ -194,10 +185,8 @@ a:hover {
 }
 
 .paragraph {
-  /* border: 1px solid white; */
-  /* text-align: justify; */
   min-width: 200px;
-  max-width: 500px;
+  max-width: 1500px;
   min-height: 200px;
   white-space: pre-wrap;
 }
@@ -212,39 +201,39 @@ a:hover {
 }
 
 .pages-videos {
-  /* border: 1px solid green; */
   margin-top: 20px;
   display: flex;
-  flex-direction: column;
-  /* border: 1px solid white; */
-  padding-top: 3%;
-  padding-bottom: 3%;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
-  /* border: 1px solid pink */
 }
 
 .pages-videos video {
-  max-width: 450px;
+  max-width: 95%;
+}
+
+.pages-videos div {
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
 
 .video1{
-  margin-left: -45%
+  margin-left: 10%;
 }
 
 .video2 {
-  margin-left: 45%;
-  right: 300px;
-  margin-top: -15%
+  margin-left: -10%;
+  margin-top: 5%
 }
 
-@media only screen and (max-width: 992px){
+@media only screen and (max-width: 991px){
   .bio-body h1{
     font-size: 5vh;
   }
 
   .paragraphs {
-    font-size: 1.8vh
+    font-size: 3vh
   }
 
   .paragraph2 {
@@ -259,23 +248,9 @@ a:hover {
     max-width: 100%;
   }
 
-  .video1{
-    width: 60%;
-    margin-left: 0;
-    /* max-width: 10px; */
-    /* border: red solid 1px */
-  }
-  
-  .video2 {
-    width: 60%;
-    margin-left: 40%;
-    right: 0;
-    margin-top: -10%
-  }
-
 }
 
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 768px){
   .bio-body h1{
     font-size: 4vh;
   }
@@ -283,15 +258,43 @@ a:hover {
   .paragraphs {
     font-size: 16px;
     flex-direction: column;
+    justify-content: none;
+  }
+
+  .paragraph {
+    min-width: 300px;
+    max-width: 700px;
+    min-height: 50px;
   }
 
   .paragraph+.paragraph{
-    margin-left: 0px
+    margin-left: 0px;
+    margin-top: 20px;
   }
 
   .pages-videos {
+    flex-direction: column;
+    justify-content: space-around;
     width: 100%;
-    /* border: 1px solid green; */
+  }
+
+  .pages-videos video{
+    width: 90%;
+  }
+
+  .pages-videos div {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  
+  .video1{
+    margin-left: -10%;
+  }
+
+  .video2 {
+    margin-left: 10%;
+    margin-top: -5%;
   }
 
 }
@@ -322,13 +325,11 @@ a:hover {
 .project {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid pink; */
 }
 
 .project-video-container {
   display: flex;
   justify-content: center;
-  /* border: 2px peru solid; */
 }
 
 .project-video {
@@ -336,7 +337,6 @@ a:hover {
 }
 
 .project-text {
-  /* border: 1px black solid; */
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -377,8 +377,6 @@ a:hover {
   padding-right: 10%;
   background-image: 
   linear-gradient(#7D6B91, #5D536B 30%);
-  /* height: 60vh; */
-  /* border: 1px solid white */
 }
 
 .skills-body h1{
@@ -389,7 +387,6 @@ a:hover {
   width: 100%;
   position: relative;
   float: left;
-  /* border: 1px solid green */
 }
 
 .skills ul {
@@ -399,80 +396,87 @@ a:hover {
 
 .skills ul > li {
   margin-bottom: 50px;
-  background: #dedede;
+  background: white;
   height: 6px;
-  /* width: 100%; */
 }
 
 .skills ul > li em {
-  /* font-size: 18px; */
   position: relative;
   top: -30px;
 }
 
 .skills ul > li span {
   height: inherit;
-  background-color: #94c245;
-  background: linear-gradient(90deg, #76b82a, #aecd60);
+  background: linear-gradient(90deg, #FFC0CB, #347FC4);
   position: absolute;
 }
 
-.html { 
-  width:85%;  
-  animation:html5 2s ease-out;
+.HTML { 
+  width: 85%;  
+  animation: html 2s ease-out;
 }
 
-.css { 
-  width:75%;  
-  animation:html5 2s ease-out;
+.CSS { 
+  width: 75%;  
+  animation: css 2s ease-out;
 }
 
-.javascript {
+.JavaScript {
   width: 65%;
   animation: javascript 2s ease-out;
 }
 
-.react {
+.React {
   width: 55%;
   animation: react 2s ease-out;
 }
 
-.go {
+.Go {
   width: 60%;
-  animation: javascript 2s ease-out;
+  animation: go 2s ease-out;
 }
 
-.sql {
+.SQL {
   width: 50%;
-  animation: javascript 2s ease-out;
+  animation: sql 2s ease-out;
 }
 
-.liquid {
+.WordPress {
+  width: 50%;
+  animation: wordpress 2s ease-out;
+}
+
+.Liquid {
   width: 20%;
-  animation: javascript 2s ease-out;
+  animation: liquid 2s ease-out;
 }
 
-@keyframes html { 
+@keyframes HTML { 
   0%  { width:0px;} 
   100%{ width:85%;}  
 }
 
-@keyframes css { 
+@keyframes CSS { 
   0%  { width:0px;} 
   100%{ width:75%;}  
 }
 
-@keyframes javascript { 
+@keyframes JavaScript { 
   0%  { width:0px;} 
   100%{ width:65%;}  
 }
 
-@keyframes go { 
+@keyframes Go { 
   0%  { width:0px;} 
   100%{ width:60%;}  
 }
 
 @keyframes sql { 
+  0%  { width:0px;} 
+  100%{ width:50%;}  
+}
+
+@keyframes wordpress { 
   0%  { width:0px;} 
   100%{ width:50%;}  
 }

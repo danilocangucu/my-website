@@ -1,6 +1,3 @@
-// import videopacman from './pacman.mp4'
-// import githublogo from './github-mark-white.png'
-
 const Header = () => {
     const text = "Selected Projects".toUpperCase()
     return (

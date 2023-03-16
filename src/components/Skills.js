@@ -4,15 +4,16 @@ const Skills = () => {
         <div className="skills-body">
             <h1>{h1}</h1>
             <div className="skills">
-                <Skill skill="html"/>
-                <Skill skill="css"/>
-                <Skill skill="javascript"/>
-                <Skill skill="go"/>
-                <Skill skill="sql"/>
-                <Skill skill="react"/>
-                <Skill skill="liquid"/>
+                <Skill skill="HTML"/>
+                <Skill skill="CSS"/>
+                <Skill skill="JavaScript"/>
+                <Skill skill="React"/>
+                <Skill skill="Go"/>
+                <Skill skill="SQL"/>
+                <Skill skill="WordPress"/>
+                <Skill skill="Liquid"/>
             </div>
-            <span>a</span>
+            <span>&nbsp;</span>
         </div>
     )
 }
