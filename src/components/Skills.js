@@ -19,10 +19,19 @@ const Skills = () => {
 }
 
 const Skill = ({ skill }) => {
+    let wasTriggered = false
+        document.addEventListener("scroll", () => {
+            const skillElement = document.getElementById(`${skill}`);
+            const elementPosition = skillElement.getBoundingClientRect();
+            if (Math.round(window.innerHeight - elementPosition["bottom"]) > 20 && !wasTriggered){
+                skillElement.classList.add(`${skill}`,`${skill}-animation`)
+                wasTriggered = true
+            }
+        });
     return (
         <ul>
             <li>
-                <span className={skill}></span>
+                <span id={skill}></span>
                 <em>{skill}</em>
             </li>
         </ul>

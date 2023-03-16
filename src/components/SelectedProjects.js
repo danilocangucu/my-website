@@ -22,27 +22,11 @@ const Projects = () => (
         name="My website"
         description="The website you are now!"
         tech="React.js, HTML and CSS"
-        role="building the project from scratch."
+        role="building the project from scratch"
         video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
         github="https://github.com/danilocangucu/my-website"
-        link="https://tranquil-tarsier-fe7b59.netlify.app/"/>
+        link="#"/>
     </div>
-    {/* <div className="projects">
-        <Project
-        name="Pacman"
-        tech="JavaScript, HTML and CSS"
-        role="JavaScript logics and DOM manipulation, CSS and HTML"
-        video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
-        github="https://github.com/danilocangucu/pacman"
-        link="https://tranquil-tarsier-fe7b59.netlify.app/"/>
-        <Project
-        name="Pacman"
-        tech="JavaScript, HTML and CSS"
-        role="JavaScript logics and DOM manipulation, CSS and HTML"
-        video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
-        github="https://github.com/danilocangucu/pacman"
-        link="https://tranquil-tarsier-fe7b59.netlify.app/"/>
-    </div> */}
     </>
 )
 

@@ -412,81 +412,105 @@ a:hover {
 }
 
 .HTML { 
-  width: 85%;  
-  animation: html 2s ease-out;
+  width: 85%; 
+}
+
+.HTML-animation {
+  animation: HTML-animation 2s ease-out;
 }
 
 .CSS { 
   width: 75%;  
-  animation: css 2s ease-out;
+}
+
+.CSS-animation {
+  animation: CSS-animation 2s ease-out;
 }
 
 .JavaScript {
   width: 65%;
-  animation: javascript 2s ease-out;
+}
+
+.JavaScript-animation {
+  animation: JavaScript-animation 2s ease-out;
 }
 
 .React {
   width: 55%;
-  animation: react 2s ease-out;
+}
+
+.React-animation{
+  animation: React-animation 2s ease-out;
 }
 
 .Go {
   width: 60%;
-  animation: go 2s ease-out;
+}
+
+.Go-animation{
+  animation: Go-animation 2s ease-out;
 }
 
 .SQL {
   width: 50%;
-  animation: sql 2s ease-out;
+}
+
+.SQL-animation {
+  animation: SQL-animation 2s ease-out;
 }
 
 .WordPress {
   width: 50%;
-  animation: wordpress 2s ease-out;
+}
+
+.WordPress-animation{
+  animation: WordPress-animation 2s ease-out;
 }
 
 .Liquid {
   width: 20%;
-  animation: liquid 2s ease-out;
 }
 
-@keyframes HTML { 
+.Liquid-animation{
+  animation: Liquid-animation 2s ease-out;
+}
+
+@keyframes HTML-animation { 
   0%  { width:0px;} 
   100%{ width:85%;}  
 }
 
-@keyframes CSS { 
+@keyframes CSS-animation { 
   0%  { width:0px;} 
   100%{ width:75%;}  
 }
 
-@keyframes JavaScript { 
+@keyframes JavaScript-animation { 
   0%  { width:0px;} 
   100%{ width:65%;}  
 }
 
-@keyframes Go { 
+@keyframes Go-animation { 
   0%  { width:0px;} 
   100%{ width:60%;}  
 }
 
-@keyframes sql { 
+@keyframes SQL-animation { 
   0%  { width:0px;} 
   100%{ width:50%;}  
 }
 
-@keyframes wordpress { 
+@keyframes WordPress-animation { 
   0%  { width:0px;} 
   100%{ width:50%;}  
 }
 
-@keyframes react { 
+@keyframes React-animation { 
   0%  { width:0px;} 
   100%{ width:55%;}  
 }
 
-@keyframes liquid { 
+@keyframes Liquid-animation { 
   0%  { width:0px;} 
   100%{ width:20%;}  
 }
