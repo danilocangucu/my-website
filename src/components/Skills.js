@@ -12,6 +12,9 @@ const Skills = () => {
                 <Skill skill="SQL"/>
                 <Skill skill="WordPress"/>
                 <Skill skill="Liquid"/>
+                <Skill skill="Git"/>
+                <Skill skill="GraphQL"/>
+                <Skill skill="Docker"/>
             </div>
             <span>&nbsp;</span>
         </div>

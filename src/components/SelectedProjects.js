@@ -1,3 +1,5 @@
+import myWebsitevideo from './my-website.mp4'
+
 const Header = () => {
     const text = "Selected Projects".toUpperCase()
     return (
@@ -23,14 +25,20 @@ const Projects = () => (
         description="The website you are now!"
         tech="React.js, HTML and CSS"
         role="building the project from scratch"
-        video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
+        video={myWebsitevideo}
         github="https://github.com/danilocangucu/my-website"
-        link="#"/>
+        link=""/>
     </div>
     </>
 )
 
 const Project = ({ name, description, tech, role, video, github, link }) => {
+    let viewLink;
+    if (link){
+        viewLink = <a href={link}>View</a>
+    } else {
+        viewLink = ""
+    }
     return (
         <div className="project">
             <div className="project-video-container">
@@ -48,7 +56,7 @@ const Project = ({ name, description, tech, role, video, github, link }) => {
                     <a href={github}>
                     <img
                     src="https://github.com/danilocangucu/my-website/raw/main/src/components/github-mark-white.png"
-                    height="13" alt="GitHub logo"></img> Repository</a> <a href={link}>View</a>  
+                    height="13" alt="GitHub logo"></img> Repository</a> {viewLink}  
             </div>
         </div>
     )
