@@ -25,7 +25,7 @@ const Projects = () => (
         description="The website you are now!"
         tech="React.js, HTML and CSS"
         role="building the project from scratch"
-        video={myWebsitevideo}
+        video="https://github.com/danilocangucu/my-website/blob/main/src/components/my-website.mp4?raw=true"
         github="https://github.com/danilocangucu/my-website"
         link=""/>
     </div>
