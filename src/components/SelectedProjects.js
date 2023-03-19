@@ -1,5 +1,3 @@
-import myWebsitevideo from './my-website.mp4'
-
 const Header = () => {
     const text = "Selected Projects".toUpperCase()
     return (
