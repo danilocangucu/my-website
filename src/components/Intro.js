@@ -42,7 +42,7 @@ const Video = () => {
 
 const Intro = () => {
   const shortDescriptionText1 = "I am Danilo Canguçu,"
-  const shortDescriptionText2 = "your future front-end developer."
+  const shortDescriptionText2 = "your future developer."
   let shortDescriptionSplit1 = shortDescriptionText1.split(' ')
   let shortDescriptionSplit2 = shortDescriptionText2.split(' ')
   return (
