@@ -26,6 +26,15 @@ const Projects = () => (
         video="https://github.com/danilocangucu/my-website/blob/main/src/components/my-website.mp4?raw=true"
         github="https://github.com/danilocangucu/my-website"
         link=""/>
+        <Project
+        name="Bike app"
+        description="Fullstack project"
+        tech="Go, JavaScript, SQLite, AWS, Docker, Cypress and unit tests"
+        role="implementing all aspects of the project"
+        video="https://github.com/danilocangucu/my-website/blob/main/src/components/hsk-bike.mp4?raw=true"
+        github="https://github.com/danilocangucu/hsk-bikeapp"
+        link=""
+        />
     </div>
     </>
 )
