@@ -456,7 +456,7 @@ ul + ul{
 }
 
 .CSS { 
-  width: 75%;  
+  width: 85%;  
 }
 
 .CSS-animation {
@@ -464,7 +464,7 @@ ul + ul{
 }
 
 .JavaScript {
-  width: 65%;
+  width: 70%;
 }
 
 .JavaScript-animation {
@@ -472,7 +472,7 @@ ul + ul{
 }
 
 .React {
-  width: 55%;
+  width: 75%;
 }
 
 .React-animation{
@@ -480,7 +480,7 @@ ul + ul{
 }
 
 .Go {
-  width: 60%;
+  width: 80%;
 }
 
 .Go-animation{
@@ -495,24 +495,8 @@ ul + ul{
   animation: SQL-animation 2s ease-out;
 }
 
-.WordPress {
-  width: 50%;
-}
-
-.WordPress-animation{
-  animation: WordPress-animation 2s ease-out;
-}
-
-.Liquid {
-  width: 20%;
-}
-
-.Liquid-animation{
-  animation: Liquid-animation 2s ease-out;
-}
-
 .Git {
-  width: 40%;
+  width: 70%;
 }
 
 .Git-animation{
@@ -520,7 +504,7 @@ ul + ul{
 }
 
 .GraphQL {
-  width: 35%;
+  width: 40%;
 }
 
 .GraphQL-animation{
@@ -535,6 +519,13 @@ ul + ul{
   animation: Docker-animation 2s ease-out;
 }
 
+.AWS {
+  width: 30%;
+}
+
+.AWS-animation{
+  animation: Docker-animation 2s ease-out;
+}
 
 @keyframes HTML-animation { 
   0%  { width:0px;} 

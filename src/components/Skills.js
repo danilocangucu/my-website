@@ -6,15 +6,15 @@ const Skills = () => {
             <div className="skills">
                 <Skill skill="HTML"/>
                 <Skill skill="CSS"/>
-                <Skill skill="JavaScript"/>
-                <Skill skill="React"/>
                 <Skill skill="Go"/>
-                <Skill skill="SQL"/>
-                <Skill skill="WordPress"/>
-                <Skill skill="Liquid"/>
+                <Skill skill="React"/>
+                <Skill skill="JavaScript"/>
+                <Skill skill="Java"/>
                 <Skill skill="Git"/>
+                <Skill skill="SQL"/>
                 <Skill skill="GraphQL"/>
                 <Skill skill="Docker"/>
+                <Skill skill="AWS"/>
             </div>
             <span>&nbsp;</span>
         </div>
