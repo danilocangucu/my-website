@@ -479,6 +479,14 @@ ul + ul{
   animation: React-animation 2s ease-out;
 }
 
+.Java {
+  width: 75%;
+}
+
+.Java-animation{
+  animation: React-animation 2s ease-out;
+}
+
 .Go {
   width: 80%;
 }
