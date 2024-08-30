@@ -44,6 +44,14 @@ const Project = ({ name, description, tech, role, projectName, link }) => {
 
 const projectsData = [
   {
+    name: "Love Tokens",
+    description: "Fullstack project!",
+    tech: "React, Redux (Toolkit), React Hook Form, React Router, Tailwind CSS, SASS, Node.js, Express.js, MongoDB, AWS EC2, Jest, JWT, crypto, bcrypt, toastify",
+    role: "implementing all aspects of the project",
+    projectName: "lovetokens",
+    link: "https://lovetokens.danilocangucu.com/",
+  },
+  {
     name: "Bike app",
     description: "Fullstack project!",
     tech: "Go, JavaScript, SQLite, AWS, Docker, Cypress and unit tests",
