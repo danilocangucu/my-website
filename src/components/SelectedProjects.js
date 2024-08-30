@@ -9,13 +9,15 @@ const Header = () => {
 
 const Project = ({ name, description, tech, role, projectName, link }) => {
   const gitHubUrl = `https://github.com/danilocangucu/`;
+  const gitHubIconUrl = `https://github.com/danilocangucu/my-website/blob/main/public/images/github-mark-white.png?raw=true`;
+  const videoSrcUrl = `https://github.com/danilocangucu/my-website/blob/main/public/videos/${projectName}.mp4?raw=true`;
 
   return (
     <div className="project">
       <div className="project-video-container">
         <video
           className="project-video"
-          src={`https://github.com/danilocangucu/my-website/blob/main/public/videos/${projectName}.mp4?raw=true`}
+          src={videoSrcUrl}
           autoPlay
           muted
           loop
@@ -31,11 +33,7 @@ const Project = ({ name, description, tech, role, projectName, link }) => {
         <br />
         <br />
         <a href={`${gitHubUrl}${projectName}`}>
-          <img
-            src="https://github.com/danilocangucu/my-website/raw/public/images/github-mark-white.png"
-            height="13"
-            alt="GitHub logo"
-          ></img>{" "}
+          <img src={gitHubIconUrl} height="13" alt="GitHub logo"></img>{" "}
           Repository
         </a>{" "}
         {link && <a href={link}>View</a>}
