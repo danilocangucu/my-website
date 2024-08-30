@@ -29,25 +29,35 @@ const Paragraph = ({ text }) => {
     )
 }
 
+const PageVideo = ({ videoNumber }) => {
+  return (
+    <video
+      className={`page-video video${videoNumber}`}
+      src={`https://github.com/danilocangucu/my-website/blob/main/public/videos/page${videoNumber}.mov?raw=true`}
+      autoPlay
+      muted
+      loop
+      playsInline
+      type="video/mp4"
+    />
+  );
+};
+
 const PageVideos = () => {
-    return (
-        <div className='pages-videos'>
-        <div>
-        <video
-            className='page-video video1'
-            src="https://github.com/danilocangucu/my-website/blob/main/src/components/page1.mov?raw=true"
-            autoPlay muted loop playsInline type="video/mp4"/>
+  const videoNumbers = ["1", "2"];
+
+  return (
+    <div className="pages-videos">
+      <div></div>
+      <span></span>
+      {videoNumbers.map((videoNumber) => (
+        <div key={videoNumber}>
+          <PageVideo videoNumber={videoNumber} />
         </div>
-        <span></span>
-        <div>
-        <video
-            className='page-video video2'
-            src="https://github.com/danilocangucu/my-website/blob/main/src/components/page2.mov?raw=true"
-            autoPlay muted loop playsInline type="video/mp4"/>
-        </div>
-        </div>
-    )
-}
+      ))}{" "}
+    </div>
+  );
+};
 
 const Bio = () => (
     <div className="bio-body">

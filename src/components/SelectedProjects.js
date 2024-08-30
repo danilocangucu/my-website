@@ -7,67 +7,85 @@ const Header = () => {
     )
 }
 
-const Projects = () => (
-    <>
-    <div className="projects">
-        <Project
-        name="Bike app"
-        description="Fullstack project!"
-        tech="Go, JavaScript, SQLite, AWS, Docker, Cypress and unit tests"
-        role="implementing all aspects of the project"
-        video="https://github.com/danilocangucu/my-website/blob/main/src/components/hsk-bike.mp4?raw=true"
-        github="https://github.com/danilocangucu/hsk-bikeapp"
-        link=""
-        />
-        <Project
-        name="Pacman"
-        description="Duo project for desktop."
-        tech="JavaScript, HTML and CSS"
-        role="part of JavaScript logics, CSS and HTML"
-        video="https://github.com/danilocangucu/my-website/blob/main/src/components/pacman.mp4?raw=true"
-        github="https://github.com/danilocangucu/pacman-js/tree/master"
-        link="https://tranquil-tarsier-fe7b59.netlify.app/"/>
-        <Project
-        name="My website"
-        description="The website you are now!"
-        tech="React.js, HTML and CSS"
-        role="building the project from scratch"
-        video="https://github.com/danilocangucu/my-website/blob/main/src/components/my-website.mp4?raw=true"
-        github="https://github.com/danilocangucu/my-website"
-        link=""/>
-    </div>
-    </>
-)
+const Project = ({ name, description, tech, role, projectName, link }) => {
+  const gitHubUrl = `https://github.com/danilocangucu/`;
 
-const Project = ({ name, description, tech, role, video, github, link }) => {
-    let viewLink;
-    if (link){
-        viewLink = <a href={link}>View</a>
-    } else {
-        viewLink = ""
-    }
-    return (
-        <div className="project">
-            <div className="project-video-container">
-                <video
-                className='project-video'
-                src={video}
-                autoPlay muted loop playsInline type="video/mp4"/>
-            </div>
-            <div className="project-text">
-                <h2>{name}</h2>
-                {description}
-                <br/>Made with {tech}.
-                I was responsible for {role}.
-                <br/><br/>
-                    <a href={github}>
-                    <img
-                    src="https://github.com/danilocangucu/my-website/raw/main/src/components/github-mark-white.png"
-                    height="13" alt="GitHub logo"></img> Repository</a> {viewLink}  
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="project">
+      <div className="project-video-container">
+        <video
+          className="project-video"
+          src={`https://github.com/danilocangucu/my-website/blob/main/public/videos/${projectName}.mp4?raw=true`}
+          autoPlay
+          muted
+          loop
+          playsInline
+          type="video/mp4"
+        />
+      </div>
+      <div className="project-text">
+        <h2>{name}</h2>
+        {description}
+        <br />
+        Made with {tech}. I was responsible for {role}.
+        <br />
+        <br />
+        <a href={`${gitHubUrl}${projectName}`}>
+          <img
+            src="https://github.com/danilocangucu/my-website/raw/public/images/github-mark-white.png"
+            height="13"
+            alt="GitHub logo"
+          ></img>{" "}
+          Repository
+        </a>{" "}
+        {link && <a href={link}>View</a>}
+      </div>
+    </div>
+  );
+};
+
+const projectsData = [
+  {
+    name: "Bike app",
+    description: "Fullstack project!",
+    tech: "Go, JavaScript, SQLite, AWS, Docker, Cypress and unit tests",
+    role: "implementing all aspects of the project",
+    projectName: "hsk-bikeapp",
+    link: "",
+  },
+  {
+    name: "Pacman",
+    description: "Duo project for desktop.",
+    tech: "JavaScript, HTML and CSS",
+    role: "part of JavaScript logics, CSS and HTML",
+    projectName: "pacman-js",
+    link: "https://tranquil-tarsier-fe7b59.netlify.app/",
+  },
+  {
+    name: "My website",
+    description: "The website you are now!",
+    tech: "React.js, HTML and CSS",
+    role: "building the project from scratch",
+    projectName: "my-website",
+    link: "",
+  },
+];
+
+const Projects = () => (
+  <div className="projects">
+    {projectsData.map((project, index) => (
+      <Project
+        key={index}
+        name={project.name}
+        description={project.description}
+        tech={project.tech}
+        role={project.role}
+        projectName={project.projectName}
+        link={project.link}
+      />
+    ))}
+  </div>
+);
 
 const SelectedProjects = () => {
     return (
