@@ -26,16 +26,23 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Print Secrets
+      - name: Debug SSH Key Length and Print Lines
         run: |
-          echo "EC2 Host: ${{ secrets.EC2_HOST }}"
-          echo "EC2 User: ${{ secrets.EC2_USER }}"
-          echo "EC2 SSH Key: |"
-          echo "${{ secrets.EC2_SSH_KEY }}"
-          echo "This is just for debugging purposes. Make sure to remove it later."
-        env:
-          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+          # Print the length of the SSH key
+          SSH_KEY="${{ secrets.EC2_SSH_KEY }}"
+          LENGTH=$(echo "$SSH_KEY" | wc -c)
+          echo "SSH Key Length: $LENGTH"
 
+          # Print the first 2 and last 2 lines of the SSH key
+          echo "First 2 lines of SSH Key:"
+          echo "$SSH_KEY" | head -n 2
+
+          echo "..."
+
+          echo "Last 2 lines of SSH Key:"
+          echo "$SSH_KEY" | tail -n 2
+        shell: bash
+      
       - name: Copy files to EC2
         uses: appleboy/scp-action@v0.1.0
         with:
