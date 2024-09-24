@@ -32,9 +32,15 @@ jobs:
       - name: Set permissions
         run: chmod 600 my-website-server.pem
 
-      - name: Copy files to EC2 using SCP
-        run: |
-          scp -i my-website-server.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r build/* ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/
+      - name: Copy files to EC2
+        uses: appleboy/scp-action@v0.1.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: my-website-server.pem
+          port: 22
+          source: "build/*"
+          target: "/var/www/html/"
 
       - name: Restart Nginx
         run: |
