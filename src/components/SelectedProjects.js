@@ -78,7 +78,7 @@ const projectsData = [
   {
     name: "My website",
     description: "The website you are now!",
-    tech: "React.js, HTML and CSS",
+    tech: "GitHub Actions, AWS EC2, React.js, HTML and CSS",
     role: "building the project from scratch",
     projectName: "my-website",
     link: "",
