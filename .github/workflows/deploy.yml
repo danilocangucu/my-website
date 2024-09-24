@@ -32,13 +32,6 @@ jobs:
       - name: Set permissions
         run: chmod 600 my-website-server.pem
 
-      - name: Debug PEM file content
-        run: cat my-website-server.pem
-
-      - name: Check if PEM file exists
-        run: |
-          ls -l
-
       - name: Copy files to EC2 using SCP
         run: |
           scp -i my-website-server.pem -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -r build/* ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/
