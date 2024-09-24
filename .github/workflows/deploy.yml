@@ -26,33 +26,23 @@ jobs:
       - name: Build the app
         run: npm run build
 
-      - name: Debug SSH Key Length and Print Lines
-        run: |
-          # Print the length of the SSH key
-          SSH_KEY="${{ secrets.EC2_SSH_KEY }}"
-          LENGTH=$(echo "$SSH_KEY" | wc -c)
-          echo "SSH Key Length: $LENGTH"
+      - name: Decode SSH Key
+        run: echo "${{ secrets.EC2_SSH_KEY }}" | base64 --decode > my-wesite-server.pem
 
-          # Print the first 2 and last 2 lines of the SSH key
-          echo "First 2 lines of SSH Key:"
-          echo "$SSH_KEY" | head -n 2
+      - name: Set permissions
+        run: chmod 600 my-wesite-server.pem
 
-          echo "..."
-
-          echo "Last 2 lines of SSH Key:"
-          echo "$SSH_KEY" | tail -n 2
-        shell: bash
-      
       - name: Copy files to EC2
         uses: appleboy/scp-action@v0.1.0
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key: $(cat my-wesite-server.pem)
           port: 22
           source: "build/*"
           target: "/var/www/html/"
 
       - name: Restart Nginx
         run: |
-          ssh -i ${{ secrets.EC2_SSH_KEY }} -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "sudo systemctl reload nginx"
+            ssh -i my-wesite-server.pem -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} "sudo systemctl reload nginx"
+  
