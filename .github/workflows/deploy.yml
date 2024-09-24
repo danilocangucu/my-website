@@ -27,13 +27,13 @@ jobs:
         run: npm run build
 
       - name: Decode SSH Key
-        run: echo "${{ secrets.EC2_SSH_KEY }}" | base64 --decode > my-wesite-server.pem
+        run: echo "${{ secrets.EC2_SSH_KEY }}" | base64 --decode > my-website-server.pem
 
       - name: Set permissions
         run: chmod 600 my-website-server.pem
 
       - name: Debug PEM file content
-        run: cat my-wesite-server.pem
+        run: cat my-website-server.pem
 
       - name: Check if PEM file exists
         run: |
