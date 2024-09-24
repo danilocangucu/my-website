@@ -44,12 +44,20 @@ const Project = ({ name, description, tech, role, projectName, link }) => {
 
 const projectsData = [
   {
+    name: "Golden Rack",
+    description: "Fullstack project!",
+    tech: "React, Redux (Toolkit), React Router, Tailwind CSS, SASS, Node.js, Express.js, MongoDB, AWS EC2 etc",
+    role: "implementing all aspects of the project",
+    projectName: "goldenrack",
+    link: "https://goldenrack.danilocangucu.net/",
+  },
+  {
     name: "Love Tokens",
     description: "Fullstack project!",
-    tech: "React, Redux (Toolkit), React Hook Form, React Router, Tailwind CSS, SASS, Node.js, Express.js, MongoDB, AWS EC2, Jest, JWT, crypto, bcrypt, toastify",
+    tech: "React, Redux (Toolkit), React Router, Tailwind CSS, SASS, Node.js, Express.js, MongoDB, AWS EC2 etc",
     role: "implementing all aspects of the project",
     projectName: "lovetokens",
-    link: "https://lovetokens.danilocangucu.com/",
+    link: "https://lovetokens.danilocangucu.net/",
   },
   {
     name: "Bike app",
