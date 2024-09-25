@@ -12,7 +12,7 @@ let P1 = `In my life, I've designed numerous websites.\
  and pages for my ex-theater company.`
 let P2 = `Now, I am ready to start working as a professional developer with you!\
  I began learning to code in 2022 with online courses and tutorials.\
- Last year, I enrolled as a student at Grit:Lab in the Åland Islands to advance my skills.`
+ I graduated in 2024 from Ålands Yrkesgymnasium with a Vocational ICT degree specializing in Cloud/DevOps.`;
     return (
     <div className='paragraphs'>
         <Paragraph text={P1}/>
