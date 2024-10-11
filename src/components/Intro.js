@@ -24,20 +24,26 @@ const ShortDescription = ({ word }) => {
 }
 
 const Video = () => {
+  // TODO spinner
   setTimeout(() => {
-    const domVideo = document.getElementById('danilo-video');
-    domVideo.style.transitionDuration = '0.2s';
+    const domVideo = document.getElementById("danilo-video");
+    domVideo.style.transitionDuration = "0.2s";
     domVideo.style.transform = `translate(0, 0) scale(1)`;
-  }, 1000)
+  }, 1000);
   return (
-  <>
-  <div id="danilo-video" className='danilo-video'>
-  <video
-    src="https://github.com/danilocangucu/my-website/blob/53b59a2efb3dda32f8fb757202d9efa78d0db6ed/src/components/danilovideo.mp4?raw=true"
-    autoPlay muted loop playsInline type="video/mp4"/>
-  </div>
-  </>
-  )
+    <>
+      <div id="danilo-video" className="danilo-video">
+        <video
+          src="https://github.com/danilocangucu/my-website/blob/53b59a2efb3dda32f8fb757202d9efa78d0db6ed/src/components/danilovideo.mp4?raw=true"
+          autoPlay
+          muted
+          loop
+          playsInline
+          type="video/mp4"
+        />
+      </div>
+    </>
+  );
 }
 
 const Intro = () => {

@@ -1,24 +1,26 @@
 const Skills = () => {
     let h1 = "Skills".toUpperCase()
     return (
-        <div className="skills-body">
-            <h1>{h1}</h1>
-            <div className="skills">
-                <Skill skill="HTML"/>
-                <Skill skill="CSS"/>
-                <Skill skill="Go"/>
-                <Skill skill="React"/>
-                <Skill skill="JavaScript"/>
-                <Skill skill="Java"/>
-                <Skill skill="Git"/>
-                <Skill skill="SQL"/>
-                <Skill skill="GraphQL"/>
-                <Skill skill="Docker"/>
-                <Skill skill="AWS"/>
-            </div>
-            <span>&nbsp;</span>
+      // TODO carousel of skills
+      // TODO update skills from CV
+      <div className="skills-body">
+        <h1>{h1}</h1>
+        <div className="skills">
+          <Skill skill="HTML" />
+          <Skill skill="CSS" />
+          <Skill skill="Go" />
+          <Skill skill="React" />
+          <Skill skill="JavaScript" />
+          <Skill skill="Java" />
+          <Skill skill="Git" />
+          <Skill skill="SQL" />
+          <Skill skill="GraphQL" />
+          <Skill skill="Docker" />
+          <Skill skill="AWS" />
         </div>
-    )
+        <span>&nbsp;</span>
+      </div>
+    );
 }
 
 const Skill = ({ skill }) => {

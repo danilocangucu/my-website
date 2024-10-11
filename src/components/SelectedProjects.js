@@ -86,6 +86,9 @@ const projectsData = [
 ];
 
 const Projects = () => (
+  // TODO better CSS-grid for projects
+  // TODO shorter project descriptions
+  // TODO carousel for technologies?
   <div className="projects">
     {projectsData.map((project, index) => (
       <Project
@@ -95,6 +98,7 @@ const Projects = () => (
         tech={project.tech}
         role={project.role}
         projectName={project.projectName}
+        // TODO project.link should be the project's own page
         link={project.link}
       />
     ))}
