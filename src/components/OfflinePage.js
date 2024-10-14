@@ -11,6 +11,8 @@ function OfflinePage() {
     subdomain.charAt(0).toUpperCase() + subdomain.slice(1)
   } is currently offline.`;
 
+  console.log("Subdomain:", subdomain);
+
   return (
     // TODO better styling
     <div>
