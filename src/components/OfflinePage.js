@@ -7,6 +7,8 @@ function OfflinePage() {
   const subdomain =
     queryParams.get("subdomain")?.split(".")[0] || "This project";
 
+    console.log("Query Param subdomain", queryParams.get("subdomain"));
+
   const offlineMessage = `${
     subdomain.charAt(0).toUpperCase() + subdomain.slice(1)
   } is currently offline.`;
