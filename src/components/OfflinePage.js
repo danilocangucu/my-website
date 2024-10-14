@@ -1,16 +1,15 @@
 import React from "react";
-
-const projectOfflineMessages = {
-  lovetokens: "Love Tokens is currently offline.",
-  goldenrack: "Golden Rack is currently offline.",
-  default: "This project is currently offline.",
-};
+import { useLocation } from "react-router-dom";
 
 function OfflinePage() {
-  const subdomain = window.location.hostname.split(".")[0];
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const subdomain =
+    queryParams.get("subdomain")?.split(".")[0] || "This project";
 
-  const offlineMessage =
-    projectOfflineMessages[subdomain] || projectOfflineMessages.default;
+  const offlineMessage = `${
+    subdomain.charAt(0).toUpperCase() + subdomain.slice(1)
+  } is currently offline.`;
 
   return (
     // TODO better styling
