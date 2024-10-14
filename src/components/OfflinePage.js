@@ -2,21 +2,21 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 function OfflinePage() {
+  // TODO do not allow users to come to this page without a valid subdomain
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
+  // TODO "This project" is a temporary solution
   const subdomain =
     queryParams.get("subdomain")?.split(".")[0] || "This project";
-
-    console.log("Query Param subdomain", queryParams.get("subdomain"));
 
   const offlineMessage = `${
     subdomain.charAt(0).toUpperCase() + subdomain.slice(1)
   } is currently offline.`;
 
-  console.log("Subdomain:", subdomain);
-
   return (
     // TODO better styling
+    // TODO better explanation
+    // TODO the actual functionality to turn the project ON
     <div>
       <h1>{offlineMessage}</h1>
       <h2>What is going on?</h2>
