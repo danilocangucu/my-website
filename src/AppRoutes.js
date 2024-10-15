@@ -4,7 +4,7 @@ import Loading from "./components/Loading";
 import NotFound from "./components/NotFound";
 
 const Home = lazy(() => import("./components/Home"));
-const StatusPage = lazy(() => import("./components/StatusPage"));
+const StatusPage = lazy(() => import("./pages/StatusPage/StatusPage"));
 
 const Routes = () =>
   useRoutes([

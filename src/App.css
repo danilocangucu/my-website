@@ -700,3 +700,16 @@ ul + ul{
     padding-top: 40px;
   }
 }
+/* TEMPORARY STYLES */
+.padding-sides-10 {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.padding-bottom-40 {
+  padding-bottom: 40px;
+}
+
+.text-dark {
+  color: #272838;
+}
