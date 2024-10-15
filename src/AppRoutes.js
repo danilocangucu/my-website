@@ -4,12 +4,12 @@ import Loading from "./components/Loading";
 import NotFound from "./components/NotFound";
 
 const Home = lazy(() => import("./components/Home"));
-const OfflinePage = lazy(() => import("./components/OfflinePage"));
+const StatusPage = lazy(() => import("./components/StatusPage"));
 
 const Routes = () =>
   useRoutes([
     { path: "/", element: <Home /> },
-    { path: "/offline", element: <OfflinePage /> },
+    { path: "/status", element: <StatusPage /> },
     { path: "*", element: <NotFound /> },
   ]);
 
