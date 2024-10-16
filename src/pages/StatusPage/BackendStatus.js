@@ -9,35 +9,13 @@ function BackendStatus({ status, projectName }) {
     setIsStartingInstance(true);
     setErrorMessage("");
 
-    const lambdaUrl = process.env.REACT_APP_LAMBDA_URL;
-    if (!lambdaUrl) {
-      setErrorMessage("Lambda URL is not set.");
-      setIsStartingInstance(false);
-      return;
-    }
-
-    const amiIdMap = {
-      lovetokens: process.env.REACT_APP_LOVETOKENS_AMI_ID,
-      goldenrack: process.env.REACT_APP_GOLDENRACK_AMI_ID,
-    };
-
-    const amiId = amiIdMap[projectName];
-    if (!amiId) {
-      setErrorMessage("AMI ID is not set.");
-      setIsStartingInstance(false);
-      return;
-    }
-
-    const requestBody = {
-      amiKeyPair: {
-        amiId,
-        keyName: projectName,
-      },
-      instanceState: "start",
-    };
+    // TODO error handling for missing REACT_APP_EC2_BACKEND_URL
+    const ec2BackendUrl = process.env.REACT_APP_EC2_BACKEND_URL;
+    // TODO error handling for missing projectName
+    const requestBody = { projectName };
 
     try {
-      const response = await axios.post(lambdaUrl, requestBody, {
+      const response = await axios.post(ec2BackendUrl, requestBody, {
         headers: {
           "Content-Type": "application/json",
         },
