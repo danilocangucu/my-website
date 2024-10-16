@@ -11,10 +11,8 @@ function BackendStatus({ status, projectName }) {
 
     // TODO error handling for missing REACT_APP_EC2_BACKEND_URL
     const ec2BackendUrl = process.env.REACT_APP_EC2_BACKEND_URL;
-    console.log("ec2BackendUrl", ec2BackendUrl);
     // TODO error handling for missing projectName
     const requestBody = { projectName };
-    console.log("requestBody", requestBody);
 
     try {
       const response = await axios.post(ec2BackendUrl, requestBody, {
