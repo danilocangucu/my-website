@@ -16,8 +16,8 @@ const EC2Explanation = () => (
     </p>
     <h4>Why do you use an EC2?</h4>
     <p>
-      An EC2 is a simple solution for hosting modern websites (a backend and
-      frontend, for example). I've been using it to host some projects and also
+      An EC2 is a simple solution for hosting modern websites; a backend and
+      frontend, for example. I've been using it to host some projects and also
       showcase my skills with Amazon Web Services.
     </p>
     <h4>
@@ -42,10 +42,10 @@ const EC2Explanation = () => (
     <h4>Nice! Can you tell more about this system?</h4>
     <p>
       Yes, thanks for asking! Basically, I have a Lambda function (a serverless
-      functionality) that allows to manage the EC2 instance. When the project is
-      offline, for example, the Lambda function can be triggered to start the
-      EC2 instance of the project in this page. Automatically, the project will
-      be turned off after a few minutes of inactivity.
+      functionality) that allows to manage the states of EC2 instances. When the
+      project is offline, for example, the Lambda function can be triggered to
+      start the EC2 instance of the project in this page. Automatically, the
+      project will be turned off after a few minutes of inactivity.
     </p>
     <h4>That's cool! I am curious to understand more about this.</h4>
     <p>
