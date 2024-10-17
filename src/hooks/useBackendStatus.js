@@ -7,7 +7,7 @@ const useBackendStatus = (subdomain) => {
   const checkBackendHealth = useCallback(async () => {
     try {
       const response = await axios.get(`https://${subdomain}/api/v1/health`);
-      setBackendStatus(response.data.status === "ok" ? "Online" : "Offline");
+      setBackendStatus(response.status === 200 ? "Online" : "Offline");
     } catch (error) {
       setBackendStatus("Offline");
     }

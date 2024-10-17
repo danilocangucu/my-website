@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function BackendStatus({ status, projectName }) {
+function StartInstance({ projectName }) {
   const [isStartingInstance, setIsStartingInstance] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -43,20 +43,14 @@ function BackendStatus({ status, projectName }) {
 
   return (
     <div>
-      {status === "Offline" && (
-        <div>
-          <button onClick={startInstance} disabled={isStartingInstance}>
-            {isStartingInstance ? "Starting..." : "Start Instance"}
-          </button>
-          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        </div>
-      )}
-      <h3>Backend Status</h3>
-      <p>
-        The backend is currently <strong>{status}</strong>.
-      </p>
+      <div>
+        <button onClick={startInstance} disabled={isStartingInstance}>
+          {isStartingInstance ? "Starting..." : "Start Instance"}
+        </button>
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+      </div>
     </div>
   );
 }
 
-export default BackendStatus;
+export default StartInstance;
