@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const PROGRESS_DURATION = 40000;
+export const PROGRESS_DURATION = 10000;
 export const INTERVAL_TIME = 100;
 export const MIN_WAIT_TIME = 2000;
 
