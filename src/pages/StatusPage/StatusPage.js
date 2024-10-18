@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import useBackendStatus from "../../hooks/useBackendStatus";
 import EC2Explanation from "./EC2Explanation";
 import StatusMessage from "./StatusMessage";
 import ProjectInfo from "./ProjectInfo";
 import Action from "./Action";
+
+import { startProgressAnimation } from "../../utils/StatusPageUtils";
 
 function StatusPage() {
   const location = useLocation();
@@ -13,22 +14,55 @@ function StatusPage() {
   const projectName = subdomain.split(".")[0] || "This project";
   const projectNameUpperCased =
     projectName.charAt(0).toUpperCase() + projectName.slice(1);
-  const backendStatus = useBackendStatus(subdomain);
 
-  const statusMessage = `${projectNameUpperCased} is: ${backendStatus}!`;
+  const [progress, setProgress] = useState(100);
+  const [isLoading, setIsLoading] = useState(false);
+  const [backendStatus, setBackendStatus] = useState("Checking status...");
+
+  useEffect(() => {
+    const clearCountdownInterval = startProgressAnimation(
+      setProgress,
+      subdomain,
+      setBackendStatus,
+      setIsLoading
+    );
+
+    return () => {
+      clearCountdownInterval();
+    };
+  }, [subdomain]);
+
+  const statusMessage = `${projectNameUpperCased} is: ${backendStatus}`;
 
   return (
     <div className="padding-sides-10 padding-bottom-40">
-      <StatusMessage statusMessage={statusMessage} />
+      <StatusMessage
+        statusMessage={statusMessage}
+        isLoading={isLoading}
+        progress={progress}
+      />
+      <div
+        style={{
+          textAlign: "center",
+          height: "30px",
+        }}
+      >
+        {isLoading ? (
+          <div className="text-dark">
+            <em>Wait until the status is checked!</em>
+          </div>
+        ) : (
+          <Action
+            backendStatus={backendStatus}
+            subdomain={subdomain}
+            projectName={projectName}
+          />
+        )}
+      </div>
       <div className="text-dark">
         <ProjectInfo
           projectNameUpperCased={projectNameUpperCased}
           backendStatus={backendStatus}
-        />
-        <Action
-          backendStatus={backendStatus}
-          subdomain={subdomain}
-          projectName={projectName}
         />
         <EC2Explanation />
       </div>
