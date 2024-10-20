@@ -8,9 +8,14 @@ export const calculateIncrement = () => {
   return 100 / (PROGRESS_DURATION / INTERVAL_TIME);
 };
 
-export const fetchBackendStatus = async (subdomain) => {
+export const fetchBackendStatus = async (projectName) => {
+  const ec2BackendUrl = process.env.REACT_APP_EC2_BACKEND_URL;
+
   try {
-    const response = await axios.get(`https://${subdomain}/api/v1/health`);
+    const response = await axios.get(ec2BackendUrl, {
+      params: { projectName },
+    });
+
     return response.status === 200 ? "Online!" : "Offline.";
   } catch (error) {
     return "Offline.";
@@ -18,7 +23,7 @@ export const fetchBackendStatus = async (subdomain) => {
 };
 
 export const startFetch = async (
-  subdomain,
+  projectName,
   setBackendStatus,
   setIsLoading,
   setProgress,
@@ -27,7 +32,7 @@ export const startFetch = async (
   setBackendStatus("Checking status...");
   setIsLoading(true);
 
-  const status = await fetchBackendStatus(subdomain);
+  const status = await fetchBackendStatus(projectName);
 
   setTimeout(() => {
     setIsLoading(false);
@@ -35,7 +40,7 @@ export const startFetch = async (
     setBackendStatus(status);
     startProgressAnimation(
       setProgress,
-      subdomain,
+      projectName,
       setBackendStatus,
       setIsLoading
     );
@@ -44,7 +49,7 @@ export const startFetch = async (
 
 export const startProgressAnimation = (
   setProgress,
-  subdomain,
+  projectName,
   setBackendStatus,
   setIsLoading
 ) => {
@@ -54,7 +59,7 @@ export const startProgressAnimation = (
       if (prevProgress >= 100) {
         clearInterval(countdownInterval);
         startFetch(
-          subdomain,
+          projectName,
           setBackendStatus,
           setIsLoading,
           setProgress,

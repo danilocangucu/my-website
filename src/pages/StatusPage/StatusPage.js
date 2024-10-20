@@ -22,7 +22,7 @@ function StatusPage() {
   useEffect(() => {
     const clearCountdownInterval = startProgressAnimation(
       setProgress,
-      subdomain,
+      projectName,
       setBackendStatus,
       setIsLoading
     );
@@ -30,7 +30,7 @@ function StatusPage() {
     return () => {
       clearCountdownInterval();
     };
-  }, [subdomain]);
+  }, [projectName]);
 
   const statusMessage = `${projectNameUpperCased} is: ${backendStatus}`;
 
