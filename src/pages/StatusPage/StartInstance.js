@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function StartInstance({ projectName }) {
+function StartInstance({
+  projectName,
+  setIsLoading,
+  setBackendStatus,
+  setProgress,
+  startProgressAnimation,
+  stopProgressAnimation,
+}) {
   const [isStartingInstance, setIsStartingInstance] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const startInstance = async () => {
     setIsStartingInstance(true);
     setErrorMessage("");
+    setIsLoading(true);
+    stopProgressAnimation();
 
     // TODO error handling for missing REACT_APP_EC2_BACKEND_URL
     const ec2BackendUrl = process.env.REACT_APP_EC2_BACKEND_URL;
@@ -20,35 +29,39 @@ function StartInstance({ projectName }) {
           "Content-Type": "application/json",
         },
       });
-      // TODO Handle properly the response status
-      // TODO Show a loading spinner while the request is being processed
-      // TODO Show a success message if the request is successful
-      // TODO Show an error message if the request fails
+      // TODO check how the error message is being
       // TODO Lambda should return 304 if the instance is already running
       if (response.status === 200) {
-        alert("Instance is starting...");
-      } else if (response.status === 304) {
-        alert("Instance is already running.");
+        setBackendStatus("starting...");
       } else {
         setErrorMessage("Failed to start the instance.");
       }
     } catch (error) {
       console.error("Error while starting the instance.", error);
-      setErrorMessage("Error while starting the instance.");
-      console.error(error);
+      if (error.response && error.response.status === 409) {
+        setErrorMessage("Instance is already running.");
+      } else {
+        setErrorMessage("Error while starting the instance.");
+      }
     } finally {
       setIsStartingInstance(false);
+      setIsLoading(false);
+      setProgress(0);
+      startProgressAnimation(
+        setProgress,
+        projectName,
+        setBackendStatus,
+        setIsLoading
+      );
     }
   };
 
   return (
     <div>
-      <div>
-        <button onClick={startInstance} disabled={isStartingInstance}>
-          {isStartingInstance ? "Starting..." : "Start Instance"}
-        </button>
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      </div>
+      <button onClick={startInstance} disabled={isStartingInstance}>
+        {isStartingInstance ? "Starting..." : "Start Instance"}
+      </button>
+      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
     </div>
   );
 }

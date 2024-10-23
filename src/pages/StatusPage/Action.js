@@ -1,13 +1,68 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import StartInstance from "./StartInstance";
+import NumberFlow from "@number-flow/react";
 
-function Action({ backendStatus, subdomain, projectName }) {
+function Action({
+  backendStatus,
+  subdomain,
+  projectName,
+  setIsLoading,
+  setBackendStatus,
+  startProgressAnimation,
+  stopProgressAnimation,
+  setProgress,
+}) {
+  // TODO think about it. now it's not working as it should.
+  // the counter should not be resetted if the status stays the same
+  // even if the sequence is: starting... -> ... -> starting...
+  // "..." should not reset the counter if previously it was "starting..."
+  const [startingCountdown, setStartingCountdown] = useState(30);
+
+  useEffect(() => {
+    if (backendStatus === "starting...") {
+      const intervalId = setInterval(() => {
+        setStartingCountdown((prev) => (prev > 0 ? prev - 1 : 0));
+      }, 1000);
+
+      return () => clearInterval(intervalId);
+    } else if (backendStatus !== "starting...") {
+      setStartingCountdown(30);
+    }
+  }, [backendStatus]);
+
   return (
     <>
-      {backendStatus === "Offline." ? (
-        <StartInstance projectName={projectName} />
+      {backendStatus === "offline." ? (
+        <div style={{ textAlign: "center", padding: "20px" }}>
+          <strong>
+            You can start this project by clicking on the button below:
+          </strong>
+          <StartInstance
+            projectName={projectName}
+            setIsLoading={setIsLoading}
+            setBackendStatus={setBackendStatus}
+            startProgressAnimation={startProgressAnimation}
+            stopProgressAnimation={stopProgressAnimation}
+            setProgress={setProgress}
+          />
+        </div>
+      ) : backendStatus === "starting..." ? (
+        <div style={{ textAlign: "center", padding: "20px" }}>
+          <em>
+            <strong>
+              It usually takes less than{" "}
+              <NumberFlow value={startingCountdown} trend={false} /> seconds for
+              <br />
+              the instance to be running smoothly. Please wait!
+            </strong>
+          </em>
+        </div>
       ) : (
-        <a href={`https://${subdomain}`}>Go to Project</a>
+        <div style={{ textAlign: "center", padding: "20px" }}>
+          <strong>Click below to view this project:</strong>
+          <br />
+          <a href={subdomain}>Let’s Go!</a>
+        </div>
       )}
     </>
   );

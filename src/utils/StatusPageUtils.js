@@ -8,6 +8,8 @@ export const calculateIncrement = () => {
   return 100 / (PROGRESS_DURATION / INTERVAL_TIME);
 };
 
+let countdownInterval;
+
 export const fetchBackendStatus = async (projectName) => {
   const ec2BackendUrl = process.env.REACT_APP_EC2_BACKEND_URL;
 
@@ -16,9 +18,18 @@ export const fetchBackendStatus = async (projectName) => {
       params: { projectName },
     });
 
-    return response.status === 200 ? "Online!" : "Offline.";
+    let status = "offline.";
+
+    if (response.status === 200) {
+      status = "online!";
+    } else if (response.status === 202) {
+      status = "starting...";
+    }
+
+    return status;
   } catch (error) {
-    return "Offline.";
+    // TODO Handle properly the error
+    return "offline.";
   }
 };
 
@@ -29,7 +40,7 @@ export const startFetch = async (
   setProgress,
   startProgressAnimation
 ) => {
-  setBackendStatus("Checking status...");
+  setBackendStatus("...");
   setIsLoading(true);
 
   const status = await fetchBackendStatus(projectName);
@@ -54,7 +65,10 @@ export const startProgressAnimation = (
   setIsLoading
 ) => {
   const increment = calculateIncrement();
-  let countdownInterval = setInterval(() => {
+
+  clearInterval(countdownInterval);
+
+  countdownInterval = setInterval(() => {
     setProgress((prevProgress) => {
       if (prevProgress >= 100) {
         clearInterval(countdownInterval);
@@ -72,4 +86,22 @@ export const startProgressAnimation = (
   }, INTERVAL_TIME);
 
   return () => clearInterval(countdownInterval);
+};
+
+export const stopProgressAnimation = () => {
+  clearInterval(countdownInterval);
+  countdownInterval = null;
+};
+
+export const updateBackendStatus = async (status) => {
+  const ec2BackendUrl = process.env.REACT_APP_EC2_BACKEND_URL;
+
+  try {
+    const response = await axios.put(ec2BackendUrl, { status });
+
+    return response.status === 200;
+  } catch (error) {
+    // TODO Handle properly the error
+    return false;
+  }
 };

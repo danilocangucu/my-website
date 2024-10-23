@@ -4,8 +4,12 @@ import EC2Explanation from "./EC2Explanation";
 import StatusMessage from "./StatusMessage";
 import ProjectInfo from "./ProjectInfo";
 import Action from "./Action";
+import cloudsRain from "./clouds-rain.gif";
 
-import { startProgressAnimation } from "../../utils/StatusPageUtils";
+import {
+  startProgressAnimation,
+  stopProgressAnimation,
+} from "../../utils/StatusPageUtils";
 
 function StatusPage() {
   const location = useLocation();
@@ -17,7 +21,7 @@ function StatusPage() {
 
   const [progress, setProgress] = useState(100);
   const [isLoading, setIsLoading] = useState(false);
-  const [backendStatus, setBackendStatus] = useState("Checking status...");
+  const [backendStatus, setBackendStatus] = useState("...");
 
   useEffect(() => {
     const clearCountdownInterval = startProgressAnimation(
@@ -32,7 +36,7 @@ function StatusPage() {
     };
   }, [projectName]);
 
-  const statusMessage = `${projectNameUpperCased} is: ${backendStatus}`;
+  const statusMessage = `${projectNameUpperCased} is ${backendStatus}`;
 
   return (
     <div className="padding-sides-10 padding-bottom-40">
@@ -43,19 +47,47 @@ function StatusPage() {
       />
       <div
         style={{
-          textAlign: "center",
-          height: "30px",
+          marginTop: "-15px",
+          textAlign: "left",
+          height: "94px",
+          width: "500px",
+          color: "#CA2E55",
+          display: "inline-block",
+          border: "2px solid #CA2E55",
+          borderRadius: "10px",
+          backgroundColor: "#F8F8F8",
         }}
       >
         {isLoading ? (
-          <div className="text-dark">
-            <em>Wait until the status is checked!</em>
+          <div
+            style={{
+              width: "500px",
+              height: "80px",
+              overflow: "hidden",
+              paddingLeft: "8px",
+              marginTop: "7px",
+            }}
+          >
+            <img
+              src={cloudsRain}
+              alt="Clouds gif"
+              style={{
+                maxWidth: "484px",
+                transform: "translateY(-25px)",
+                borderRadius: "10px",
+              }}
+            ></img>
           </div>
         ) : (
           <Action
+            setBackendStatus={setBackendStatus}
             backendStatus={backendStatus}
             subdomain={subdomain}
             projectName={projectName}
+            setIsLoading={setIsLoading}
+            startProgressAnimation={startProgressAnimation}
+            stopProgressAnimation={stopProgressAnimation}
+            setProgress={setProgress}
           />
         )}
       </div>
