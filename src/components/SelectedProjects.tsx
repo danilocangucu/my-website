@@ -12,13 +12,12 @@ const Header: React.FC = () => {
 interface ProjectProps {
   name: string;
   description: string;
-  tech: string;
-  role: string;
+  techStack: string;
   projectName: string;
   link?: string;
 }
 
-const Project: React.FC<ProjectProps> = ({ name, description, tech, role, projectName, link }) => {
+const Project: React.FC<ProjectProps> = ({ name, description, techStack, projectName, link }) => {
   const gitHubUrl = `https://github.com/danilocangucu/`;
   const gitHubIconUrl = `https://github.com/danilocangucu/my-website/blob/main/public/images/github-mark-white.png?raw=true`;
   const videoSrcUrl = `https://github.com/danilocangucu/my-website/blob/main/public/videos/${projectName}.mp4?raw=true`;
@@ -39,7 +38,7 @@ const Project: React.FC<ProjectProps> = ({ name, description, tech, role, projec
         <h2>{name}</h2>
         {description}
         <br />
-        Made with {tech}. I was responsible for {role}.
+        Mainly {techStack} & more.
         <br />
         <br />
         <a href={`${gitHubUrl}${projectName}`}>
@@ -56,40 +55,35 @@ const projectsData = [
   {
     name: "Golden Rack",
     description: "Fullstack project!",
-    tech: "React, Redux (Toolkit), React Router, Tailwind CSS, SASS, Node.js, Express.js, MongoDB, AWS EC2 etc",
-    role: "implementing all aspects of the project",
+    techStack: "Node.js, Express.js, React, Redux, Tailwind CSS, MongoDB and AWS",
     projectName: "goldenrack",
     link: "https://goldenrack.danilocangucu.net/",
   },
   {
     name: "Love Tokens",
     description: "Fullstack project!",
-    tech: "React, Redux (Toolkit), React Router, Tailwind CSS, SASS, Node.js, Express.js, MongoDB, AWS EC2 etc",
-    role: "implementing all aspects of the project",
+    techStack: "Node.js, Express.js, React, Redux, Tailwind CSS, MongoDB and AWS EC2",
     projectName: "lovetokens",
     link: "https://lovetokens.danilocangucu.net/",
   },
   {
     name: "Bike app",
     description: "Fullstack project!",
-    tech: "Go, JavaScript, SQLite, AWS, Docker, Cypress and unit tests",
-    role: "implementing all aspects of the project",
+    techStack: "Go, JavaScript, SQLite, AWS EC2, Docker, Cypress and unit tests",
     projectName: "hsk-bikeapp",
     link: "",
   },
   {
     name: "Pacman",
     description: "Duo project for desktop.",
-    tech: "JavaScript, HTML and CSS",
-    role: "part of JavaScript logics, CSS and HTML",
+    techStack: "JavaScript, HTML and CSS",
     projectName: "pacman-js",
     link: "https://tranquil-tarsier-fe7b59.netlify.app/",
   },
   {
     name: "My website",
     description: "The website you are now!",
-    tech: "GitHub Actions, AWS EC2, React.js, HTML and CSS",
-    role: "building the project from scratch",
+    techStack: "GitHub Actions, AWS EC2 and Lambda, React",
     projectName: "my-website",
     link: "",
   },
@@ -105,8 +99,7 @@ const Projects: React.FC = () => (
         key={index}
         name={project.name}
         description={project.description}
-        tech={project.tech}
-        role={project.role}
+        techStack={project.techStack}
         projectName={project.projectName}
         // TODO project.link should be the project's own page
         link={project.link}
