@@ -73,7 +73,7 @@ const Action: React.FC<ActionProps> = ({
         <div style={{ textAlign: "center", padding: "20px" }}>
           <strong>Click below to view this project:</strong>
           <br />
-          <a href={subdomain}>Let’s Go!</a>
+              <a href={`https://${subdomain}`}>Let’s Go!</a>
         </div>
       )}
     </>
