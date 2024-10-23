@@ -28,6 +28,7 @@ const Project: React.FC<ProjectProps> = ({ name, description, techStack, project
         <video
           className="project-video"
           src={videoSrcUrl}
+          height={350}
           autoPlay
           muted
           loop
@@ -38,7 +39,7 @@ const Project: React.FC<ProjectProps> = ({ name, description, techStack, project
         <h2>{name}</h2>
         {description}
         <br />
-        Mainly {techStack} & more.
+        Made with {techStack} & more.
         <br />
         <br />
         <a href={`${gitHubUrl}${projectName}`}>
@@ -51,25 +52,26 @@ const Project: React.FC<ProjectProps> = ({ name, description, techStack, project
   );
 };
 
+// TODO backend should provide this data and the video files
 const projectsData = [
   {
     name: "Golden Rack",
     description: "Fullstack project!",
-    techStack: "Node.js, Express.js, React, Redux, Tailwind CSS, MongoDB and AWS",
+    techStack: "Node.js, Express.js, TypeScript, React, Redux, Tailwind CSS, MongoDB, AWS EC2",
     projectName: "goldenrack",
     link: "https://goldenrack.danilocangucu.net/",
   },
   {
     name: "Love Tokens",
     description: "Fullstack project!",
-    techStack: "Node.js, Express.js, React, Redux, Tailwind CSS, MongoDB and AWS EC2",
+    techStack: "Node.js, Express.js, TypeScript, React, Redux, Tailwind CSS, MongoDB, AWS EC2",
     projectName: "lovetokens",
     link: "https://lovetokens.danilocangucu.net/",
   },
   {
     name: "Bike app",
     description: "Fullstack project!",
-    techStack: "Go, JavaScript, SQLite, AWS EC2, Docker, Cypress and unit tests",
+    techStack: "Go, JavaScript, SQLite, AWS EC2, Docker, Cypress, unit tests",
     projectName: "hsk-bikeapp",
     link: "",
   },
@@ -81,18 +83,17 @@ const projectsData = [
     link: "https://tranquil-tarsier-fe7b59.netlify.app/",
   },
   {
+    // TODO update my-website video
     name: "My website",
     description: "The website you are now!",
-    techStack: "GitHub Actions, AWS EC2 and Lambda, React",
+    techStack: "React, TypeScript, GitHub Actions, AWS EC2, Lambda",
     projectName: "my-website",
     link: "",
   },
 ];
 
 const Projects: React.FC = () => (
-  // TODO better CSS-grid for projects
-  // TODO shorter project descriptions
-  // TODO carousel for technologies?
+  // TODO marquee for technologies?
   <div className="projects">
     {projectsData.map((project, index) => (
       <Project

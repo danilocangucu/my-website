@@ -326,8 +326,8 @@ a:hover {
 
 .projects {
   display: flex;
-  flex-direction: row;
-  justify-content:space-between;
+  flex-wrap: wrap;
+    justify-content: space-between;
   font-size: 2.5vh;
   min-width: 100%;
 }
@@ -337,6 +337,10 @@ a:hover {
   display: flex;
   justify-content: right;
   flex-direction: column;
+  width: calc(50% - 20px);
+    /* Two items per row with some spacing */
+    margin-bottom: 60px;
+    /* Space between rows */
 }
 
 .project-video-container {
@@ -353,7 +357,7 @@ a:hover {
 }
 
 .project+.project{
-  margin-left: 100px;
+  margin-left: 0px;
 }
 
 @media only screen and (max-width: 991px){
@@ -404,6 +408,7 @@ a:hover {
 /* SKILLS */
 
 .skills-body{
+  margin-top: -100px;
   padding-left: 10%;
   padding-right: 10%;
   background-image: 
