@@ -1,54 +1,159 @@
-import React from "react"
+import React from "react";
+
+import { arrangeSkillsByCategory, formatCategoryName, glowShadow, logosBaseUrl, populateMarquee, Skill } from "../utils/SkillsUtils";
+import Marquee from "react-fast-marquee";
+
+// TODO add missing skills
+// TODO implement the backend for skills and fetch them here
+const skillsData = [
+    {
+        name: "React",
+        logoFile: `react.png`,
+        skillUrl: "https://reactjs.org/",
+        category: "Frontend",
+        useLightGlow: false,
+    },
+    {
+        name: "Redux",
+        logoFile: `redux.png`,
+        skillUrl: "https://redux.js.org/",
+        category: "Frontend",
+        useLightGlow: true,
+    },
+    {
+        name: "Python",
+        logoFile: `python.png`,
+        skillUrl: "https://www.python.org/",
+        category: "Backend",
+        useLightGlow: false,
+    },
+    {
+        name: "Java",
+        logoFile: `java.png`,
+        skillUrl: "https://www.oracle.com/java/",
+        category: "Backend",
+        useLightGlow: false,
+    },
+    {
+        name: "Spring",
+        logoFile: `spring.png`,
+        skillUrl: "https://spring.io/",
+        category: "Backend",
+        useLightGlow: false,
+    },
+    {
+        name: "GraphQL",
+        logoFile: `graphql.png`,
+        skillUrl: "https://graphql.org/",
+        category: "Databases",
+        useLightGlow: true,
+    },
+    {
+        name: "AWS",
+        logoFile: `aws.png`,
+        skillUrl: "https://aws.amazon.com/",
+        category: "cloud_and_dev_ops",
+        useLightGlow: true,
+    },
+    {
+        name: "Linux",
+        logoFile: `linux.png`,
+        skillUrl: "https://www.linux.org/",
+        category: "Other",
+        useLightGlow: true,
+    },
+    {
+        name: "Ubuntu",
+        logoFile: `ubuntu.png`,
+        skillUrl: "https://www.linux.org/",
+        category: "Other",
+        useLightGlow: true,
+    },
+    {
+        name: "Photoshop",
+        logoFile: `photoshop.png`,
+        skillUrl: "https://www.adobe.com/products/photoshop.html",
+        category: "Other",
+        useLightGlow: true,
+    },
+    {
+        name: "Jest",
+        logoFile: `jest.png`,
+        skillUrl: "https://jestjs.io/",
+        category: "Testing",
+        useLightGlow: true,
+    },
+    {
+        name: "Azure",
+        logoFile: `azure.png`,
+        skillUrl: "https://azure.microsoft.com/",
+        category: "familiar_with",
+        useLightGlow: false,
+    },
+    {
+        name: "Google Cloud Console",
+        logoFile: `google_cloud_console.png`,
+        skillUrl: "https://cloud.google.com/console/",
+        category: "familiar_with",
+        useLightGlow: false,
+    },
+    {
+        name: "Kotlin",
+        logoFile: `kotlin.png`,
+        skillUrl: "https://kotlinlang.org/",
+        category: "familiar_with",
+        useLightGlow: true,
+    },
+];
+
+export const LogosMarquee: React.FC<{ skillsLogos: Skill[] }> = ({ skillsLogos }) => {
+    const populatedMarquee = populateMarquee(skillsLogos, 20);
+    return (
+        <Marquee gradient={false} pauseOnHover={true} speed={50}>
+            {populatedMarquee.map((skill, index) => (
+                <div key={index} style={{ margin: '0 20px' }}>
+                    <img
+                        style={{
+                            filter: `drop-shadow(${skill.useLightGlow ?
+                                glowShadow.light : glowShadow.dark})`,
+                            padding: "10px"
+                        }}
+                        src={`${logosBaseUrl}${(skill.logoFile)}`}
+                        alt={skill.name}
+                        height={80}
+                    />
+                </div>
+            ))}
+        </Marquee>
+    );
+};
+
+const mapSkillsToCategories: React.FC = (skills: Record<string, Skill[]>): JSX.Element[] => {
+    return Object.keys(skills).map((category) => {
+        const formattedCategory = formatCategoryName(category);
+
+        return (
+            <div key={category}>
+                <h3>{formattedCategory}</h3>
+                <LogosMarquee skillsLogos={skills[category]} />
+            </div>
+        );
+    });
+};
 
 const Skills: React.FC = () => {
-    let h1 = "Skills".toUpperCase()
+    const h1 = "Skills".toUpperCase();
+    const skills = arrangeSkillsByCategory(skillsData);
+    const mappedSkills = mapSkillsToCategories(skills);
+
     return (
-        // TODO carousel of skills
-        // TODO update skills from CV
         <div className="skills-body">
             <h1>{h1}</h1>
-            <div className="skills">
-                <Skill skill="HTML" />
-                <Skill skill="CSS" />
-                <Skill skill="Go" />
-                <Skill skill="React" />
-                <Skill skill="JavaScript" />
-                <Skill skill="Java" />
-                <Skill skill="Git" />
-                <Skill skill="SQL" />
-                <Skill skill="GraphQL" />
-                <Skill skill="Docker" />
-                <Skill skill="AWS" />
-            </div>
+            {mappedSkills}
             <span>&nbsp;</span>
         </div>
     );
 }
 
-interface SkillProps {
-    skill: string;
-}
+export default Skills;
 
-const Skill: React.FC<SkillProps> = ({ skill }) => {
-    let wasTriggered = false
-    document.addEventListener("scroll", () => {
-        const skillElement = document.getElementById(`${skill}`);
-        if (skillElement) {
-            const elementPosition = skillElement.getBoundingClientRect();
-            if (Math.round(window.innerHeight - elementPosition["bottom"]) > 20 && !wasTriggered) {
-                skillElement.classList.add(`${skill}`, `${skill}-animation`)
-                wasTriggered = true
-            }
-        }
-    });
-    return (
-        <ul>
-            <li>
-                <span id={skill}></span>
-                <em>{skill}</em>
-            </li>
-        </ul>
-    )
-}
-
-export default Skills
