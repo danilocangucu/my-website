@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from "react";
-import StartInstance from "./StartInstance";
 import NumberFlow from "@number-flow/react";
 
-function Action({
+import StartInstance from "./StartInstance";
+
+interface ActionProps {
+  backendStatus: string;
+  subdomain: string;
+  projectName: string;
+  setIsLoading: (isLoading: boolean) => void;
+  setBackendStatus: (status: string) => void;
+  startProgressAnimation: () => void;
+  stopProgressAnimation: () => void;
+  setProgress: (progress: number) => void;
+}
+
+const Action: React.FC<ActionProps> = ({
   backendStatus,
   subdomain,
   projectName,
@@ -11,7 +23,7 @@ function Action({
   startProgressAnimation,
   stopProgressAnimation,
   setProgress,
-}) {
+}: ActionProps) => {
   // TODO think about it. now it's not working as it should.
   // the counter should not be resetted if the status stays the same
   // even if the sequence is: starting... -> ... -> starting...

@@ -1,6 +1,10 @@
 import React from "react";
 
-function ProjectInfo({ projectNameUpperCased }) {
+interface ProjectInfoProps {
+  projectNameUpperCased: string;
+}
+
+const ProjectInfo: React.FC<ProjectInfoProps> = ({ projectNameUpperCased }: ProjectInfoProps) => {
   return (
     <div>
       <h2>Danilo, what's going on?!</h2>

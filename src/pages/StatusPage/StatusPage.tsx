@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
 import EC2Explanation from "./EC2Explanation";
 import StatusMessage from "./StatusMessage";
 import ProjectInfo from "./ProjectInfo";
@@ -11,11 +12,11 @@ import {
   stopProgressAnimation,
 } from "../../utils/StatusPageUtils";
 
-function StatusPage() {
+const StatusPage: React.FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const subdomain = queryParams.get("subdomain");
-  const projectName = subdomain.split(".")[0] || "This project";
+  const projectName = subdomain ? subdomain.split(".")[0] : "This project";
   const projectNameUpperCased =
     projectName.charAt(0).toUpperCase() + projectName.slice(1);
 
@@ -82,10 +83,10 @@ function StatusPage() {
           <Action
             setBackendStatus={setBackendStatus}
             backendStatus={backendStatus}
-            subdomain={subdomain}
+            subdomain={subdomain || ""}
             projectName={projectName}
             setIsLoading={setIsLoading}
-            startProgressAnimation={startProgressAnimation}
+            startProgressAnimation={() => startProgressAnimation(setProgress, projectName, setBackendStatus, setIsLoading)}
             stopProgressAnimation={stopProgressAnimation}
             setProgress={setProgress}
           />
@@ -94,7 +95,6 @@ function StatusPage() {
       <div className="text-dark">
         <ProjectInfo
           projectNameUpperCased={projectNameUpperCased}
-          backendStatus={backendStatus}
         />
         <EC2Explanation />
       </div>

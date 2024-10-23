@@ -1,24 +1,30 @@
+import React, { Suspense, lazy } from "react";
 import { useRoutes, BrowserRouter as Router } from "react-router-dom";
-import { Suspense, lazy } from "react";
+
 import Loading from "./components/Loading";
 import NotFound from "./components/NotFound";
 
 const Home = lazy(() => import("./components/Home"));
 const StatusPage = lazy(() => import("./pages/StatusPage/StatusPage"));
 
-const Routes = () =>
-  useRoutes([
+const RouteHandler: React.FC = () => {
+  const routes = useRoutes([
     { path: "/", element: <Home /> },
     { path: "/status", element: <StatusPage /> },
     { path: "*", element: <NotFound /> },
   ]);
 
-export default function AppRoutes() {
+  return routes;
+};
+
+const AppRoutes: React.FC = () => {
   return (
     <Router>
       <Suspense fallback={<Loading />}>
-        <Routes />
+        <RouteHandler />
       </Suspense>
     </Router>
   );
-}
+};
+
+export default AppRoutes;

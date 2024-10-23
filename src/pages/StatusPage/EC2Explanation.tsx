@@ -1,6 +1,6 @@
 import React from "react";
 
-const EC2Explanation = () => (
+const EC2Explanation: React.FC = () => (
   <>
     <h3>What is an AWS EC2 Instance?</h3>
     <p>

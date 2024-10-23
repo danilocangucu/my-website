@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function StartInstance({
+
+const StartInstance = ({
+  // @ts-ignore
   projectName,
+  // @ts-ignore
   setIsLoading,
+  // @ts-ignore
   setBackendStatus,
+  // @ts-ignore
   setProgress,
+  // @ts-ignore
   startProgressAnimation,
+  // @ts-ignore
   stopProgressAnimation,
-}) {
+}) => {
   const [isStartingInstance, setIsStartingInstance] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -20,6 +27,9 @@ function StartInstance({
 
     // TODO error handling for missing REACT_APP_EC2_BACKEND_URL
     const ec2BackendUrl = process.env.REACT_APP_EC2_BACKEND_URL;
+    if (!ec2BackendUrl) {
+      return;
+    }
     // TODO error handling for missing projectName
     const requestBody = { projectName };
 
@@ -38,7 +48,7 @@ function StartInstance({
       }
     } catch (error) {
       console.error("Error while starting the instance.", error);
-      if (error.response && error.response.status === 409) {
+      if (axios.isAxiosError(error) && error.response && error.response.status === 409) {
         setErrorMessage("Instance is already running.");
       } else {
         setErrorMessage("Error while starting the instance.");

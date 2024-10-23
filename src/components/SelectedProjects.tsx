@@ -1,13 +1,24 @@
-const Header = () => {
-    const text = "Selected Projects".toUpperCase()
-    return (
+import React from "react"
+
+const Header: React.FC = () => {
+  const text = "Selected Projects".toUpperCase()
+  return (
     <h1>
-        {text}
+      {text}
     </h1>
-    )
+  )
 }
 
-const Project = ({ name, description, tech, role, projectName, link }) => {
+interface ProjectProps {
+  name: string;
+  description: string;
+  tech: string;
+  role: string;
+  projectName: string;
+  link?: string;
+}
+
+const Project: React.FC<ProjectProps> = ({ name, description, tech, role, projectName, link }) => {
   const gitHubUrl = `https://github.com/danilocangucu/`;
   const gitHubIconUrl = `https://github.com/danilocangucu/my-website/blob/main/public/images/github-mark-white.png?raw=true`;
   const videoSrcUrl = `https://github.com/danilocangucu/my-website/blob/main/public/videos/${projectName}.mp4?raw=true`;
@@ -22,7 +33,6 @@ const Project = ({ name, description, tech, role, projectName, link }) => {
           muted
           loop
           playsInline
-          type="video/mp4"
         />
       </div>
       <div className="project-text">
@@ -85,7 +95,7 @@ const projectsData = [
   },
 ];
 
-const Projects = () => (
+const Projects: React.FC = () => (
   // TODO better CSS-grid for projects
   // TODO shorter project descriptions
   // TODO carousel for technologies?
@@ -105,13 +115,13 @@ const Projects = () => (
   </div>
 );
 
-const SelectedProjects = () => {
-    return (
-        <div className="selected-projects-body">
-            <Header />
-            <Projects />
-        </div>
-    )
+const SelectedProjects: React.FC = () => {
+  return (
+    <div className="selected-projects-body">
+      <Header />
+      <Projects />
+    </div>
+  )
 }
 
 export default SelectedProjects
