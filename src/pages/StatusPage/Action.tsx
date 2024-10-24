@@ -73,6 +73,7 @@ const Action: React.FC<ActionProps> = ({
         <div style={{ textAlign: "center", padding: "20px" }}>
           <strong>Click below to view this project:</strong>
           <br />
+              { /* TODO check how to clean the cached if the user has arrived here */}
               <a href={`https://${subdomain}`}>Let’s Go!</a>
         </div>
       )}

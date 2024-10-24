@@ -59,14 +59,14 @@ const projectsData = [
     description: "Fullstack project!",
     techStack: "Node.js, Express.js, TypeScript, React, Redux, Tailwind CSS, MongoDB, AWS EC2",
     projectName: "goldenrack",
-    link: "https://goldenrack.danilocangucu.net/",
+    link: "https://danilocangucu.net/status?=subdomain=goldenrack.danilocangucu.net",
   },
   {
     name: "Love Tokens",
     description: "Fullstack project!",
     techStack: "Node.js, Express.js, TypeScript, React, Redux, Tailwind CSS, MongoDB, AWS EC2",
     projectName: "lovetokens",
-    link: "https://lovetokens.danilocangucu.net/",
+    link: "https://danilocangucu.net/status?=subdomain=lovetokens.danilocangucu.net",
   },
   {
     name: "Bike app",
@@ -85,7 +85,7 @@ const projectsData = [
   {
     // TODO update my-website video
     name: "My website",
-    description: "The website you are now!",
+    description: "Where you are now!",
     techStack: "React, TypeScript, GitHub Actions, AWS EC2, Lambda",
     projectName: "my-website",
     link: "",
