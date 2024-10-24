@@ -361,6 +361,10 @@ a:hover {
 }
 
 @media only screen and (max-width: 991px){
+  .project-text {
+      padding-right: 0;
+      text-align: center;
+    }
   .selected-projects-body h1{
     font-size: 5vh;
   }
@@ -370,7 +374,12 @@ a:hover {
   }
 
   .project-video {
-    max-width: 70%;
+    max-width: 100%;
+    }
+    
+    .project-video-container {
+      display: flex;
+      justify-content: center;
   }
 
   .project+.project{
@@ -384,14 +393,20 @@ a:hover {
     flex-direction: column;
   }
 
+.project {
+  width: 100%;
+  margin-left: 0;
+  margin-top: 30px;
+}
+
+.project-video {
+  max-width: 100%;
+}
   .project+.project{
     margin-left: 0px;
     margin-top: 30px;
   }
 
-  .project-video {
-    max-width: 55%;
-  }
 }
 
 @media only screen and (max-width: 530px){
