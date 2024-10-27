@@ -1,33 +1,25 @@
 import React from "react";
+
 import { useResizeHandler } from "../../hooks/useResizeHandler";
 import { useSnowFlakeAnimation } from "../../hooks/useSnowFlakesAnimation";
-import { createSnowFlakes, snowFlakesUrls, SnowFlakes } from "../../utils/HohohoUtils";
+import { calculateSnowflakeAmount, createAllSnowflakeDivs } from "../../utils/HohohoUtils";
 
 const Hohoho: React.FC = () => {
-    const { maxHeight, maxWidth } = useResizeHandler(window.innerHeight, window.innerWidth);
-    // TODO temporary console.log
-    console.log("maxWidth", maxWidth);
-    console.log("maxHeight", maxHeight);
+    const { currentHeight, currentWidth } = useResizeHandler(window.innerHeight, window.innerWidth);
+    const snowflakesAmount = calculateSnowflakeAmount(currentHeight, currentWidth);
 
     // TODO snowflakes should be svgs, now they are pngs
-    // TODO amount of snowflakes to be created should vary according to the screen's width
     // TODO styles of margin between snow flakes should also be dinamically set
-    const heavySnowFlakes = createSnowFlakes({ snowFlake: SnowFlakes.heavy, amount: 20, url: snowFlakesUrls.heavy });
-    const mediumSnowFlakes = createSnowFlakes({ snowFlake: SnowFlakes.medium, amount: 40, url: snowFlakesUrls.medium });
-    const lightSnowFlakes = createSnowFlakes({ snowFlake: SnowFlakes.light, amount: 60, url: snowFlakesUrls.light });
+    const createdSnowflakesDivs = createAllSnowflakeDivs(snowflakesAmount);
 
-    useSnowFlakeAnimation(maxHeight)
+    // TODO useSnowFlakeAnimation should also be called with currentWidth
+    useSnowFlakeAnimation(currentHeight)
 
     return (
-        <>
-            <div className="bodySnowFlakes">
-                <div className="snowFlakes">
-                    <div className="heavySnowFlakes">{heavySnowFlakes}</div>
-                    <div className="mediumSnowFlakes">{mediumSnowFlakes}</div>
-                    <div className="lightSnowFlakes">{lightSnowFlakes}</div>
-                </div>
-            </div>
-        </>);
+        <div className="bodySnowFlakes">
+            {createdSnowflakesDivs}
+        </div>
+    );
 };
 
 export default Hohoho;

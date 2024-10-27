@@ -1,16 +1,12 @@
 import React from "react";
 import gsap from "gsap";
+import { SnowFlake, SnowflakeAmount, SnowFlakeWeight } from "../types/HohohoTypes";
 
-const HEAVY_SNOW_FLAKE_URL = "https://danilocangucu.net/certificates/snow1.png";
-const MEDIUM_SNOW_FLAKE_URL =
-  "https://danilocangucu.net/certificates/snow2.png";
-const LIGHT_SNOW_FLAKE_URL = "https://danilocangucu.net/certificates/snow3.png"
+const BASE_URL = "https://danilocangucu.net/certificates/";
 
-export const snowFlakesUrls = {
-  heavy: HEAVY_SNOW_FLAKE_URL,
-  medium: MEDIUM_SNOW_FLAKE_URL,
-  light: LIGHT_SNOW_FLAKE_URL
-};
+const HEAVY_SNOW_FLAKE_URL = `${BASE_URL}snow1.png`;
+const MEDIUM_SNOW_FLAKE_URL = `${BASE_URL}snow2.png`;
+const LIGHT_SNOW_FLAKE_URL = `${BASE_URL}snow3.png`;
 
 // TODO startSnowFlakes should also receive maxWidth
 export const startSnowFlakes = (
@@ -94,29 +90,67 @@ export const fadeOutAndRestartAnimations = async (
   startAnimations();
 };
 
-export type SnowFlakeWeight = 'heavy' | 'medium' | 'light';
-
-export interface SnowFlake {
-  name: SnowFlakeWeight;
-  size: number;
-}
-
 export const SnowFlakes: Record<SnowFlakeWeight, SnowFlake> = {
-  heavy: { name: "heavy", size: 80 },
-  medium: { name: "medium", size: 50 },
-  light: { name: "light", size: 30 },
+  heavy: { name: "heavy", size: 80, url: HEAVY_SNOW_FLAKE_URL },
+  medium: { name: "medium", size: 50, url: MEDIUM_SNOW_FLAKE_URL },
+  light: { name: "light", size: 30, url: LIGHT_SNOW_FLAKE_URL },
 };
 
-export interface SnowFlakeProps {
-  snowFlake: SnowFlake;
-  amount: number;
-  url: string;
-}
+export const calculateSnowflakeAmount = (
+  maxHeight: number,
+  maxWidth: number
+): SnowflakeAmount => {
 
-export const createSnowFlakes = ({ snowFlake, amount, url }: SnowFlakeProps) => {
-  return Array.from({ length: amount }).map((_, index) => (
-    <div className={`snowFlake ${snowFlake.name}`} key={`${snowFlake.name}-flake-${index}`}>
-      <img src={url} alt={`${snowFlake.name} snow flake`} height={snowFlake.size} />
+  const screenArea = maxWidth * maxHeight;
+
+  // Densities define the amount of snowflakes per pixel that will be rendered on the screen.
+  // The heavier the snowflake, the less dense it is, resulting in fewer heavy snowflakes compared to lighter ones.
+  // The current density values generate approximately:
+  // - 106 snowflakes on a 1440x812 screen (for example, a MacBook Pro 15");
+  // - 26 snowflakes on a 375x667 screen (for example, an iPhone SE);
+  // - 96 snowflakes on a 820x1180 screen (for example, an iPad Air).
+  const heavyDensity = 0.00002;
+  const mediumDensity = 0.00003;
+  const lightDensity = 0.00005;
+
+  const heavy = Math.round(screenArea * heavyDensity);
+  const medium = Math.round(screenArea * mediumDensity);
+  const light = Math.round(screenArea * lightDensity);
+
+  return { heavy, medium, light };
+};
+
+const createDivsForSpecificSnowflake = (snowflake: SnowFlake, amount: number) => {
+  const classNameAndKey = `${snowflake.name}SnowFlakes`;
+  const snowflakeDivs = Array.from({ length: amount }).map((_, index) => (
+    <div
+      className={`snowFlake ${snowflake.name}`}
+      key={`${snowflake.name}-flake-${index}`}
+    >
+      <img
+        src={snowflake.url}
+        alt={`${snowflake.name} snowflake`}
+        height={snowflake.size}
+      />
     </div>
   ));
+
+  return (
+    <div
+      className={classNameAndKey}
+      key={classNameAndKey}
+    >
+      {snowflakeDivs}
+    </div>);
+};
+
+export const createAllSnowflakeDivs = (snowflakesAmount: SnowflakeAmount) => {
+  return (
+    <div className="snowFlakes" key="snowflakes">
+      {Object.entries(SnowFlakes).map(([key, snowflake]) => {
+        const amount = snowflakesAmount[key as SnowFlakeWeight];
+        return createDivsForSpecificSnowflake(snowflake, amount);
+      })}
+    </div>
+  );
 };
