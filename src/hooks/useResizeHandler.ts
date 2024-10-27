@@ -4,16 +4,13 @@ export const useResizeHandler = (
   initialHeight: number,
   innitialWidth: number
 ) => {
-  const [maxHeight, setMaxHeight] = useState(initialHeight);
-  const [maxWidth, setMaxWidth] = useState(innitialWidth);
+  const [currentHeight, setCurrentHeight] = useState(initialHeight);
+  const [currentWidth, setCurrentWidth] = useState(innitialWidth);
 
   useEffect(() => {
     const handleResize = () => {
-      const currentHeight = window.innerHeight;
-      const currentWidth = window.innerWidth;
-
-      setMaxHeight((prevHeight) => Math.max(prevHeight, currentHeight));
-      setMaxWidth((prevWidth) => Math.max(prevWidth, currentWidth));
+      setCurrentHeight(window.innerHeight);
+      setCurrentWidth(window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);
@@ -22,5 +19,5 @@ export const useResizeHandler = (
     };
   }, []);
 
-  return { maxHeight, maxWidth };
+  return { currentHeight, currentWidth };
 };
