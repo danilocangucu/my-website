@@ -12,23 +12,6 @@ export const snowFlakesUrls = {
   light: LIGHT_SNOW_FLAKE_URL
 };
 
-// TODO temporary solutions for mobile and tablet detection, might be removed soon
-const mayBeMobileOrTablet = () => {
-  return /Mobi|Android|iPad|Tablet/i.test(navigator.userAgent);
-};
-
-const isTouchDevice = () => {
-  return (
-    window.matchMedia("(pointer: coarse)").matches ||
-    navigator.maxTouchPoints > 0
-  );
-};
-
-export const deviceChecker = {
-  mayBeMobileOrTablet,
-  isTouchDevice,
-};
-
 // TODO startSnowFlakes should also receive maxWidth
 export const startSnowFlakes = (
   snowFlake: gsap.TweenTarget,

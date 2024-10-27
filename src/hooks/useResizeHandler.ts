@@ -1,19 +1,11 @@
 import { useState, useEffect } from "react";
 
-type Dimensions = {
-  heights: Set<number>;
-  widths: Set<number>;
-};
-
-const RESIZE_COUNT_LIMIT = 5;
-
-export const useResizeHandler = (initialHeight: number) => {
+export const useResizeHandler = (
+  initialHeight: number,
+  innitialWidth: number
+) => {
   const [maxHeight, setMaxHeight] = useState(initialHeight);
-  const [uniqueDimensions, setUniqueDimensions] = useState<Dimensions>({
-    heights: new Set(),
-    widths: new Set(),
-  });
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [maxWidth, setMaxWidth] = useState(innitialWidth);
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,27 +13,14 @@ export const useResizeHandler = (initialHeight: number) => {
       const currentWidth = window.innerWidth;
 
       setMaxHeight((prevHeight) => Math.max(prevHeight, currentHeight));
-
-      if (!isDesktop) {
-        setUniqueDimensions((prevDimensions) => ({
-          heights: new Set(prevDimensions.heights).add(currentHeight),
-          widths: new Set(prevDimensions.widths).add(currentWidth),
-        }));
-
-        if (
-          uniqueDimensions.heights.size > RESIZE_COUNT_LIMIT ||
-          uniqueDimensions.widths.size > RESIZE_COUNT_LIMIT
-        ) {
-          setIsDesktop(true);
-        }
-      }
+      setMaxWidth((prevWidth) => Math.max(prevWidth, currentWidth));
     };
 
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isDesktop, uniqueDimensions]);
+  }, []);
 
-  return { maxHeight, isDesktop };
+  return { maxHeight, maxWidth };
 };

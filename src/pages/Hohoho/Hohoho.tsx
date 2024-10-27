@@ -4,10 +4,10 @@ import { useSnowFlakeAnimation } from "../../hooks/useSnowFlakesAnimation";
 import { createSnowFlakes, snowFlakesUrls, SnowFlakes } from "../../utils/HohohoUtils";
 
 const Hohoho: React.FC = () => {
-    const { maxHeight, isDesktop } = useResizeHandler(window.innerHeight);
-    // TODO animation handling could be different for desktop and mobile
-    // TODO console.log is a temporary solution for possible use of isDesktop
-    console.log("isDesktop", isDesktop);
+    const { maxHeight, maxWidth } = useResizeHandler(window.innerHeight, window.innerWidth);
+    // TODO temporary console.log
+    console.log("maxWidth", maxWidth);
+    console.log("maxHeight", maxHeight);
 
     // TODO snowflakes should be svgs, now they are pngs
     // TODO amount of snowflakes to be created should vary according to the screen's width
