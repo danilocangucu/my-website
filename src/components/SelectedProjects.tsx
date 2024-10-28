@@ -59,14 +59,14 @@ const projectsData = [
     description: "Fullstack project!",
     techStack: "Node.js, Express.js, TypeScript, React, Redux, Tailwind CSS, MongoDB, AWS EC2",
     projectName: "goldenrack",
-    link: "https://danilocangucu.net/status?=subdomain=goldenrack.danilocangucu.net",
+    link: "https://danilocangucu.net/status?subdomain=goldenrack.danilocangucu.net",
   },
   {
     name: "Love Tokens",
     description: "Fullstack project!",
     techStack: "Node.js, Express.js, TypeScript, React, Redux, Tailwind CSS, MongoDB, AWS EC2",
     projectName: "lovetokens",
-    link: "https://danilocangucu.net/status?=subdomain=lovetokens.danilocangucu.net",
+    link: "https://danilocangucu.net/status?subdomain=lovetokens.danilocangucu.net",
   },
   {
     name: "Bike app",
