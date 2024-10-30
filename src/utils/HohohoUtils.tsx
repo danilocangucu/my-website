@@ -2,7 +2,7 @@ import React from "react";
 import gsap from "gsap";
 import { SnowFlake, SnowflakeAmount, SnowFlakeWeight } from "../types/HohohoTypes";
 
-const BASE_URL = "https://danilocangucu.net/certificates/";
+const BASE_URL = "https://danilocangucu.net/my-website/assets/hohoho/";
 
 const HEAVY_SNOW_FLAKE_URL = `${BASE_URL}snow1.png`;
 const MEDIUM_SNOW_FLAKE_URL = `${BASE_URL}snow2.png`;
