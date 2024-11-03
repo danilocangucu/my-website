@@ -10,8 +10,10 @@ export const calculateIncrement = () => {
 
 let countdownInterval: string | number | undefined | NodeJS.Timeout | null = null;
 
-const ec2BackendUrl = process.env.REACT_APP_EC2_BACKEND_URL;
-const errorReportUrl = `${ec2BackendUrl}/error/report`;
+// TODO env vars validation
+const apiUrl = process.env.REACT_APP_API_URL;
+const ec2BackendUrl = `${apiUrl}/ec2`;
+const errorReportUrl = `${apiUrl}/error/report`;
 
 const reportError = async (errorMessage: string) => {
   try {
