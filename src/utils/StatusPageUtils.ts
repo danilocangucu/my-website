@@ -49,8 +49,8 @@ export const fetchBackendStatus = async (projectName: string) => {
         return "online!";
       case 202:
         return "starting...";
-      // TODO handle properly guaranteed offline case that will allow user to start ec2
-      case 20000:
+      // TODO handle properly other guaranteed offline cases that will allow user to start ec2
+      case 204:
         return "offline.";
       default:
         await reportError(`Unexpected status code: ${response.status}`);
