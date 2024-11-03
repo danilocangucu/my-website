@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import { ec2BackendUrl } from "../../utils/StatusPageUtils";
+
 
 const StartInstance = ({
   // @ts-ignore
@@ -25,11 +27,6 @@ const StartInstance = ({
     setIsLoading(true);
     stopProgressAnimation();
 
-    // TODO error handling for missing REACT_APP_EC2_BACKEND_URL
-    const ec2BackendUrl = process.env.REACT_APP_EC2_BACKEND_URL;
-    if (!ec2BackendUrl) {
-      return;
-    }
     // TODO error handling for missing projectName
     const requestBody = { projectName };
 
