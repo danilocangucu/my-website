@@ -13,7 +13,7 @@ let countdownInterval: string | number | undefined | NodeJS.Timeout | null = nul
 // TODO env vars validation
 const apiUrl = process.env.REACT_APP_API_URL;
 const ec2BackendUrl = `${apiUrl}/ec2`;
-const errorReportUrl = `${apiUrl}/error/report`;
+const errorReportUrl = `${apiUrl}/errors/report`;
 
 const reportError = async (errorMessage: string) => {
   try {
