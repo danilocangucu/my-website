@@ -69,6 +69,16 @@ const Action: React.FC<ActionProps> = ({
             </strong>
           </em>
         </div>
+        ) : backendStatus === "unavailable." ? (
+          // TODO review the unavailable rendering on the page
+          <div style={{ textAlign: "center", padding: "20px" }}>
+            <em>
+              <strong>
+                Sorry! You can’t access or start this project right now.<br />
+                Danilo is aware and working on it. Please try again later.
+              </strong>
+            </em>
+          </div>
       ) : (
         <div style={{ textAlign: "center", padding: "20px" }}>
           <strong>Click below to view this project:</strong>

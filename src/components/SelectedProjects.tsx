@@ -42,7 +42,7 @@ const Project: React.FC<ProjectProps> = ({ name, description, techStack, project
         Made with {techStack} & more.
         <br />
         <br />
-        <a href={`${gitHubUrl}${projectName}`}>
+        <a href={`${gitHubUrl}${projectName}`} target="_blank" rel="noreferrer">
           <img src={gitHubIconUrl} height="13" alt="GitHub logo"></img>{" "}
           Repository
         </a>{" "}

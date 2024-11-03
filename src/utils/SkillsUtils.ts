@@ -6,7 +6,6 @@ export interface Skill {
   useLightGlow: boolean;
 }
 
-// TODO correct the path to the images in the server
 export const logosBaseUrl = `https://danilocangucu.net/my-website/assets/home/components/skills/images/`;
 
 export const arrangeSkillsByCategory = (
