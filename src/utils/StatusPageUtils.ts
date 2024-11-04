@@ -15,11 +15,11 @@ export const apiUrl = process.env.REACT_APP_API_URL;
 export const ec2BackendUrl = `${apiUrl}/ec2`;
 export const errorReportUrl = `${apiUrl}/errors/report`;
 
-const reportError = async (errorMessage: string) => {
+const reportError = async (error: Error, errorContext: string) => {
   try {
     await axios.post(errorReportUrl, {
-      errorMessage,
-      errorStack: new Error().stack,
+      errorMessage: `${errorContext}: ${error.message}`,
+      errorStack: error.stack,
     });
   } catch (reportError) {
     if (axios.isAxiosError(reportError)) {
@@ -53,16 +53,20 @@ export const fetchBackendStatus = async (projectName: string) => {
       case 204:
         return "offline.";
       default:
-        await reportError(`Unexpected status code: ${response.status}`);
+        const error = new Error(`Unexpected status code: ${response.status}`);
+        await reportError(error, "Handling response status");
         return "unavailable.";
     }
   } catch (error) {
     if (axios.isAxiosError(error)) {
       if (error.code === "ECONNABORTED") {
-        await reportError("Request timed out.");
+        await reportError(error, "Request timed out.");
         return "unavailable.";
       } else {
-        await reportError(`Request failed: ${error.message}`);
+        await reportError(
+          error,
+          `Request failed at fetchBackendStatus: ${error.message}`
+        );
         return "unavailable.";
       }
     }
@@ -90,8 +94,10 @@ export const startFetch = async (
   const status = await fetchBackendStatus(projectName);
 
   if (!status) {
-    // TODO Report error properly
-    reportError("Status not found");
+    const error = new Error(
+      `No status found for ${projectName} at startFetch.`
+    );
+    await reportError(error, "Failed to fetch backend status.");
     return;
   }
 
