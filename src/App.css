@@ -1,13 +1,21 @@
 /* WHOLE PAGE */
-
-body {
+.body-home {
   background-color: #FFC0CB;
   color: white;
   font-family: 'Martel', serif;
   overflow-y: scroll;
 }
 
-body h1{
+.padding-sides-10 {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.home-h1 {
   font-family: 'Prompt', sans-serif;
   font-size: 5vh;
 }
@@ -720,6 +728,7 @@ ul + ul{
     padding-top: 40px;
   }
 }
+/* TODO remove temorary styles */
 /* TEMPORARY STYLES */
 .padding-sides-10 {
   padding-left: 10%;
@@ -733,134 +742,173 @@ ul + ul{
 .text-dark {
   color: #272838;
 }
-/* GSAP TESTS */
-.bodySnowFlakes {
+/* UTOPIA CODE */
+:root {
+  /* FONT STEPS */
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  /* Step -2: 12.5px → 12.8px */
+  --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  /* Step 0: 18px → 20px */
+  --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  /* Step 3: 31.104px → 39.0625px */
+  --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+  /* Step 7: 64.4973px → 95.3674px */
+  --step-7: clamp(4.0311rem, 3.36rem + 3.3555vw, 5.9605rem);
+
+  /* SNOW FLAKES STEPS */
+  /* @link https://utopia.fyi/type/calculator?c=320,40,1.2,1240,80,1.25,5,2,&s=0.75|0.5|0.25|0.25|0.25,1.5|2|3|4|6,s-l|3xs-3xl&g=s,l,xl,12 */
+
+  --heavy-step-1: clamp(2.5rem, 1.6304rem + 4.3478vw, 5rem);
+  --medium-step-0: clamp(2.1875rem, 1.5353rem + 3.2609vw, 4.0625rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,35,1.2,1240,38,1.25,5,2,&s=0.75|0.5|0.25|0.25|0.25,1.5|2|3|4|6,s-l|3xs-3xl&g=s,l,xl,12 */
+  --light-step-0: clamp(2.625rem, 2.5054rem + 0.5978vw, 2.9688rem);
+
+  /* SPACES */
+  /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25|0.25|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  /* Space s: 18px → 20px */
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  /* Space m: 27px → 30px */
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+
+  /* One-up pairs */
+  /* Space 4xs-3xs: 5px → 5px */
+  --space-4xs-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  /* Space xs-s: 14px → 20px */
+  --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
+
+  /* Custom pairs */
+  /* Space s-l: 18px → 40px */
+  --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+  /* Space 2xs-s: 9px → 20px */
+  --space-2xs-s: clamp(0.5625rem, 0.3234rem + 1.1957vw, 1.25rem);
+  --space-3xs-3xl: clamp(0.3125rem, -2.1875rem + 12.5vw, 7.5rem);
+
+  /* GRID */
+  /* @link https://utopia.fyi/grid/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --grid-max-width: 77.50rem;
+  --grid-gutter: var(--space-s-l, clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem));
+  --grid-columns: 12;
+}
+
+/* HO HO HO ANIMATION */
+
+.snow-body {
+  background-color: black;
+}
+
+.snow-container {
+  max-width: 90rem;
   height: 100vh;
-  margin: 0;
+  padding-inline: var(--grid-gutter);
+    margin-inline: auto;
   overflow: hidden;
-  background-color: black !important;
 }
 
 .snowFlakes {
-  /* -100 hides them to top */
-  margin-top: -100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  gap: 10px;
-  width: 100%;
+  display: grid;
+    width: 100%;
+    position: relative;
 }
-
-.heavySnowFlakes {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  justify-content: center;
-  margin-left: calc(0.2vw * 20)
-}
-
-.mediumSnowFlakes {
-  position: absolute;
-  top: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-left: calc(0.2vw * 40)
-}
-
-.lightSnowFlakes {
-  margin-left: calc(0.1vw * 60);
-  position: absolute;
-  display: flex;
-  flex-direction: row;
+  
+.snowflakes-grid-base {
+  /* margin-top hides start of the grids */
+  margin-top: -80px;
+  display: grid;
   justify-content: center;
 }
 
 .snowFlake {
-  display: block;
-  width: 100px;
-  height: 100px;
-  margin-top: 0px;
-  margin-left: 0px;
+  display: grid
 }
 
-.heavySnowFlakes .snowFlake {
-  margin-right: -2vw;
+.heavySnowFlakes {
+  grid-template-columns: repeat(auto-fit, var(--heavy-step-1));
+  gap: var(--space-xs-s);
 }
 
-.heavySnowFlakes .snowFlake:last-child {
-  margin-right: 0;
+.mediumSnowFlakes {
+  grid-template-columns: repeat(auto-fit, var(--medium-step-0));
+  gap: var(--space-xs-s);
 }
 
-.mediumSnowFlakes .snowFlake {
-  margin-right: -3vw;
+.lightSnowFlakes {
+  grid-template-columns: repeat(auto-fit, var(--light-step-0));
+  gap: var(--space-4xs-3xs);
 }
 
-.mediumSnowFlakes .snowFlake:last-child {
-  margin-right: 0;
+.heavySnowFlakes-container img {
+  width: var(--heavy-step-1);
+  height: var(--heavy-step-1);
 }
 
-.lightSnowFlakes .snowFlake {
-  margin-right: -5vw;
+.mediumSnowFlakes-container img {
+  width: var(--medium-step-0);
+  height: var(--medium-step-0);
 }
 
-.lightSnowFlakes .snowFlake:last-child {
-  margin-right: 0px;
+.lightSnowFlakes-container img {
+  width: var(--light-step-0);
+  height: var(--light-step-0);
 }
 
-.circle {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+/* CHRISTMAS GIFT */
 
+.christmas-body h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
-.green {
-  background-color: green;
+.u-container {
+  max-width: var(--grid-max-width);
+  padding-inline: var(--grid-gutter);
+  margin-inline: auto;
 }
 
-.blue {
-  background-color: blue;
+.p-grid {
+  display: grid;
+  gap: var(--space-2xs-s);
 }
 
-/* GIVE 20 colors */
-.red {
-  background-color: red;
+.christmas-body {
+  color: #000;
 }
 
-.purple {
-  background-color: purple;
+.mountains-of-christmas-bold {
+  font-family: "Mountains of Christmas", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
-.orange {
-  background-color: orange;
+.mountains-o-c-b--h1 {
+  font-size: var(--step-7);
+  margin-top: var(--space-m) !important;
+  margin-bottom: var(--space-m) !important;
 }
 
-.yellow {
-  background-color: yellow;
+.quattrocento-regular {
+  font-size: var(--step-0);
+  line-height: 1.8;
+  font-family: "Quattrocento", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.pink {
-  background-color: pink;
+.merriweather-regular {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.cyan {
-  background-color: cyan;
+.merriweather-r--h2 {
+  font-size: var(--step-3);
+  margin-top: var(--space-s) !important;
+  margin-bottom: var(--space-s) !important;
 }
-
-.brown {
-  background-color: brown;
-}
-
-.grey {
-  background-color: grey;
-}
-
-.white {
-  background-color: white;
-}
-
-/* .box+.box {
-  margin-top: 100px;
-} */
