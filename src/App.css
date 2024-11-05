@@ -429,6 +429,7 @@ a:hover {
 }
 
 /* SKILLS */
+/* TODO cleanup these styles */
 
 .skills-body{
   margin-top: -100px;
@@ -742,6 +743,7 @@ ul + ul{
 .text-dark {
   color: #272838;
 }
+
 /* UTOPIA CODE */
 :root {
   /* FONT STEPS */
@@ -755,6 +757,8 @@ ul + ul{
   --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
   /* Step 7: 64.4973px → 95.3674px */
   --step-7: clamp(4.0311rem, 3.36rem + 3.3555vw, 5.9605rem);
+  /* Step 10: 111.4513px → 186.2645px */
+    --step-10: clamp(6.9657rem, 5.3393rem + 8.1319vw, 11.6415rem);
 
   /* SNOW FLAKES STEPS */
   /* @link https://utopia.fyi/type/calculator?c=320,40,1.2,1240,80,1.25,5,2,&s=0.75|0.5|0.25|0.25|0.25,1.5|2|3|4|6,s-l|3xs-3xl&g=s,l,xl,12 */
@@ -764,13 +768,22 @@ ul + ul{
   /* @link https://utopia.fyi/type/calculator?c=320,35,1.2,1240,38,1.25,5,2,&s=0.75|0.5|0.25|0.25|0.25,1.5|2|3|4|6,s-l|3xs-3xl&g=s,l,xl,12 */
   --light-step-0: clamp(2.625rem, 2.5054rem + 0.5978vw, 2.9688rem);
 
+  /* SPERATOR STEP */
+    /* @link https://utopia.fyi/type/calculator?c=320,40,1.2,1240,100,1.25,5,2,&s=0.75|0.5|0.25|0.25|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  
+    /* Step 0: 40px → 100px */
+    --separator-step-0: clamp(2.5rem, 1.1957rem + 6.5217vw, 6.25rem);
   /* SPACES */
   /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25|0.25|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
+  
+  /* Space xs: 14px → 15px */
+    --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
   /* Space s: 18px → 20px */
   --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
   /* Space m: 27px → 30px */
   --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+    /* Space l: 36px → 40px */
+      --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
 
   /* One-up pairs */
   /* Space 4xs-3xs: 5px → 5px */
@@ -779,6 +792,8 @@ ul + ul{
   --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
 
   /* Custom pairs */
+  /* Space xs-l: 14px → 40px */
+    --space-xs-l: clamp(0.875rem, 0.3098rem + 2.8261vw, 2.5rem);
   /* Space s-l: 18px → 40px */
   --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
   /* Space 2xs-s: 9px → 20px */
@@ -791,12 +806,18 @@ ul + ul{
   --grid-max-width: 77.50rem;
   --grid-gutter: var(--space-s-l, clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem));
   --grid-columns: 12;
+/* COLORS */
+  --color-border: #5C6784;
+  --color-background: #040F16;
+  --color-background-elements: rgba(0, 0, 0, 0.6);
+  --color-primary: white;
+  --color-secondary: #D62839;
 }
 
 /* HO HO HO ANIMATION */
 
 .snow-body {
-  background-color: black;
+  background-color: var(--color-background);
 }
 
 .snow-container {
@@ -854,6 +875,19 @@ ul + ul{
   height: var(--light-step-0);
 }
 
+/* HO HO HO ANIMATION */
+.hohoho-animation-container {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.animation-h1 {
+  font-size: var(--step-10) !important;
+}
 /* CHRISTMAS GIFT */
 
 .christmas-body h1,
@@ -873,12 +907,39 @@ p {
 }
 
 .p-grid {
-  display: grid;
+display: grid;
   gap: var(--space-2xs-s);
+border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-background-elements);
+  padding: var(--space-xs);
+  box-shadow: 0 0 10px rgba(230, 188, 205, 0.1);
 }
 
-.christmas-body {
-  color: #000;
+.img-grid {
+  place-items: center;
+  display: grid;
+  padding: var(--space-xs-l);
+}
+
+.img-grid img {
+  height: var(--separator-step-0);
+  background: radial-gradient(circle,
+      rgba(4, 15, 22, 1) 0%,
+      /* Fully opaque at the center */
+      rgba(4, 15, 22, 0.8) 5%,
+      /* 80% opacity at 5% distance */
+      rgba(4, 15, 22, 0.5) 10%,
+      /* 50% opacity at 10% distance */
+      rgba(4, 15, 22, 0.2) 20%,
+      /* 20% opacity at 20% distance */
+      rgba(4, 15, 22, 0) 100%);
+  /* Fully transparent at the edge */
+  filter: drop-shadow(0 4px 15px var(--color-background-elements));
+}
+
+.text-white {
+  color: var(--color-primary);
 }
 
 .mountains-of-christmas-bold {
@@ -888,6 +949,7 @@ p {
 }
 
 .mountains-o-c-b--h1 {
+  color: #D62839;
   font-size: var(--step-7);
   margin-top: var(--space-m) !important;
   margin-bottom: var(--space-m) !important;
@@ -911,4 +973,28 @@ p {
   font-size: var(--step-3);
   margin-top: var(--space-s) !important;
   margin-bottom: var(--space-s) !important;
+}
+.hohoho-component-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Position Hohoho to cover the entire background */
+.hohoho-component-container>.snow-body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  opacity: 100%;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
 }
