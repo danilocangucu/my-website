@@ -18,13 +18,13 @@ const Home: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="body-home">
       <Intro />
       <ArrowDown />
       <Bio />
       <SelectedProjects />
       <Skills />
-    </>
+    </div>
   );
 };
 

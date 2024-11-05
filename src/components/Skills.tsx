@@ -55,7 +55,7 @@ const Skills: React.FC = () => {
     return (
         // TODO option to change view from marquee to grid
         <div className="skills-body">
-            <h1>{h1}</h1>
+            <h1 className="home-h1">{h1}</h1>
             {mappedSkills}
             { /* TODO fix this <span> */}
             <span>&nbsp;</span>

@@ -4,7 +4,7 @@ const animStr = () => `fadeIn 1000ms ease-out ${1000 * (Math.random())}ms forwar
 
 const Hello: React.FC = () =>
 (<>
-  <h1 className='pop-from-left'>HELLO!</h1>
+  <h1 className='pop-from-left home-h1'>HELLO!</h1>
 </>)
 
 

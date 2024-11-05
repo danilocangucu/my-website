@@ -3,7 +3,7 @@ import React from "react"
 const Header: React.FC = () => {
   const text = "Selected Projects".toUpperCase()
   return (
-    <h1>
+    <h1 className="home-h1">
       {text}
     </h1>
   )

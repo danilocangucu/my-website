@@ -3,7 +3,7 @@ import React from "react"
 const BioHeader: React.FC = () => {
   let text = "I am passionate about creating beautiful websites".toUpperCase()
   return (
-    <h1>{text}</h1>
+    <h1 className="home-h1">{text}</h1>
   )
 }
 
