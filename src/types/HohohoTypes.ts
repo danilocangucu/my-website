@@ -2,7 +2,6 @@ export type SnowFlakeWeight = "heavy" | "medium" | "light";
 
 export interface SnowFlake {
   name: SnowFlakeWeight;
-  size: number;
   url: string;
 }
 

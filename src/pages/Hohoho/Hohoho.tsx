@@ -16,8 +16,10 @@ const Hohoho: React.FC = () => {
     useSnowFlakeAnimation(currentHeight)
 
     return (
-        <div className="bodySnowFlakes">
+        <div className="snow-body">
+            <div className="snow-container">
             {createdSnowflakesDivs}
+            </div>
         </div>
     );
 };

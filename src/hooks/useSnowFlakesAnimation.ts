@@ -21,6 +21,7 @@ export const useSnowFlakeAnimation = (maxHeight: number) => {
     );
 
     const startAnimations = () => {
+      // TODO minDuration and maxDuration should be calculated based on maxHeight
       heavySnowFlakesRow.forEach((snowFlake) =>
         startSnowFlakes(snowFlake, 15, 20, maxHeight)
       );
@@ -39,7 +40,8 @@ export const useSnowFlakeAnimation = (maxHeight: number) => {
       fadeOutAndRestartAnimations(
         heavySnowFlakesRow,
         mediumSnowFlakesRow,
-        0.2,
+        lightSnowFlakesRow,
+        0.5,
         startAnimations
       );
     }
@@ -47,6 +49,7 @@ export const useSnowFlakeAnimation = (maxHeight: number) => {
     return () => {
       gsap.killTweensOf(heavySnowFlakesRow);
       gsap.killTweensOf(mediumSnowFlakesRow);
+      gsap.killTweensOf(lightSnowFlakesRow);
     };
   }, [maxHeight]);
 };

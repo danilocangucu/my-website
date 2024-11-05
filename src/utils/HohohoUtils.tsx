@@ -19,7 +19,7 @@ export const startSnowFlakes = (
 
   let xOffset = 0;
   const eases = ["power1", "power2", "power3", "power4"];
-  const endOfScreen = maxHeight * 2 + 300;
+  const endOfScreen = maxHeight * 1.2 + 80;
 
   const animateCycle = () => {
     const randomDuration =
@@ -54,6 +54,9 @@ export const startSnowFlakes = (
   animateCycle();
 };
 
+// TODO debug: why animations are buggy when restarting?
+// TODO there are no bugs when the animations are started for the first time
+// TODO should all the divs be removed and recreated?
 export const fadeOutSnowFlakes = (
   snowFlakesRow: NodeListOf<Element>,
   duration: number
@@ -77,41 +80,39 @@ export const fadeOutSnowFlakes = (
 export const fadeOutAndRestartAnimations = async (
   heavySnowFlakesRow: NodeListOf<Element>,
   mediumSnowFlakesRow: NodeListOf<Element>,
+  lightSnowFlakesRow: NodeListOf<Element>,
   fadeDuration: number,
   startAnimations: () => void
 ) => {
   await Promise.all([
     fadeOutSnowFlakes(heavySnowFlakesRow, fadeDuration),
     fadeOutSnowFlakes(mediumSnowFlakesRow, fadeDuration),
+    fadeOutSnowFlakes(lightSnowFlakesRow, fadeDuration),
   ]);
 
   gsap.killTweensOf(heavySnowFlakesRow);
   gsap.killTweensOf(mediumSnowFlakesRow);
+  gsap.killTweensOf(lightSnowFlakesRow);
   startAnimations();
 };
 
 export const SnowFlakes: Record<SnowFlakeWeight, SnowFlake> = {
-  heavy: { name: "heavy", size: 80, url: HEAVY_SNOW_FLAKE_URL },
-  medium: { name: "medium", size: 50, url: MEDIUM_SNOW_FLAKE_URL },
-  light: { name: "light", size: 30, url: LIGHT_SNOW_FLAKE_URL },
+  heavy: { name: "heavy", url: HEAVY_SNOW_FLAKE_URL },
+  medium: { name: "medium", url: MEDIUM_SNOW_FLAKE_URL },
+  light: { name: "light", url: LIGHT_SNOW_FLAKE_URL },
 };
 
 export const calculateSnowflakeAmount = (
   maxHeight: number,
   maxWidth: number
 ): SnowflakeAmount => {
-
   const screenArea = maxWidth * maxHeight;
 
   // Densities define the amount of snowflakes per pixel that will be rendered on the screen.
   // The heavier the snowflake, the less dense it is, resulting in fewer heavy snowflakes compared to lighter ones.
-  // The current density values generate approximately:
-  // - 106 snowflakes on a 1440x812 screen (for example, a MacBook Pro 15");
-  // - 26 snowflakes on a 375x667 screen (for example, an iPhone SE);
-  // - 96 snowflakes on a 820x1180 screen (for example, an iPad Air).
-  const heavyDensity = 0.00002;
-  const mediumDensity = 0.00003;
-  const lightDensity = 0.00005;
+  const heavyDensity = 0.000006;
+  const mediumDensity = 0.000009;
+  const lightDensity = 0.000014;
 
   const heavy = Math.round(screenArea * heavyDensity);
   const medium = Math.round(screenArea * mediumDensity);
@@ -124,20 +125,19 @@ const createDivsForSpecificSnowflake = (snowflake: SnowFlake, amount: number) =>
   const classNameAndKey = `${snowflake.name}SnowFlakes`;
   const snowflakeDivs = Array.from({ length: amount }).map((_, index) => (
     <div
-      className={`snowFlake ${snowflake.name}`}
+      className={`snowFlake ${classNameAndKey} ${classNameAndKey}-container`}
       key={`${snowflake.name}-flake-${index}`}
     >
       <img
         src={snowflake.url}
         alt={`${snowflake.name} snowflake`}
-        height={snowflake.size}
       />
     </div>
   ));
 
   return (
     <div
-      className={classNameAndKey}
+      className={`${classNameAndKey} snowflakes-grid-base`}
       key={classNameAndKey}
     >
       {snowflakeDivs}
