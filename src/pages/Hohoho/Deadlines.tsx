@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 
 import useFadeInAnimation from '../../hooks/useFadeInAnimation';
 import { useResizeHandler } from '../../hooks/useResizeHandler';
-import { largeGrid, smallGrid } from '../../utils/DeadlineUtils';
+import { largeGrid, smallGrid } from '../../utils/DeadlinesUtils';
 import Header from './Header/Header';
 import Paragraph from './Paragraph';
 import Separator from './Separator';
@@ -53,7 +53,7 @@ const Deadlines = ({ separator }: { separator: string }) => {
             </div>
           )}
 
-          <Paragraph additionalClassNames={['margin-top', 'font-size--step-0']}>
+          <Paragraph additionalClassNames={['margin-top--space-3xs-2xs', 'font-size--step-0']}>
             <em>
               <small>
                 *Note: After I review your application,
