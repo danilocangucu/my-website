@@ -748,11 +748,18 @@ ul + ul{
 :root {
   /* FONT STEPS */
   /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
+  /* Step -4: 8.6806px → 8.192px */
+    --step--4: clamp(0.512rem, 0.5532rem + -0.0531vw, 0.5425rem);
+    /* Step -3: 10.4167px → 10.24px */
+    --step--3: clamp(0.64rem, 0.6549rem + -0.0192vw, 0.651rem);
   /* Step -2: 12.5px → 12.8px */
   --step--2: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+    /* Step -1: 15px → 16px */
+      --step--1: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
   /* Step 0: 18px → 20px */
   --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    /* Step 1: 21.6px → 25px */
+      --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
   /* Step 3: 31.104px → 39.0625px */
   --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
   /* Step 7: 64.4973px → 95.3674px */
@@ -776,6 +783,10 @@ ul + ul{
   /* SPACES */
   /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25|0.25|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   
+  /* Space 3xs: 5px → 5px */
+    --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+    /* Space 2xs: 9px → 10px */
+    --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
   /* Space xs: 14px → 15px */
     --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
   /* Space s: 18px → 20px */
@@ -786,19 +797,29 @@ ul + ul{
       --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
 
   /* One-up pairs */
+    /* Space 3xs-2xs: 5px → 10px */
+      --space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vw, 0.625rem);
   /* Space 4xs-3xs: 5px → 5px */
   --space-4xs-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
   /* Space xs-s: 14px → 20px */
   --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
 
   /* Custom pairs */
+  
   /* Space xs-l: 14px → 40px */
     --space-xs-l: clamp(0.875rem, 0.3098rem + 2.8261vw, 2.5rem);
   /* Space s-l: 18px → 40px */
   --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+  
   /* Space 2xs-s: 9px → 20px */
   --space-2xs-s: clamp(0.5625rem, 0.3234rem + 1.1957vw, 1.25rem);
   --space-3xs-3xl: clamp(0.3125rem, -2.1875rem + 12.5vw, 7.5rem);
+    /* Space 5xs-3xl: 5px → 120px */
+      --space-5xs-3xl: clamp(0.3125rem, -2.1875rem + 12.5vw, 7.5rem);
+      /* Space xl-3xl: 54px → 120px */
+      --space-xl-3xl: clamp(3.375rem, 1.9402rem + 7.1739vw, 7.5rem);
+      /* Space l-3xl: 36px → 120px */
+      --space-l-3xl: clamp(2.25rem, 0.4239rem + 9.1304vw, 7.5rem);
 
   /* GRID */
   /* @link https://utopia.fyi/grid/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
@@ -812,6 +833,10 @@ ul + ul{
   --color-background-elements: rgba(0, 0, 0, 0.6);
   --color-primary: white;
   --color-secondary: #D62839;
+  --color-tertiary: #003D29;
+    --color-quaternary: #ECA72C;
+    --color-quinary: black;
+    --color-secondary-dark: #9B1A2E;
 }
 
 /* HO HO HO ANIMATION */
@@ -825,7 +850,7 @@ ul + ul{
   height: 100vh;
   padding-inline: var(--grid-gutter);
     margin-inline: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .snowFlakes {
@@ -881,7 +906,7 @@ ul + ul{
   place-items: center;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
 }
 
@@ -890,6 +915,28 @@ ul + ul{
 }
 /* CHRISTMAS GIFT */
 
+.breadcrumbs-grid {
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--space-2xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: start;
+}
+
+.breadcrumbs-grid a {
+  background-color: transparent;
+  color: inherit;
+  text-decoration: underline;
+  padding: 0;
+  animation: none;
+}
+
+.color-border {
+  color: var(--color-border);
+}
 .christmas-body h1,
 h2,
 h3,
@@ -916,6 +963,11 @@ border: 1px solid var(--color-border);
   box-shadow: 0 0 10px rgba(230, 188, 205, 0.1);
 }
 
+.p-grid--font-size {
+  font-size: var(--step-0);
+  font-size: var(--step-0);
+  line-height: 1.8;
+}
 .img-grid {
   place-items: center;
   display: grid;
@@ -923,7 +975,7 @@ border: 1px solid var(--color-border);
 }
 
 .img-grid img {
-  height: var(--separator-step-0);
+  height: var(--space-l-3xl);
   background: radial-gradient(circle,
       rgba(4, 15, 22, 1) 0%,
       /* Fully opaque at the center */
@@ -942,22 +994,26 @@ border: 1px solid var(--color-border);
   color: var(--color-primary);
 }
 
+.text-black {
+  color: var(--color-quinary) !important;
+}
 .mountains-of-christmas-bold {
   font-family: "Mountains of Christmas", serif;
   font-weight: 700;
   font-style: normal;
 }
 
+.mountains-o-c-b--1st-h1 {
+  margin-top: var(--space-m) !important;
+}
 .mountains-o-c-b--h1 {
   color: #D62839;
   font-size: var(--step-7);
-  margin-top: var(--space-m) !important;
   margin-bottom: var(--space-m) !important;
+  margin-top: 0;
 }
 
 .quattrocento-regular {
-  font-size: var(--step-0);
-  line-height: 1.8;
   font-family: "Quattrocento", serif;
   font-weight: 400;
   font-style: normal;
@@ -977,7 +1033,6 @@ border: 1px solid var(--color-border);
 .hohoho-component-container {
   position: relative;
   height: 100vh;
-  overflow: hidden;
 }
 
 /* Position Hohoho to cover the entire background */
@@ -988,6 +1043,7 @@ border: 1px solid var(--color-border);
   width: 100%;
   height: 100%;
   z-index: 1;
+  overflow: hidden;
 }
 
 .overlay {
@@ -996,5 +1052,291 @@ border: 1px solid var(--color-border);
   opacity: 100%;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
+}
+
+/* Deadlines */
+.row {
+  color: white;
+  text-align: center;
+}
+
+.empty-row {
+  padding: var(--space-3xs-2xs)
+}
+
+.empty-row--last {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.empty-row--last--left-radius {
+  border-bottom-left-radius: 10px;
+}
+
+.empty-row--last--right-radius {
+  border-bottom-right-radius: 10px;
+}
+
+.year {
+  font-size: var(--step-0);
+  padding: var(--space-3xs-2xs);
+}
+
+.date {
+  padding-right: var(--space-3xs-2xs);
+  padding-left: var(--space-3xs-2xs);
+}
+
+/* TODO Maybe make circle as a grid? */
+/* TODO combine equal properties of circle and rectangle together */
+
+.date-circle {
+  display: inline-flex;
+  /* Flexbox helps to center content */
+  justify-content: center;
+  /* Center the number horizontally */
+  align-items: center;
+  /* Center the number vertically */
+  width: var(--step-0);
+  /* Width of the circle */
+  height: var(--step-0);
+  /* Height of the circle */
+  border-radius: 50%;
+  /* Makes the element a circle */
+  color: var(--color-primary);
+  /* Color of the text (number) inside the circle */
+  font-size: var(--step--2);
+  /* Adjust the font size to fit within the circle */
+  text-align: center;
+  /* Ensure the text is centered */
+}
+
+.date-rectangle {
+  display: inline-flex;
+  /* Flexbox helps to center content */
+  justify-content: center;
+  /* Center the number horizontally */
+  align-items: center;
+  /* Center the number vertically */
+  height: var(--step-0);
+  /* Height of the rectangle (same as circle for consistency) */
+  border-radius: var(--step--4);
+  /* Rounded corners (adjust as needed) */
+  color: var(--color-primary);
+  /* Color of the text (number or range) inside the rectangle */
+  font-size: var(--step--2);
+  /* Font size for text inside */
+  text-align: center;
+  /* Center the text */
+  line-height: var(--step-0);
+  /* Center text vertically if necessary */
+  padding-left: 2px;
+  padding-right: 2px;
+  border: 1px solid var(--color-border);
+}
+
+.color-quaternary {
+  color: var(--color-quaternary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.border-secondary {
+  border: 1px solid #E8485A;
+}
+
+.bg-tertiary {
+  background-color: var(--color-tertiary);
+}
+
+.border-tertiary {
+  border: 1px solid var(--color-border);
+}
+
+.bg-quaternary {
+  background-color: var(--color-quaternary)
+}
+
+.border-quaternary {
+  border: 1px solid #A3622C;
+}
+
+.date-number {
+  color: white;
+  padding-top: var(--space-3xs-2xs);
+  padding-bottom: unset;
+}
+
+.date-text {
+  color: white;
+  font-size: var(--step--0);
+}
+
+.month {
+  color: white;
+  background-color: #D6283A;
+  padding: var(--space-3xs-2xs);
+}
+
+.deadline-grid {
+  display: grid;
+  box-shadow: 0 0 10px rgba(230, 188, 205, 0.1);
+  grid-template-columns: repeat(12, 1fr);
+  border-radius: 10px;
+}
+
+.deadline-grid--small {
+  display: grid;
+  box-shadow: 0 0 10px rgba(230, 188, 205, 0.1);
+  border-radius: 10px;
+}
+
+.row-date-small {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.month-dates-small {
+  display: grid;
+}
+
+.row-dates-small-container {
+  display: grid;
+  padding: var(--space-3xs-2xs);
+}
+
+.date-day {
+  grid-column: span 1;
+}
+
+.date-description {
+  grid-column: span 11;
+}
+
+.font-size--step-0 {
+  font-size: var(--step-0);
+}
+
+.border-right--dashed {
+  border-right: 1px dashed var(--color-primary);
+}
+
+.border-left {
+  border-left: 1px solid var(--color-border);
+}
+
+.border-right {
+  border-right: 1px solid var(--color-border);
+}
+
+.border-sides {
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.border-top {
+  border-top: 1px solid var(--color-border);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.border-radius-sides-top {
+  border-radius: 10px 10px 0 0;
+}
+
+.border-radius-sides-bottom {
+  border-radius: 0 0 10px 10px;
+}
+
+.row-smal--text-align-left {
+  text-align: left;
+}
+
+.font-size--step-0 {
+  font-size: var(--step-0);
+}
+
+.margin-top {
+  margin-top: var(--space-3xs-2xs);
+}
+
+/* Base button styles */
+.button {
+  padding: var(--space-xs) var(--space-s);
+  font-size: var(--step-1);
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s ease;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary Button */
+.button--secondary {
+  background-color: var(--color-tertiary);
+  /* Secondary color from your theme */
+  color: white;
+}
+
+.button--secondary:hover {
+  background-color: var(--color-secondary);
+  /* Hover state: tertiary color */
+  transform: translateY(-2px);
+}
+
+.button--secondary:active {
+  background-color: var(--color-secondary-dark);
+  /* Active state: quaternary color */
+}
+
+/* Button Sizes */
+.button--small {
+  font-size: var(--step--1);
+  /* Smaller text */
+  padding: var(--space-3xs) var(--space-xs);
+}
+
+.button--medium {
+  font-size: var(--step-1);
+  /* Medium text */
+  padding: var(--space-xs) var(--space-s);
+}
+
+/* Disabled State */
+.button--disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Basic footer styles */
+.footer {
+  margin-top: var(--space-l);
+  padding: var(--space-s);
+  padding-bottom: var(--space-2xs);
+  background-color: var(--color-background);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--space-3xs);
+}
+
+.footer-text {
+  align-self: end;
+  text-align: right;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.footer-image {
+  height: var(--step-7);
 }
