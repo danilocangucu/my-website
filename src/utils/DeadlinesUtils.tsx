@@ -379,7 +379,7 @@ const renderSmallGrid = (deadlineData: YearSmall[]) => {
                                             <div key={`row small-${day}-${dayIndex}`} className="row-dates-small-container" >
                                                 <div className={`row date row-date-small`}>
                                                     <div className={`date-day date-circle    bg-${backgroundColor} border-${backgroundColor} ${backgroundColor === "quaternary" ? "text-black" : ""}`}>{day}</div>
-                                                    <div className={`date-description row-smal--text-align-left font-size--step-0`}>{description}</div>
+                                                    <div className={`date-description row-smal--text-align-left font-size--step-0 margin-left--space-3xs`}>{description}</div>
                                                 </div>
                                             </div>
                                         )
