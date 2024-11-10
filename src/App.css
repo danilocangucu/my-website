@@ -934,6 +934,11 @@ ul + ul{
   animation: none;
 }
 
+.breadcrumbs-snowflake {
+  font-family: "Arial", sans-serif !important;
+  font-size: inherit;
+  line-height: inherit;
+}
 .color-border {
   color: var(--color-border);
 }
@@ -1218,6 +1223,9 @@ border: 1px solid var(--color-border);
   font-size: var(--step-0);
 }
 
+.font-size--step-1 {
+  font-size: var(--step--1);
+}
 .border-right--dashed {
   border-right: 1px dashed var(--color-primary);
 }

@@ -38,7 +38,7 @@ function Breadcrumbs({ separator }: BreadcrumbsProps) {
                         </Link>
                     )}
                 </li>
-                {index < completeSegments.length - 1 && <span> {separator} </span>}
+                {index < completeSegments.length - 1 && <span className="breadcrumbs-snowflake"> {separator} </span>}
             </React.Fragment>
         );
     });
@@ -47,7 +47,7 @@ function Breadcrumbs({ separator }: BreadcrumbsProps) {
         <nav aria-label="breadcrumb">
             <section ref={sectionRef}>
                 <div className="u-container">
-                    <ol className="breadcrumbs-grid margin-top--space-3xs-2xs merriweather-regular">
+                    <ol className="breadcrumbs-grid margin-top--space-3xs-2xs font-size--step-1 merriweather-regular">
                         {renderedBreadCrumbs}
                     </ol>
                 </div>
