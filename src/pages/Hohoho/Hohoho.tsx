@@ -1,9 +1,13 @@
 import React from 'react'
 
-import SnowAnimation from './SnowAnimation'
-import ChristmasGiftPage from './ChristmasGiftPage'
-import Separator from './Separator'
-import HohohoAnimation from './HohohoAnimation'
+import SnowAnimation from './Animations/SnowAnimation'
+import HohohoAnimation from './Animations/HohohoAnimation'
+import Intro from './Intro'
+import Deadlines from './Deadlines'
+import Criteria from './Criteria/Criteria'
+import CallToAction from './CallToAction'
+import Breadcrumbs from './BreadCrumbs'
+import Footer from './Footer'
 
 function Hohoho() {
     return (
@@ -11,8 +15,12 @@ function Hohoho() {
             <SnowAnimation />
             <div className='overlay text-white'>
                 <HohohoAnimation />
-                <ChristmasGiftPage />
-                <Separator separator="lights" />
+                <Breadcrumbs separator='❄' />
+                <Intro separator="branch1" />
+                <Deadlines separator="lights" />
+                <Criteria separator="branch2" />
+                <CallToAction />
+                <Footer />
             </div>
         </div>
     )
