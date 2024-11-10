@@ -1,38 +1,15 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { gsap } from 'gsap';
+import React, { RefObject } from 'react';
 
-const Separator = ({ separator }: { separator: string }) => {
-    const [isVisible, setIsVisible] = useState(false);
-    const [imageSrc, setImageSrc] = useState<string | null>(null);
-    const imgRef = useRef(null);
+const Separator = ({ separator, separatorRef }: { separator: string, separatorRef: RefObject<HTMLHeadingElement> }) => {
+    const imageSrc = `https://danilocangucu.net/my-website/assets/hohoho/separators/${separator}.png`
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsVisible(true);
-        }, 4800);
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    useEffect(() => {
-        if (isVisible && separator) {
-            setImageSrc(`https://danilocangucu.net/my-website/assets/hohoho/separators/${separator}.png`);
-            gsap.fromTo(
-                imgRef.current,
-                { opacity: 0 },
-                { opacity: 1, duration: 1, ease: "power2.out" }
-            );
-
-        }
-    }, [isVisible, separator]);
-
-    if (!isVisible || !imageSrc) {
-        return null;
-    }
-
+    // TODO separator is not resized properly in small screens, height should go as smaller as possible
     return (
-        <div className='img-grid'>
-            <img ref={imgRef} src={imageSrc} alt="separator" />
+        <div className='img-grid' ref={separatorRef}>
+            <img
+                src={imageSrc}
+                alt="separator"
+            />
         </div>
     );
 };
