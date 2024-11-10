@@ -15,7 +15,7 @@ function Hohoho() {
             <SnowAnimation />
             <div className='overlay text-white'>
                 <HohohoAnimation />
-                <Breadcrumbs separator='❄' />
+                <Breadcrumbs separator='∙' />
                 <Intro separator="branch1" />
                 <Deadlines separator="lights" />
                 <Criteria separator="branch2" />

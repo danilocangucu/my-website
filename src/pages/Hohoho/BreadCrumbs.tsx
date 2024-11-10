@@ -38,7 +38,7 @@ function Breadcrumbs({ separator }: BreadcrumbsProps) {
                         </Link>
                     )}
                 </li>
-                {index < completeSegments.length - 1 && <span className="breadcrumbs-snowflake"> {separator} </span>}
+                {index < completeSegments.length - 1 && <span> {separator} </span>}
             </React.Fragment>
         );
     });

@@ -918,7 +918,7 @@ ul + ul{
 .breadcrumbs-grid {
   display: grid;
   grid-auto-flow: column;
-  gap: var(--space-2xs);
+  gap: var(--space-3xs);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -934,11 +934,6 @@ ul + ul{
   animation: none;
 }
 
-.breadcrumbs-snowflake {
-  font-family: "Arial", sans-serif !important;
-  font-size: inherit;
-  line-height: inherit;
-}
 .color-border {
   color: var(--color-border);
 }
