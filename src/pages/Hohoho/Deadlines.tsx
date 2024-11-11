@@ -42,7 +42,7 @@ const Deadlines = ({ separator }: { separator: string }) => {
           h1Ref={h1Ref}
           h2Ref={h2Ref}
         />
-        <section className="quattrocento-regular" ref={sectionRef}>
+        <section className="quattrocento-regular" ref={sectionRef} style={{ opacity: 0 }}>
           {isCurrentWidthLarge ? (
             <div className="deadline-grid">
               {deadlineGridLarge}

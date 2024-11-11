@@ -45,7 +45,7 @@ function Breadcrumbs({ separator }: BreadcrumbsProps) {
 
     return (
         <nav aria-label="breadcrumb">
-            <section ref={sectionRef}>
+            <section ref={sectionRef} style={{ opacity: 0 }}>
                 <div className="u-container">
                     <ol className="breadcrumbs-grid margin-top--space-3xs-2xs font-size--step-1 merriweather-regular">
                         {renderedBreadCrumbs}

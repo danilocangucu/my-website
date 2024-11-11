@@ -11,6 +11,7 @@ function H1(
                 'mountains-o-c-b--h1',
                 { 'mountains-o-c-b--1st-h1': isFirstH1 }
             )}
+            style={{ opacity: 0 }}
         >
             {h1Text}
         </h1>

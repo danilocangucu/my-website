@@ -22,7 +22,7 @@ function CallToAction() {
                 h1Text='Ready to Apply?'
                 h1Ref={h1Ref}
             />
-            <section ref={sectionRef}>
+            <section ref={sectionRef} style={{ opacity: 0 }}>
                 <Button
                     text="GET STARTED NOW"
                     onClick={handleClick}

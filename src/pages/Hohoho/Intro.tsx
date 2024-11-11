@@ -29,7 +29,11 @@ const Intro = ({ separator }: { separator: string }) => {
           h2Ref={h2Ref}
           isFirstH1={true}
         />
-        <section ref={sectionRef} className="p-grid p-grid--font-size">
+        <section
+          ref={sectionRef}
+          className="p-grid p-grid--font-size"
+          style={{ opacity: 0 }}
+        >
           <Paragraph>
             This year, I’m giving you something special: a free, custom-made website! Imagine a beautiful site to showcase your ideas, hobbies, or business—ready to go for the new year. It’s a gift designed just for you. Everyone deserves some extra sparkle this season!
           </Paragraph>

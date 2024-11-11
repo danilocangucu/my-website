@@ -46,7 +46,7 @@ function Criteria({ separator }: { separator: string }) {
                     h1Ref={h1Ref}
                     h2Ref={h2Ref}
                 />
-                <section className="p-grid p-grid--font-size" ref={sectionRef}>
+                <section className="p-grid p-grid--font-size" ref={sectionRef} style={{ opacity: 0 }}>
                     <Paragraph>
                         To make sure the project is a perfect fit for this Christmas gift, I have a few selection criteria in mind. Here's what I'm looking for:
                     </Paragraph>

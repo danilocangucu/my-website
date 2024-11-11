@@ -13,7 +13,7 @@ function Footer() {
 
     return (
         <footer className="footer border-top margin-top--footer">
-            <section ref={sectionRef}>
+            <section ref={sectionRef} style={{ opacity: 0 }}>
                 <div className="footer-grid">
                     <p className="footer-text merriweather-regular">© 2024 DANILO CANGUÇU</p>
                     <img
