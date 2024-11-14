@@ -764,6 +764,8 @@ ul + ul{
   --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
   /* Step 7: 64.4973px → 95.3674px */
   --step-7: clamp(4.0311rem, 3.36rem + 3.3555vw, 5.9605rem);
+    /* Step 8: 77.3967px → 119.2093px */
+      --step-8: clamp(4.8373rem, 3.9283rem + 4.5448vw, 7.4506rem);
   /* Step 10: 111.4513px → 186.2645px */
     --step-10: clamp(6.9657rem, 5.3393rem + 8.1319vw, 11.6415rem);
 
@@ -1269,6 +1271,9 @@ border: 1px solid var(--color-border);
 .margin-left--space-3xs {
   margin-left: var(--space-3xs);
 }
+.margin-left--space-2xs {
+  margin-left: var(--space-2xs);
+}
 /* Base button styles */
 .button {
   padding: var(--space-xs) var(--space-s);
@@ -1321,6 +1326,18 @@ border: 1px solid var(--color-border);
   box-shadow: none;
 }
 
+.two-buttons-container {
+  display: grid;
+  grid-template-columns: repeat(2, calc(var(--step-0) * 7));
+  gap: var(--space-xs-l);
+}
+
+@media (max-width: 350px) {
+  .two-buttons-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-s);
+  }
+}
 /* Basic footer styles */
 .footer {
   margin-top: var(--space-l);
