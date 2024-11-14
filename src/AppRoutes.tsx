@@ -4,6 +4,8 @@ import { useRoutes, BrowserRouter as Router } from "react-router-dom";
 import Loading from "./components/Loading";
 import NotFound from "./components/NotFound";
 import Hohoho from "./pages/Hohoho/Hohoho";
+import LandingPage from "./pages/Hohoho/LandingPage";
+import ApplicationPage from "./pages/Hohoho/ApplicationPage";
 
 const Home = lazy(() => import("./components/Home"));
 const StatusPage = lazy(() => import("./pages/StatusPage/StatusPage"));
@@ -12,7 +14,13 @@ const RouteHandler: React.FC = () => {
   const routes = useRoutes([
     { path: "/", element: <Home /> },
     { path: "/status", element: <StatusPage /> },
-    { path: "/hohoho", element: <Hohoho /> },
+    {
+      path: "/hohoho", element: <Hohoho />,
+      children: [
+        { path: "", element: <LandingPage key="landing" /> },
+        { path: "my-application", element: <ApplicationPage key="application" /> },
+      ],
+    },
     { path: "*", element: <NotFound /> },
   ]);
 
