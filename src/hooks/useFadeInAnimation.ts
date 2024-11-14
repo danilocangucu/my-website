@@ -1,16 +1,26 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
+interface DurationOptions {
+  hasCustomDuration?: boolean;
+  h1Duration?: number;
+  h2Duration?: number;
+  sectionDuration?: number;
+  separatorDuration?: number;
+}
+
 interface FadeInAnimationOptions {
   delay: number;
   modifyBodyOverflow?: boolean;
   additionalAnimation?: () => void;
+  customDuration?: DurationOptions;
 }
 
 const useFadeInAnimation = ({
   delay,
   modifyBodyOverflow = false,
   additionalAnimation,
+  customDuration = {},
 }: FadeInAnimationOptions) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -42,12 +52,24 @@ const useFadeInAnimation = ({
       const duration = modifyBodyOverflow ? 0.5 : 0.1;
       const tl = gsap.timeline();
 
+      const {
+        hasCustomDuration = false,
+        h1Duration,
+        h2Duration,
+        sectionDuration,
+        separatorDuration,
+      } = customDuration;
+
       // Only animate if the ref is present
       if (h1Ref.current) {
         tl.fromTo(
           h1Ref.current,
           { opacity: 0 },
-          { opacity: 1, duration, ease: "power2.out" }
+          {
+            opacity: 1,
+            duration: hasCustomDuration && h1Duration ? h1Duration : duration,
+            ease: "power2.out",
+          }
         );
       }
 
@@ -55,8 +77,13 @@ const useFadeInAnimation = ({
         tl.fromTo(
           h2Ref.current,
           { opacity: 0 },
-          { opacity: 1, duration, ease: "power2.out" },
-          "-=0.1"
+          {
+            opacity: 1,
+            duration: hasCustomDuration && h2Duration ? h2Duration : duration,
+            ease: "power2.out",
+          },
+          // Remove the delay if custom duration is set
+          hasCustomDuration ? undefined : "-=0.1"
         );
       }
 
@@ -64,8 +91,13 @@ const useFadeInAnimation = ({
         tl.fromTo(
           sectionRef.current,
           { opacity: 0 },
-          { opacity: 1, duration, ease: "power2.out" },
-          "-=0.05"
+          {
+            opacity: 1,
+            duration:
+              hasCustomDuration && sectionDuration ? sectionDuration : duration,
+            ease: "power2.out",
+          },
+          hasCustomDuration ? undefined : "-=0.05"
         );
       }
 
@@ -73,12 +105,23 @@ const useFadeInAnimation = ({
         tl.fromTo(
           separatorRef.current,
           { opacity: 0 },
-          { opacity: 1, duration, ease: "power2.out" },
-          "-=0.03"
+          {
+            opacity: 1,
+            duration:
+              hasCustomDuration && separatorDuration
+                ? separatorDuration
+                : duration,
+            ease: "power2.out",
+          },
+          hasCustomDuration ? undefined : "-=0.03"
         );
       }
+
+      return () => {
+        tl.kill();
+      };
     }
-  }, [isVisible, modifyBodyOverflow]);
+  }, [customDuration, isVisible, modifyBodyOverflow]);
 
   return { h1Ref, h2Ref, sectionRef, separatorRef, isVisible };
 };
