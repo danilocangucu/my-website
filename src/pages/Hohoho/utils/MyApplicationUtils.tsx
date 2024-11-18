@@ -2,7 +2,7 @@ import axios from "axios";
 import gsap from "gsap";
 
 import { ApplicationDetailsDTO } from "../HohohoTypes";
-import { BASE_API_URL } from "./HohohoUtils";
+import { HOHOHO_BASE_API_URL } from "./HohohoUtils";
 
 export const inputClass = 'input-modern';
 
@@ -19,7 +19,7 @@ interface loadApplicationReturn {
 
 export const loadApplicationData = async (token: string): Promise<loadApplicationReturn> => {
     try {
-        const response: LoadFormDataResponse = await axios.get(`${BASE_API_URL}/applications`, {
+        const response: LoadFormDataResponse = await axios.get(`${HOHOHO_BASE_API_URL}/applications`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -52,7 +52,7 @@ export const createEmptyApplication = () => ({
 
 export const submitApplication = async (formData: any, token: string) => {
     try {
-        const response = await fetch(`${BASE_API_URL}/applications/`, {
+        const response = await fetch(`${HOHOHO_BASE_API_URL}/applications/`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

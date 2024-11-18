@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { SnowFlake, SnowflakeAmount, SnowFlakeWeight } from "../HohohoTypes";
 
 export const BASE_URL = "https://danilocangucu.net/my-website/assets/hohoho";
-export const BASE_API_URL = "https:/danilocangucu.net/api/hohoho";
+export const HOHOHO_BASE_API_URL = "https:/danilocangucu.net/api/hohoho";
 
 const HEAVY_SNOW_FLAKE_URL = `${BASE_URL}/snow1.png`;
 const MEDIUM_SNOW_FLAKE_URL = `${BASE_URL}/snow2.png`;

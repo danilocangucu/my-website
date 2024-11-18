@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { setHohohoApplicationData, setHohohoEmail, setHohohoToken } from '../../../../redux/hohohoSlice';
 
 import { loadApplicationData } from '../../../../utils/MyApplicationUtils';
-import { BASE_API_URL } from '../../../../utils/HohohoUtils';
+import { HOHOHO_BASE_API_URL } from '../../../../utils/HohohoUtils';
 import Button from '../../../../components-elements/Button';
 import { useTranslation } from 'react-i18next';
 
@@ -26,7 +26,7 @@ const LoginForm: React.FC = () => {
 
         try {
             setStatusMessage("Submitting...");
-            const response = await axios.post(`${BASE_API_URL}/login`, {
+            const response = await axios.post(`${HOHOHO_BASE_API_URL}/login`, {
                 email: data.email,
                 code: data.code,
             });

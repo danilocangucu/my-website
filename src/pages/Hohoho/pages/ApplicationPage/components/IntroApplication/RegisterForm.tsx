@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-import { BASE_API_URL } from '../../../../utils/HohohoUtils';
+import { HOHOHO_BASE_API_URL } from '../../../../utils/HohohoUtils';
 import Button from '../../../../components-elements/Button';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../../../redux/store';
@@ -22,7 +22,7 @@ const RegisterForm: React.FC = () => {
         setStatusMessage(null);
 
         try {
-            const response = await axios.post(`${BASE_API_URL}/register`, {
+            const response = await axios.post(`${HOHOHO_BASE_API_URL}/register`, {
                 email: data.email,
                 lang,
             });
