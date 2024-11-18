@@ -362,7 +362,7 @@ const deadlineDataSmall: YearSmall[] = [
                 month: 'Dec',
                 dates: [
                     { day: 18, description: { en: "Deadline", es: "Fecha límite", ptbr: "Data limite" }, backgroundColor: 'secondary' },
-                    { day: 20, description: { en: "End of selection", es: "Fin de la selección", ptbr: "Fim da seleção" }, backgroundColor: 'tertiary' },
+                    { day: 22, description: { en: "End of selection", es: "Fin de la selección", ptbr: "Fim da seleção" }, backgroundColor: 'tertiary' },
                     { day: 24, description: { en: "Awarded!", es: "¡Premiado!", ptbr: "Premiado!" }, backgroundColor: 'quaternary' }
                 ]
             }
