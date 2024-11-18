@@ -146,10 +146,10 @@ type DateType = {
 const datesData: Array<{ [key: string]: DateType[] }> = [
     {
         "Nov": [
-            { data: 17, gridColumn: "1 / 3", align: "center", class: DateClass.Number, backgroundColor: "tertiary" },
+            { data: 18, gridColumn: "1 / 3", align: "center", class: DateClass.Number, backgroundColor: "tertiary" },
         ],
         "Dec": [
-            { data: 15, gridColumn: "4 / 5", align: "right", class: DateClass.Number, backgroundColor: "secondary" },
+            { data: 18, gridColumn: "4 / 5", align: "right", class: DateClass.Number, backgroundColor: "secondary" },
             { data: 24, gridColumn: "6 / 7", align: "right", class: DateClass.Number, backgroundColor: "quaternary" },
         ],
     },
@@ -208,7 +208,7 @@ const datesData: Array<{ [key: string]: DateType[] }> = [
     },
     {
         "Nov": [
-            { data: 23, gridColumn: "3 / 4", align: "left", class: DateClass.Number, backgroundColor: "tertiary" },
+            { data: 20, gridColumn: "3 / 4", align: "left", class: DateClass.Number, backgroundColor: "tertiary" },
         ],
         "Dec": [
             { data: 22, gridColumn: "5 / 7", align: "center", class: DateClass.Number, backgroundColor: "secondary" },
@@ -354,14 +354,14 @@ const deadlineDataSmall: YearSmall[] = [
             {
                 month: 'Nov',
                 dates: [
-                    { day: 15, description: { en: 'Open for entries', es: "Abierto para propuestas", ptbr: "Aberto para propostas" }, backgroundColor: 'secondary' },
-                    { day: 25, description: { en: "Selection process starts*", es: "Selección comienza*", ptbr: "Início da seleção*" }, backgroundColor: 'tertiary' }
+                    { day: 18, description: { en: 'Open for entries', es: "Abierto para propuestas", ptbr: "Aberto para propostas" }, backgroundColor: 'secondary' },
+                    { day: 20, description: { en: "Selection process starts*", es: "Selección comienza*", ptbr: "Início da seleção*" }, backgroundColor: 'tertiary' }
                 ]
             },
             {
                 month: 'Dec',
                 dates: [
-                    { day: 13, description: { en: "Deadline", es: "Fecha límite", ptbr: "Data limite" }, backgroundColor: 'secondary' },
+                    { day: 18, description: { en: "Deadline", es: "Fecha límite", ptbr: "Data limite" }, backgroundColor: 'secondary' },
                     { day: 20, description: { en: "End of selection", es: "Fin de la selección", ptbr: "Fim da seleção" }, backgroundColor: 'tertiary' },
                     { day: 24, description: { en: "Awarded!", es: "¡Premiado!", ptbr: "Premiado!" }, backgroundColor: 'quaternary' }
                 ]
