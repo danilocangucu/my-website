@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { gsap } from 'gsap'
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -8,7 +7,7 @@ import ApplicationForm from './components/ApplicationForm/ApplicationForm';
 
 import { RootState } from '../../../../redux/store';
 import { setHohohoApplicationData, setHohohoToken } from '../../redux/hohohoSlice';
-import { loadApplicationData, scrollAndAnimate, validateFormFields } from '../../utils/MyApplicationUtils';
+import { loadApplicationData, scrollAndAnimate } from '../../utils/MyApplicationUtils';
 import Footer from '../../components-elements/Footer';
 import NavBar from '../../components-shared/NavBar/NavBar';
 
