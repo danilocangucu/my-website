@@ -1,6 +1,6 @@
-// src/redux/store.ts
 import { configureStore } from "@reduxjs/toolkit";
-import hohohoReducer from "./slices/hohohoSlice";
+
+import hohohoReducer from "../pages/Hohoho/redux/hohohoSlice";
 
 const store = configureStore({
   reducer: {
