@@ -1046,7 +1046,7 @@ border: 1px solid var(--color-border);
   }
 }
 
-@media (max-width: 465px) {
+@media (max-width: 535px) {
   .breadcrumbs-grid {
     grid-auto-flow: unset;
     grid-template-columns: 1fr;
