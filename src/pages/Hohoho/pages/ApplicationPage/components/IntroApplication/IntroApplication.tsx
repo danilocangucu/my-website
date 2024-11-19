@@ -42,6 +42,8 @@ const IntroApplication: React.FC<IntroApplicationProps> = ({ separator, isLogged
       : t("p1-welcome-back")
     : t("p1-start");
 
+  const isHTML = (str: string) => /<[a-z][\s\S]*>/i.test(str);
+
   return (
     <>
       <div className="u-container">
@@ -57,9 +59,12 @@ const IntroApplication: React.FC<IntroApplicationProps> = ({ separator, isLogged
           className="p-grid p-grid--font-size"
           style={{ opacity: 0 }}
         >
-          <Paragraph>
-            {paragraphText}
-          </Paragraph>
+          {/* TODO solve this html check */}
+          {
+            isHTML(paragraphText)
+              ? <div dangerouslySetInnerHTML={{ __html: paragraphText }} />
+              : <Paragraph>{paragraphText}</Paragraph>
+          }
           {!isLoggedIn && <CollapsibleManager />}
         </section>
       </div>
