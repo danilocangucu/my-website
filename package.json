@@ -57,6 +57,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "@types/react-helmet": "^6.1.11",
     "gsap": "^3.12.5"
   }
 }
