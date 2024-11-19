@@ -12,7 +12,7 @@ interface AboutProjectProps {
     isDisabled: boolean;
 }
 
-const AboutWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
+const AboutYourWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
     const { register } = useFormContext();
 
     const { h2Ref, sectionRef, isVisible } = useFadeInAnimation({
@@ -167,4 +167,4 @@ const AboutWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
     );
 })
 
-export default AboutWebsite;
+export default AboutYourWebsite;

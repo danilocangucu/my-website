@@ -10,7 +10,7 @@ import { setHohohoApplicationData, setHohohoToken } from '../../redux/hohohoSlic
 import { loadApplicationData, scrollAndAnimate } from '../../utils/MyApplicationUtils';
 import Footer from '../../components-elements/Footer';
 import NavBar from '../../components-shared/NavBar/NavBar';
-import SentApplication from './components/SentApplication';
+import SentApplication from './components/SentApplication/SentApplication';
 
 // TODO refactor ApplicationPage
 // TODO check GSAP error in console coming from ApplicationPage
