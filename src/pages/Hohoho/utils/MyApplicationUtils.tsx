@@ -71,7 +71,7 @@ export const submitApplication = async (formData: any, token: string) => {
     }
 };
 
-export function showErrorMessage(actionType: "saved" | "submitted") {
+export function showErrorMessage(actionType: string) {
     const spanError = document.getElementById('span-error');
     if (spanError) {
         spanError.textContent = actionType;
