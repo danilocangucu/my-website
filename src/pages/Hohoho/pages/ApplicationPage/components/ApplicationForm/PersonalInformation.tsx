@@ -23,8 +23,6 @@ export const PersonalInformation = React.memo(({ isDisabled }: { isDisabled: boo
         return null;
     }
 
-
-
     return (
         <>
             <div className="u-container">
