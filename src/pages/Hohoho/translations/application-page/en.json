@@ -4,7 +4,7 @@
   "h2-welcome-back": "Hello again!",
   "h2-complete": "Your application is complete!",
   "p1-start": "Welcome! To begin your application, click the registration button below. If you've already registered and have an application code, log in with your email and code by clicking the login button to start or edit your application. The full application form is available below, but you can only begin filling it out once you log in.",
-  "p1-welcome-back": "Your application details are ready for you below.",
+  "p1-welcome-back": "Your application details are ready for you below.<br />You can save your application and continue later by clicking the <b>floppy disk button</b> on the right side of the form. All fields are required except section <em>4. Links and References</em> and section <em>5. Final Thoughts</em>. You can submit your application by clicking the <b>submit button</b> at the bottom of the form after having filled all mandatory fields. If you haven't filled all mandatory fields, the button is not enabled.",
   "p1-complete": "Thank you for completing your application! You can review your application details below.",
   "register-submitting": "Sending your code...",
   "register-unknown-error": "Something went wrong. Please try again in a moment.",
