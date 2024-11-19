@@ -54,6 +54,7 @@ const LinksAndReferences = React.memo(({ isDisabled }: LinksAndReferencesProps) 
                         <div className="input-paragraph--small">
                             <small>
                                 <em>
+                                    <b className="text-white">These are not mandatory fields</b> but I strongly recommend filling them out if you have any links to be shared.
                                     Please provide up to 3 relevant links that showcase your current online presence.
                                     This could include your existing website, social media pages, or any other online platforms related to your project.
                                 </em>
@@ -79,6 +80,7 @@ const LinksAndReferences = React.memo(({ isDisabled }: LinksAndReferencesProps) 
                         <div className="input-paragraph--small">
                             <small>
                                 <em>
+                                    <b className="text-white">These are not mandatory fields</b> but I strongly recommend filling them out if you have any links to be shared.
                                     Please provide up to 3 links to websites, businesses, portfolios, etc. that you think align with your vision for your website.
                                 </em>
                             </small>
