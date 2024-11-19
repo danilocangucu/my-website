@@ -8,8 +8,11 @@ interface ParagraphProps {
 
 const Paragraph: React.FC<ParagraphProps> = ({ children, additionalClassNames = [] }) => {
     return (
-        <p className={classNames('quattrocento-regular', ...additionalClassNames)}>
-            {children}
+        <p
+            className={classNames('quattrocento-regular', ...additionalClassNames)}
+            dangerouslySetInnerHTML={{ __html: children as string }} // Renders the string as HTML
+        >
+            {/* {children as string} */}
         </p>
     );
 };
