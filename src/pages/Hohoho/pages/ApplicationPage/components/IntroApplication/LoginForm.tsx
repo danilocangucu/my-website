@@ -50,6 +50,8 @@ const LoginForm: React.FC = () => {
                 throw new Error(loadMessage!);
             }
 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
             dispatch(setHohohoApplicationData(applicationData));
             dispatch(setHohohoToken(token));
             dispatch(setHohohoEmail(data.email));
