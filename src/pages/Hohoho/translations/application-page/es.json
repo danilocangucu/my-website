@@ -37,5 +37,7 @@
   "4-LR-reference-websites": "¿Tienes algunos sitios web como referencia para el tuyo?",
   "h2-final-thoughts": "5. Pensamientos Finales",
   "5-FT-final-thoughts": "¿Hay algo más que te gustaría agregar?",
-  "submit-button": "ENVIAR"
+  "submit-button": "ENVIAR",
+  "sent-no-current-presence": "No enviaste ningún enlace.",
+  "sent-no-reference-websites": "No proporcionaste ningún sitio web de referencia."
 }
