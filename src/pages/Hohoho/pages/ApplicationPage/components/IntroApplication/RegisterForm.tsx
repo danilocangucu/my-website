@@ -59,6 +59,7 @@ const RegisterForm: React.FC = () => {
                         className='input-modern'
                     />
                     {/* TODO register errors multilang */}
+                    {/* TODO error styles */}
                     {errors.email && typeof errors.email.message === 'string' && <span>{errors.email.message}</span>}
                 </div>
                 <Button text={t("send-button")} type="submit" size="x-small" variant="quaternary" inlineStyles={{ marginTop: "var(--space-s)" }} />
