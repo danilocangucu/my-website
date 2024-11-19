@@ -11,6 +11,7 @@ import { loadApplicationData, scrollAndAnimate } from '../../utils/MyApplication
 import Footer from '../../components-elements/Footer';
 import NavBar from '../../components-shared/NavBar/NavBar';
 import SentApplication from './components/SentApplication/SentApplication';
+import SnowLoading from './SnowLoading';
 
 // TODO refactor ApplicationPage
 // TODO check GSAP error in console coming from ApplicationPage
@@ -27,17 +28,17 @@ function ApplicationPage() {
             const token = localStorage.getItem('hohohoJwtToken');
             if (token) {
                 try {
-                    const { applicationData, loadMessage } = await loadApplicationData(token);
+                    // TODO loadApplication returns also loadMessage. Where could it be used?
+                    const { applicationData } = await loadApplicationData(token);
                     setIsLoading(false);
 
                     if (applicationData) {
                         dispatch(setHohohoApplicationData(applicationData));
                         dispatch(setHohohoToken(token));
-                        console.log("loadMessage", loadMessage);
                     }
 
                 } catch (err) {
-                    console.log('Failed to load data. Please try again later.');
+                    // TODO Debug fetch error. Could loadMessage be used here?
                     setIsLoading(false);
                 }
             }
@@ -51,9 +52,8 @@ function ApplicationPage() {
         }
     }, [dispatch, location.state?.fromHohoho]);
 
-    // TODO better loading state
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <SnowLoading isLoading={isLoading} />;
     }
 
     const isComplete = applicationData?.application.isComplete;
