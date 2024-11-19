@@ -77,7 +77,7 @@ const AboutYou = React.memo(({ isDisabled }: AboutProjectProps) => {
                             rows={2}
                             maxLength={200}
                         />
-                        <p id="charCountAboutYouWork" className="char-counter">0 / 200</p>
+                        <p id="charCountProjectContext" className="char-counter">0 / 200</p>
                     </div>
                 </section>
             </div>
