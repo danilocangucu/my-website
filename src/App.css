@@ -1660,3 +1660,21 @@ textarea {
   text-decoration: underline !important;
   padding: 0 !important;
 }
+.loading-snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.loading-snowflake {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
