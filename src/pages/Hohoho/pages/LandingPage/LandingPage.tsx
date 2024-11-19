@@ -33,6 +33,7 @@ function LandingPage() {
         <>
             <Helmet>
                 <title>{t("title")}</title>
+                <meta property="og:url" content="https://danilocangucu.net/hohoho" />
                 <meta name="description" content={t("description")} />
                 <meta property="og:title" content={t('myApplication.title')} />
                 <meta property="og:description" content={t('myApplication.description')} />
