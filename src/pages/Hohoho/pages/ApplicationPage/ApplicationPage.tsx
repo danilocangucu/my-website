@@ -10,6 +10,7 @@ import { setHohohoApplicationData, setHohohoToken } from '../../redux/hohohoSlic
 import { loadApplicationData, scrollAndAnimate } from '../../utils/MyApplicationUtils';
 import Footer from '../../components-elements/Footer';
 import NavBar from '../../components-shared/NavBar/NavBar';
+import SentApplication from './components/SentApplication';
 
 // TODO refactor ApplicationPage
 // TODO check GSAP error in console coming from ApplicationPage
@@ -59,11 +60,9 @@ function ApplicationPage() {
 
     return (
         <>
-            {/* TODO adjust nav layout */}
             <NavBar showLogout={isLoggedIn} delay={500} />
             <IntroApplication separator="branch1" isLoggedIn={isLoggedIn} isComplete={isComplete} />
-            {/* TODO "isComplete" component */}
-            {isComplete ? <div>That's your sent application</div> : <ApplicationForm />}
+            {isComplete ? <SentApplication /> : <ApplicationForm />}
             <Footer />
         </>
     )
