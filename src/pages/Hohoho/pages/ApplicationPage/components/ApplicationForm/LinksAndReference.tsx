@@ -5,6 +5,7 @@ import Header from '../../../../components-elements/Header/Header';
 
 import useFadeInAnimation from '../../../../hooks/useFadeInAnimation';
 import { useTranslation } from 'react-i18next';
+import FillingTip from './FillingTip';
 
 interface LinksAndReferencesProps {
     isDisabled: boolean;
@@ -51,14 +52,15 @@ const LinksAndReferences = React.memo(({ isDisabled }: LinksAndReferencesProps) 
                                 />
                             </div>
                         ))}
-                        <div className="input-paragraph--small">
+                        <div className="input-paragraph--small quattrocento-regular">
                             <small>
                                 <em>
-                                    <b className="text-white">These are not mandatory fields</b> but I strongly recommend filling them out if you have any links to be shared.
-                                    Please provide up to 3 relevant links that showcase your current online presence.
-                                    This could include your existing website, social media pages, or any other online platforms related to your project.
+                                    <b className="text-quaternary">{t("4-LR-not-mandatory-plural")}</b> {t("4-LR-current-presence-description")}
                                 </em>
                             </small>
+                            <div className="margin-top--space-3xs">
+                                <FillingTip text={`${t("4-LR-current-presence-filling-tip")}`} />
+                            </div>
                         </div>
                     </div>
                     <div>
@@ -77,13 +79,13 @@ const LinksAndReferences = React.memo(({ isDisabled }: LinksAndReferencesProps) 
                                 />
                             </div>
                         ))}
-                        <div className="input-paragraph--small">
+                        <div className="input-paragraph--small quattrocento-regular">
                             <small>
                                 <em>
-                                    <b className="text-white">These are not mandatory fields</b> but I strongly recommend filling them out if you have any links to be shared.
-                                    Please provide up to 3 links to websites, businesses, portfolios, etc. that you think align with your vision for your website.
+                                    <b className="text-quaternary">{t("4-LR-not-mandatory-plural")}</b> {t("4-LR-reference-websites-description")}
                                 </em>
                             </small>
+                            <FillingTip text={`${t("4-LR-current-presence-filling-tip")}`} />
                         </div>
                     </div>
                 </section>

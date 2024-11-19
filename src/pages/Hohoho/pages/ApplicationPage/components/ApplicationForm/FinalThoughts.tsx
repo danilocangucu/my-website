@@ -52,10 +52,10 @@ const FinalThoughts = React.memo(({ isDisabled }: { isDisabled: boolean }) => {
                             rows={3}
                         />
                         <p id="charCountFinalThoughts" className="char-counter">0 / 300</p>
-                        <div className="input-paragraph--small">
+                        <div className="input-paragraph--small quattrocento-regular">
                             <small>
                                 <em>
-                                    <b className="text-white">This is not a mandatory field.</b>
+                                    <b className="text-quaternary">This is not a mandatory field.</b>
                                 </em>
                             </small>
                         </div>

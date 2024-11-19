@@ -90,7 +90,7 @@ function ApplicationForm() {
             if (!response.ok) {
                 console.log("response", response);
                 console.log("formData", formData);
-                showErrorMessage(isComplete ? "submitted" : "saved");
+                showErrorMessage(isComplete ? t("show-error-message-true") : t("show-error-message-false"));
                 sendErrorReport(formData, applicantEmail!, response);
                 return;
             }

@@ -1064,6 +1064,9 @@ border: 1px solid var(--color-border);
 .text-black {
   color: var(--color-quinary) !important;
 }
+.text-quaternary {
+  color: var(--color-quaternary);
+}
 .mountains-of-christmas-bold {
   font-family: "Mountains of Christmas", serif;
   font-weight: 700;

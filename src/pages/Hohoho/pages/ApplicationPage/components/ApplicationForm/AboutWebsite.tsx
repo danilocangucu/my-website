@@ -60,12 +60,12 @@ const AboutYourWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
                             maxLength={200}
                         />
                         <p id="charCountWebsiteReason" className="char-counter">0 / 200</p>
-                        <div className="input-paragraph--small">
+                        <div className="input-paragraph--small quattrocento-regular">
                             <small>
-                                <em>This is a description. It provides more context and additional details about the subject, offering insight and clarity. This text serves as an example of how a more extensive description might look, showcasing the type of content that can be expected.</em>
+                                <em>{t("3-AYW-website-reason-description")}</em>
                             </small>
                             <div className="margin-top--space-3xs">
-                                <FillingTip text={`"This is a medium filling tip. It offers a brief explanation or suggestion, giving the user the essential information they need in a short, easily digestible format."`} />
+                                <FillingTip text={`"${t("3-AYW-website-reason-filling-tip")}"`} />
                             </div>
                         </div>
 
@@ -86,14 +86,13 @@ const AboutYourWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
                             rows={5}
                             maxLength={500}
                         />
-                        {/* TODO add char counter? */}
                         <p id="charWebsiteMainDescription" className="char-counter">0 / 500</p>
-                        <div className="input-paragraph--small">
+                        <div className="input-paragraph--small quattrocento-regular">
                             <small>
-                                <em>This is a description. It provides context and additional details, offering insight about the subject in a concise manner.</em>
+                                <em>{t("3-AYW-website-main-description-description")}</em>
                             </small>
                             <div className="margin-top--space-3xs">
-                                <FillingTip text="This is a long filling tip. It provides detailed instructions or advice for users, explaining all relevant steps in a process. It can include examples, extra information, and context to ensure users fully understand what to do. The goal is to give as much information as possible while still being concise and clear. When providing guidance, it's important to balance helpful details with brevity, so users aren't overwhelmed by too much text at once. This length is suitable for more complex or technical tips." />
+                                <FillingTip text={`"${t("3-AYW-website-main-description-filling-tip")}"`} />
                             </div>
                         </div>
                     </div>
@@ -107,12 +106,12 @@ const AboutYourWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
                             disabled={isDisabled}
                             style={{ cursor: isDisabled ? "not-allowed" : "text" }}
                         />
-                        <div className="input-paragraph--small">
+                        <div className="input-paragraph--small quattrocento-regular">
                             <small>
-                                <em>This is a brief description for context.</em>
+                                <em>{t("3-AYW-website-main-feature-description")}</em>
                             </small>
                             <div className="margin-top--space-3xs">
-                                <FillingTip text="I want a website for my new business that will allow customers to book appointments online." />
+                                <FillingTip text={`"${t("3-AYW-website-main-feature-filling-tip")}"`} />
                             </div>
                         </div>
                     </div>
@@ -130,12 +129,12 @@ const AboutYourWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
                                 />
                             </div>
                         ))}
-                        <div className="input-paragraph--small">
+                        <div className="input-paragraph--small quattrocento-regular">
                             <small>
-                                <em>This is a description. It provides more context and additional details about the subject, offering insight and clarity. This text serves as an example of how a more extensive description might look, showcasing the type of content that can be expected.</em>
+                                <em>{t("3-AYW-website-additional-features-description")}</em>
                             </small>
                             <div className="margin-top--space-3xs">
-                                <FillingTip text="This is a short filling tip. It provides quick, helpful information for the user in a concise manner." />
+                                <FillingTip text={`"${t("3-AYW-website-additional-features-filling-tip")}"`} />
                             </div>
                         </div>
                     </div>
@@ -152,12 +151,12 @@ const AboutYourWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
                             maxLength={200}
                         />
                         <p id="charWebsiteContentMaterial" className="char-counter">0 / 200</p>
-                        <div className="input-paragraph--small">
+                        <div className="input-paragraph--small quattrocento-regular">
                             <small>
-                                <em>This is a description. It provides context and additional details, offering insight about the subject in a concise manner.</em>
+                                <em>{t("3-AYW-content-material-description")}</em>
                             </small>
                             <div className="margin-top--space-3xs">
-                                <FillingTip text="This is a medium filling tip. It offers a brief explanation or suggestion, giving the user the essential information they need in a short, easily digestible format." />
+                                <FillingTip text={`"${t("3-AYW-content-material-filling-tip")}"`} />
                             </div>
                         </div>
                     </div>

@@ -57,12 +57,11 @@ export const PersonalInformation = React.memo(({ isDisabled }: { isDisabled: boo
                             disabled={isDisabled}
                             style={{ cursor: isDisabled ? "not-allowed" : "text" }}
                         />
-                        <div className="input-paragraph--small">
+                        <div className="input-paragraph--small quattrocento-regular">
                             <small>
                                 <em>{t("1-PI-phone-number-description")}</em>
                             </small>
                             <div className="margin-top--space-3xs">
-                                {/* TODO ES and PTBR translation for filling tip for phone number */}
                                 <FillingTip text={t("1-PI-phone-number-filling-tip")} />
                             </div>
                         </div>
