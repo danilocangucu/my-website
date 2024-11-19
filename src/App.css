@@ -1347,6 +1347,7 @@ border: 1px solid var(--color-border);
 .margin-top--space-s {
   margin-top: var(--space-s);
 }
+
 .margin-left--space-3xs {
   margin-left: var(--space-3xs);
 }
@@ -1361,6 +1362,9 @@ border: 1px solid var(--color-border);
   padding-left: 0;
 }
 
+dl {
+  margin: 0;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1648,4 +1652,11 @@ textarea {
   color: var(--color-secondary);
   font-size: var(--step--1);
   margin-top: var(--space-3xs);
+}
+.dd-link {
+  background-color: unset !important;
+  animation: unset !important;
+  color: var(--color-quaternary) !important;
+  text-decoration: underline !important;
+  padding: 0 !important;
 }
