@@ -71,7 +71,13 @@ export const PersonalInformation = React.memo(({ isDisabled }: { isDisabled: boo
                     </div>
                     <div>
                         <label htmlFor="preferred-language">{t("1-PI-preferred-language")}</label>
-                        <select id="preferred-language"   {...register('personalInformation.preferredLanguage')} className="input-modern merriweather-regular font-size--step--1" style={{ cursor: isDisabled ? "not-allowed" : "pointer" }}>
+                        <select
+                            id="preferred-language"
+                            {...register('personalInformation.preferredLanguage')}
+                            className="input-modern merriweather-regular font-size--step--1"
+                            style={{ cursor: isDisabled ? "not-allowed" : "pointer" }}
+                            disabled={isDisabled}
+                        >
                             <option value="pt">Português</option>
                             <option value="es">Español</option>
                             <option value="en">English</option>
