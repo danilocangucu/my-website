@@ -18,7 +18,6 @@ export interface SnowFlakeProps {
 }
 
 // TODO organise the types in folders and files
-
 export interface ApplicationDetailsDTO {
   application: {
     personalInformation: {
@@ -27,10 +26,34 @@ export interface ApplicationDetailsDTO {
       phoneNumber: string;
       preferredLanguage: string;
     };
-    aboutYourWebsite: {
-      websiteDescription: string;
-      websiteFeatures: string[];
+    aboutYou: {
+      work: string;
+      projectContext: string;
     };
+    aboutYourWebsite: {
+      websiteReason: string;
+      websiteMainDescription: string;
+      websiteMainFeature: string;
+      websiteAdditionalFeatures: {
+        feature1: string;
+        feature2: string;
+        feature3: string;
+      };
+      websiteContentMaterial: string;
+    };
+    linksAndReferences: {
+      currentPresence: {
+        link1: string;
+        link2: string;
+        link3: string;
+      };
+      referenceWebsites: {
+        link1: string;
+        link2: string;
+        link3: string;
+      };
+    };
+    finalThoughts: string;
     isComplete: boolean;
   };
 }
