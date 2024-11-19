@@ -25,7 +25,7 @@ const LoginForm: React.FC = () => {
         setStatusMessage(null);
 
         try {
-            setStatusMessage("Submitting...");
+            setStatusMessage(t("login-submitting"));
             const response = await axios.post(`${HOHOHO_BASE_API_URL}/login`, {
                 email: data.email,
                 code: data.code,
@@ -40,7 +40,8 @@ const LoginForm: React.FC = () => {
 
             localStorage.setItem('hohohoJwtToken', token);
 
-            setStatusMessage(message);
+            // TODO adjust backend to send success message in languages
+            setStatusMessage(message.includes("successful") ? t("login-success") : message);
 
             const { applicationData, loadMessage } = await loadApplicationData(token);
 
@@ -57,7 +58,8 @@ const LoginForm: React.FC = () => {
 
         } catch (error) {
             if (axios.isAxiosError(error) && error.response) {
-                setStatusMessage(`${error.response.data.message}`);
+                const erorMessage = error.response.data.message;
+                setStatusMessage(erorMessage.includes("No pending or active") ? t("login-error") : erorMessage);
             } else if (error instanceof Error) {
                 // TODO report error to backend
                 setStatusMessage(error.message);
