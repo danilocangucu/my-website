@@ -24,6 +24,13 @@ function SentPersonalInformation({ personalInformation }: PersonalInformationPro
         return null;
     }
 
+    const languageNames: { [key: string]: string } = {
+        en: "English",
+        es: "Español",
+        sv: "Svenska",
+        ptbr: "Português (Brasil)"
+    };
+
     return (
         <div className="u-container">
             <Header h2Text={t("h2-personal-information")} h2Ref={h2Ref} />
@@ -46,6 +53,11 @@ function SentPersonalInformation({ personalInformation }: PersonalInformationPro
                     <dt className="merriweather-regular">{t("1-PI-phone-number")}</dt>
                     <dd className="quattrocento-regular color-quaternary margin-top--15px">
                         {personalInformation.phoneNumber}
+                    </dd>
+
+                    <dt className="merriweather-regular">{t("1-PI-preferred-language")}</dt>
+                    <dd className="quattrocento-regular color-quaternary margin-top--15px">
+                        {languageNames[personalInformation.preferredLanguage as keyof typeof languageNames] || personalInformation.preferredLanguage}
                     </dd>
                 </dl>
             </section>
