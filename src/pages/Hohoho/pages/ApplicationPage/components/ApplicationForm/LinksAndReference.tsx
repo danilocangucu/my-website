@@ -49,6 +49,7 @@ const LinksAndReferences = React.memo(({ isDisabled }: LinksAndReferencesProps) 
                                     disabled={isDisabled}
                                     style={{ cursor: isDisabled ? "not-allowed" : "text" }}
                                     id={`currentPresence${index + 1}`}
+                                    maxLength={200}
                                 />
                             </div>
                         ))}
@@ -76,6 +77,7 @@ const LinksAndReferences = React.memo(({ isDisabled }: LinksAndReferencesProps) 
                                     disabled={isDisabled}
                                     style={{ cursor: isDisabled ? "not-allowed" : "text" }}
                                     id={`referenceWebsites${index + 1}`}
+                                    maxLength={200}
                                 />
                             </div>
                         ))}

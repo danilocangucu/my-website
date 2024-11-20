@@ -36,6 +36,7 @@ export const PersonalInformation = React.memo(({ isDisabled }: { isDisabled: boo
                             {...register('personalInformation.fullName')}
                             disabled={isDisabled}
                             style={{ cursor: isDisabled ? "not-allowed" : "text" }}
+                            maxLength={200}
                         />
                     </div>
                     <div>
@@ -46,6 +47,7 @@ export const PersonalInformation = React.memo(({ isDisabled }: { isDisabled: boo
                             {...register('personalInformation.emailAddress')}
                             disabled={isDisabled}
                             style={{ cursor: isDisabled ? "not-allowed" : "text" }}
+                            maxLength={200}
                         />
                     </div>
                     <div>
@@ -56,6 +58,7 @@ export const PersonalInformation = React.memo(({ isDisabled }: { isDisabled: boo
                             {...register('personalInformation.phoneNumber')}
                             disabled={isDisabled}
                             style={{ cursor: isDisabled ? "not-allowed" : "text" }}
+                            maxLength={50}
                         />
                         <div className="input-paragraph--small quattrocento-regular">
                             <small>

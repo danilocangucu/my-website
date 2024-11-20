@@ -105,6 +105,7 @@ const AboutYourWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
                             placeholder=""
                             disabled={isDisabled}
                             style={{ cursor: isDisabled ? "not-allowed" : "text" }}
+                            maxLength={200}
                         />
                         <div className="input-paragraph--small quattrocento-regular">
                             <small>
@@ -126,6 +127,7 @@ const AboutYourWebsite = React.memo(({ isDisabled }: AboutProjectProps) => {
                                     disabled={isDisabled}
                                     style={{ cursor: isDisabled ? "not-allowed" : "text" }}
                                     id={`websiteAdditionalFeatures${index + 1}`}
+                                    maxLength={200}
                                 />
                             </div>
                         ))}
