@@ -60,6 +60,8 @@
   "submit-button": "ENVIAR",
   "sent-no-current-presence": "No enviaste ningún enlace.",
   "sent-no-reference-websites": "No proporcionaste ningún sitio web de referencia.",
+  "show-error-message-true": "enviada",
+  "show-error-message-false": "guardada",
   "form-error-message-h1": "¡Lo siento!",
   "form-error-message-p-1": "Tu propuesta no pudo ser ",
   "form-error-message-p-2": "procesada",
