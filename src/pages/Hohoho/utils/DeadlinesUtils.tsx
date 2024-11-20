@@ -146,7 +146,7 @@ type DateType = {
 const datesData: Array<{ [key: string]: DateType[] }> = [
     {
         "Nov": [
-            { data: 18, gridColumn: "1 / 3", align: "center", class: DateClass.Number, backgroundColor: "tertiary" },
+            { data: 20, gridColumn: "1 / 3", align: "center", class: DateClass.Number, backgroundColor: "tertiary" },
         ],
         "Dec": [
             { data: 18, gridColumn: "4 / 5", align: "right", class: DateClass.Number, backgroundColor: "secondary" },
@@ -208,7 +208,7 @@ const datesData: Array<{ [key: string]: DateType[] }> = [
     },
     {
         "Nov": [
-            { data: 20, gridColumn: "3 / 4", align: "left", class: DateClass.Number, backgroundColor: "tertiary" },
+            { data: 22, gridColumn: "3 / 4", align: "left", class: DateClass.Number, backgroundColor: "tertiary" },
         ],
         "Dec": [
             { data: 22, gridColumn: "5 / 7", align: "center", class: DateClass.Number, backgroundColor: "secondary" },
@@ -354,8 +354,8 @@ const deadlineDataSmall: YearSmall[] = [
             {
                 month: 'Nov',
                 dates: [
-                    { day: 18, description: { en: 'Open for entries', es: "Abierto para propuestas", ptbr: "Aberto para propostas" }, backgroundColor: 'secondary' },
-                    { day: 20, description: { en: "Selection process starts*", es: "Selección comienza*", ptbr: "Início da seleção*" }, backgroundColor: 'tertiary' }
+                    { day: 20, description: { en: 'Open for entries', es: "Abierto para propuestas", ptbr: "Aberto para propostas" }, backgroundColor: 'secondary' },
+                    { day: 22, description: { en: "Selection process starts*", es: "Selección comienza*", ptbr: "Início da seleção*" }, backgroundColor: 'tertiary' }
                 ]
             },
             {
