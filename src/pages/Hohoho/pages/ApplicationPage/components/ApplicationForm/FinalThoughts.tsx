@@ -55,7 +55,7 @@ const FinalThoughts = React.memo(({ isDisabled }: { isDisabled: boolean }) => {
                         <div className="input-paragraph--small quattrocento-regular">
                             <small>
                                 <em>
-                                    <b className="text-quaternary">This is not a mandatory field.</b>
+                                    <b className="text-quaternary">{t("5-FT-not-mandatory-singular")}</b>
                                 </em>
                             </small>
                         </div>
