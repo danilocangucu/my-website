@@ -75,7 +75,7 @@ export const PersonalInformation = React.memo(({ isDisabled }: { isDisabled: boo
                             style={{ cursor: isDisabled ? "not-allowed" : "pointer" }}
                             disabled={isDisabled}
                         >
-                            <option value="ptbr">Português</option>
+                            <option value="ptbr">{`Português (Brasil)`}</option>
                             <option value="es">Español</option>
                             <option value="en">English</option>
                             <option value="sv">Svenska</option>
