@@ -12,6 +12,7 @@ import Footer from '../../components-elements/Footer';
 import NavBar from '../../components-shared/NavBar/NavBar';
 import SentApplication from './components/SentApplication/SentApplication';
 import SnowLoading from './SnowLoading';
+import TopBar from '../../components-shared/TopBar';
 
 // TODO refactor ApplicationPage
 // TODO check GSAP error in console coming from ApplicationPage
@@ -60,6 +61,7 @@ function ApplicationPage() {
 
     return (
         <>
+            <TopBar delay={500} />
             <NavBar showLogout={isLoggedIn} delay={500} />
             <IntroApplication separator="branch1" isLoggedIn={isLoggedIn} isComplete={isComplete} />
             {isComplete ? <SentApplication /> : <ApplicationForm />}

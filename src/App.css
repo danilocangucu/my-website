@@ -1681,3 +1681,7 @@ textarea {
   width: 100px;
   height: 100px;
 }
+/* TOP BAR */
+.text-align--center {
+  text-align: center;
+}
