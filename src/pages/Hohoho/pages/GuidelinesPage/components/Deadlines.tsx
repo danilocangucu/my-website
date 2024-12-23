@@ -12,11 +12,11 @@ import { useResizeHandler } from '../../../hooks/useResizeHandler';
 
 const Deadlines = React.memo(({ separator, language }: { separator: string, language: "en" | "es" | "ptbr" }) => {
   const { h1Ref, h2Ref, sectionRef, separatorRef, isVisible } = useFadeInAnimation({
-    delay: 5500,
+    delay: 1000,
   });
   const { currentWidth } = useResizeHandler(window.innerHeight, window.innerWidth);
 
-  const { t } = useTranslation("hohoho/landing-page");
+  const { t } = useTranslation("hohoho/guidelines-page");
 
   const deadlineGridLarge = useMemo(() => {
     return [

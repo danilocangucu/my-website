@@ -13,14 +13,14 @@ import { RootState } from '../../../../../../redux/store';
 
 function Criteria({ separator }: { separator: string }) {
     const { h1Ref, h2Ref, sectionRef, separatorRef, isVisible } = useFadeInAnimation({
-        delay: 5600,
+        delay: 1100,
     });
 
     const currentLanguage = useSelector((state: RootState) => state.hohoho.language) as "en" | "es" | "ptbr";
 
-    const { t, i18n } = useTranslation("hohoho/landing-page");
+    const { t, i18n } = useTranslation("hohoho/guidelines-page");
 
-    const criteriaList = getCriteriaFromTranslationData(i18n.store.data, 'hohoho/landing-page', currentLanguage);
+    const criteriaList = getCriteriaFromTranslationData(i18n.store.data, 'hohoho/guidelines-page', currentLanguage);
 
     if (!isVisible) {
         return null;

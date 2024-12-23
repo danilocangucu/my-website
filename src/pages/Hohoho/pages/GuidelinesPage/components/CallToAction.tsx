@@ -12,13 +12,13 @@ import { useTranslation } from 'react-i18next';
 
 function CallToAction() {
     const { h1Ref, sectionRef, isVisible } = useFadeInAnimation({
-        delay: 5700,
+        delay: 1200,
     });
 
     const navigate = useNavigate();
     const currentLanguage = useSelector((state: RootState) => state.hohoho.language);
 
-    const { t } = useTranslation("hohoho/landing-page");
+    const { t } = useTranslation("hohoho/guidelines-page");
 
     if (!isVisible) {
         return null;
