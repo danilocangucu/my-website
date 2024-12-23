@@ -1,0 +1,9 @@
+[
+  { "name": "Chrome", "visitors": 101 },
+  { "name": "Safari", "visitors": 67 },
+  { "name": "Mobile App", "visitors": 32 },
+  { "name": "Samsung Browser", "visitors": 10 },
+  { "name": "Firefox", "visitors": 8 },
+  { "name": "Microsoft Edge", "visitors": 4 },
+  { "name": "Opera", "visitors": 1 }
+]

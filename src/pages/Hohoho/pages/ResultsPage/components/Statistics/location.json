@@ -1,0 +1,134 @@
+[
+  {
+    "country": "Finland",
+    "visitors": 75,
+    "cities": [
+      { "name": "Helsinki", "visitors": 51 },
+      { "name": "Vantaa", "visitors": 3 },
+      { "name": "Tampere", "visitors": 3 },
+      { "name": "Espoo", "visitors": 3 },
+      { "name": "Mariehamn", "visitors": 3 },
+      { "name": "Turku", "visitors": 2 },
+      { "name": "Mäntsälä", "visitors": 1 },
+      { "name": "Kuopio", "visitors": 1 },
+      { "name": "Hämeenlinna", "visitors": 1 },
+      { "name": "Porvoo", "visitors": 1 }
+    ]
+  },
+  {
+    "country": "Brazil",
+    "visitors": 38,
+    "cities": [
+      { "name": "Salvador", "visitors": 21 },
+      { "name": "São Paulo", "visitors": 8 },
+      { "name": "Rio de Janeiro", "visitors": 2 },
+      { "name": "Camaçari", "visitors": 2 },
+      { "name": "Recife", "visitors": 1 },
+      { "name": "Maceió", "visitors": 1 },
+      { "name": "Ipiaú", "visitors": 1 },
+      { "name": "Brasília", "visitors": 1 },
+      { "name": "Lauro de Freitas", "visitors": 1 }
+    ]
+  },
+  {
+    "country": "Germany",
+    "visitors": 37,
+    "cities": [
+      { "name": "Berlin", "visitors": 26 },
+      { "name": "Duisburg", "visitors": 3 },
+      { "name": "Münster", "visitors": 1 },
+      { "name": "Leipzig", "visitors": 1 },
+      { "name": "Ingelheim am Rhein", "visitors": 1 },
+      { "name": "Glinde", "visitors": 1 },
+      { "name": "Bad Soden am Taunus", "visitors": 1 },
+      { "name": "Augsburg", "visitors": 1 }
+    ]
+  },
+  {
+    "country": "United States",
+    "visitors": 35,
+    "cities": [
+      { "name": "Denver", "visitors": 14 },
+      { "name": "Aurora", "visitors": 7 },
+      { "name": "Houston", "visitors": 2 },
+      { "name": "Thornton", "visitors": 2 },
+      { "name": "Westminster", "visitors": 2 },
+      { "name": "Dallas", "visitors": 1 },
+      { "name": "Fresno", "visitors": 1 },
+      { "name": "Centennial", "visitors": 1 },
+      { "name": "Parker", "visitors": 1 },
+      { "name": "Las Vegas", "visitors": 1 }
+    ]
+  },
+  {
+    "country": "Chile",
+    "visitors": 8,
+    "cities": [{ "name": "Santiago", "visitors": 8 }]
+  },
+  {
+    "country": "Colombia",
+    "visitors": 8,
+    "cities": [
+      { "name": "Bogotá", "visitors": 7 },
+      { "name": "Chía", "visitors": 1 }
+    ]
+  },
+  {
+    "country": "Åland Islands",
+    "visitors": 5,
+    "cities": [{ "name": "Mariehamn", "visitors": 3 }]
+  },
+  {
+    "country": "Spain",
+    "visitors": 4,
+    "cities": [
+      { "name": "Madrid", "visitors": 2 },
+      { "name": "Barcelona", "visitors": 1 }
+    ]
+  },
+  {
+    "country": "Philippines",
+    "visitors": 3,
+    "cities": [{ "name": "Carmona", "visitors": 1 }]
+  },
+  {
+    "country": "Puerto Rico",
+    "visitors": 3,
+    "cities": [{ "name": "San Juan", "visitors": 3 }]
+  },
+  {
+    "country": "Sweden",
+    "visitors": 2,
+    "cities": [{ "name": "Stockholm", "visitors": 2 }]
+  },
+  {
+    "country": "Austria",
+    "visitors": 1,
+    "cities": [{ "name": "Vienna", "visitors": 1 }]
+  },
+  {
+    "country": "United Kingdom",
+    "visitors": 1,
+    "cities": [{ "name": "Cheadle", "visitors": 1 }]
+  },
+  {
+    "country": "Morocco",
+    "visitors": 1,
+    "cities": [{ "name": "Casablanca", "visitors": 1 }]
+  },
+  {
+    "country": "Netherlands",
+    "visitors": 1,
+    "cities": [{ "name": "Amsterdam", "visitors": 1 }]
+  },
+  {
+    "country": "Norway",
+    "visitors": 1,
+    "cities": [{ "name": "Oslo", "visitors": 1 }]
+  },
+  {
+    "country": "Thailand",
+    "visitors": 1,
+    "cities": [{ "name": "Bangkok", "visitors": 1 }]
+  }
+]
