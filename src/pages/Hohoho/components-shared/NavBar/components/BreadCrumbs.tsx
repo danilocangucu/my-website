@@ -13,61 +13,54 @@ function Breadcrumbs() {
     const { t } = useTranslation("hohoho/shared");
 
     const segmentMapping: Record<string, string> = {
+        "results": t('breadcrumbs-results'),
+        "guidelines": t('breadcrumbs-guidelines'),
         "my-application": t('breadcrumbs-my-application'),
         "hohoho": t('breadcrumbs-hohoho')
     };
 
-    // TODO refactor handleClick in CallToAction to be shared with BreadCrumbs
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>, pathToSegment: string) => {
         event.preventDefault();
         gsap.to(['.hohoho-page-container', '.footer'], {
             opacity: 0,
             duration: 0.7,
             onComplete: () => {
-                // TODO tenery operator needs to be checked
-                if (location.pathname === '/hohoho' && pathToSegment === '/hohoho/my-application') {
-                    const url = `/hohoho/my-application?lang=${currentLanguage}`;
-                    navigate(url, { state: { fromHohoho: true } });
-                } else {
-                    navigate(pathToSegment, { state: { fromHohoho: true } });
-                }
+                navigate(pathToSegment, { state: { fromHohoho: true } });
             },
         });
     };
 
-    const paths = location.pathname.split('/').filter(Boolean);
-    const domain = window.location.hostname;
-    const completeSegments = [domain, ...paths];
+    const breadcrumbPaths = ['hohoho', 'results', 'guidelines', 'my-application'];
 
-    const isOnHohohoPath = location.pathname === '/hohoho' || location.pathname === '/hohoho/';
-    if (isOnHohohoPath) {
-        completeSegments.push('my-application');
-    }
-
-    const renderedBreadCrumbs = completeSegments.map((segment, index) => {
+    const renderedBreadCrumbs = breadcrumbPaths.map((segment, index) => {
         const displaySegment = segmentMapping[segment] || segment.replace(/-/g, ' ');
-        const isLast = index === completeSegments.length - (isOnHohohoPath ? 2 : 1);
-        const className = isLast ? 'color-quaternary' : 'color-border';
-        let pathToSegment = `/${completeSegments.slice(1, index + 1).join('/')}`;
 
-        if (pathToSegment === '/hohoho') {
+        let pathToSegment = `/${segment}`;
+        if (index !== 0) {
+            pathToSegment = `/hohoho${pathToSegment}`;
+        }
+        if (segment === 'hohoho') {
             pathToSegment += `?lang=${currentLanguage}`;
         }
+
+        const isActive = location.pathname === pathToSegment || location.pathname === `/${segment}`;
+
+        const className = isActive ? 'active-class color-quaternary' : 'color-border';
 
         return (
             <React.Fragment key={index}>
                 <li className={className}>
-                    {isLast ? (
+                    {isActive ? (
                         displaySegment
                     ) : (
                         <Link
-                            to={pathToSegment}
-                            onClick={(event) => handleClick(event, pathToSegment)}
+                                to={pathToSegment}
+                                onClick={(event) => handleClick(event, pathToSegment)}
                         >
                             {displaySegment}
                         </Link>
                     )}
-                    {index < completeSegments.length - 1 && <span className='text-white'> ∙ </span>}
+                    {index < breadcrumbPaths.length - 1 && <span className='text-white'> ∙ </span>}
                 </li>
             </React.Fragment>
         );
