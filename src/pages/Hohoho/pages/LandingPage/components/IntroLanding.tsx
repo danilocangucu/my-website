@@ -23,7 +23,6 @@ const IntroLanding = ({ separator }: { separator: string }) => {
     return null;
   }
 
-
   return (
     <>
       <div className="u-container">
@@ -44,8 +43,6 @@ const IntroLanding = ({ separator }: { separator: string }) => {
           <Paragraph>{t('intro-p3')}</Paragraph>
           <Paragraph>{t('intro-p4')}</Paragraph>
           <Paragraph>{t('intro-p5')}</Paragraph>
-          <Paragraph>{t('intro-p6')}</Paragraph>
-          <Paragraph>{t('intro-p7')}</Paragraph>
         </section>
       </div>
       <Separator separator={separator} separatorRef={separatorRef} />
