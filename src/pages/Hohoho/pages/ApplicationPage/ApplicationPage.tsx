@@ -65,7 +65,7 @@ function ApplicationPage() {
             <NavBar showLogout={isLoggedIn} delay={500} />
             <IntroApplication separator="branch1" isLoggedIn={isLoggedIn} isComplete={isComplete} />
             {isComplete ? <SentApplication /> : <ApplicationForm />}
-            <Footer />
+            <Footer delay={500} />
         </>
     )
 }
