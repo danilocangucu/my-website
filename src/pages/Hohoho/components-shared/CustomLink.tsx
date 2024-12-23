@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 
 interface CustomLinkProps {
-    children: React.ReactNode;
+    text: string;
     url: string;
 }
 
-const CustomLink: React.FC<CustomLinkProps> = ({ children, url }) => {
+const CustomLink: React.FC<CustomLinkProps> = ({ text, url }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -15,7 +15,7 @@ const CustomLink: React.FC<CustomLinkProps> = ({ children, url }) => {
             opacity: 0,
             duration: 0.7,
             onComplete: () => {
-                navigate(url, { state: { fromHohoho: true } });
+                navigate(`/hohoho${url}`, { state: { fromHohoho: true } });
             },
         });
     };
@@ -26,7 +26,7 @@ const CustomLink: React.FC<CustomLinkProps> = ({ children, url }) => {
             className="dd-link"
             style={{ cursor: 'pointer' }}
         >
-            {children}
+            {text}
         </span>
     );
 };

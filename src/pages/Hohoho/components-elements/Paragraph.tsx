@@ -10,19 +10,20 @@ interface ParagraphProps {
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({ children, additionalClassNames = [] }) => {
-    const processedContent = extractLinksFromText(children as string) as { type: string; linkText: string; linkUrl: string; key: number; content?: undefined; }[] | { type: string; content: string; key: number; linkText?: undefined; linkUrl?: undefined; }[];
+    const processedContent = extractLinksFromText(children as string) as (
+        | { type: 'link'; linkText: string; linkUrl: string; key: number; }
+        | { type: 'text'; content: string; key: number; }
+    )[];
 
     return (
         <p className={classNames('quattrocento-regular', ...additionalClassNames)}>
-            {Array.isArray(processedContent) && processedContent.map((part) => {
+            {processedContent.map((part) => {
                 if (part.type === 'link') {
                     return (
-                        <CustomLink key={part.key} url={part.linkUrl!}>
-                            {part.linkText}
-                        </CustomLink>
+                        <CustomLink key={part.key} text={part.linkText} url={part.linkUrl} />
                     );
                 }
-                return part.content;
+                return <React.Fragment key={part.key}>{part.content}</React.Fragment>;
             })}
         </p>
     );

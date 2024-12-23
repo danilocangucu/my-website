@@ -59,11 +59,13 @@ const Deadlines = React.memo(({ separator, language }: { separator: string, lang
           )}
 
           <Paragraph additionalClassNames={['margin-top--space-3xs-2xs', 'font-size--step-0']}>
+            {/*
+            TODO: Add the <em> and <small> tags back in when the design is updated
             <em>
-              <small>
+              <small> */}
                 {t('deadlines-p1-small')}
-              </small>
-            </em>
+            {/* </small>
+            </em> */}
           </Paragraph>
         </section>
       </div>
