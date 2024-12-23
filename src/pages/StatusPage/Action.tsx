@@ -75,7 +75,7 @@ const Action: React.FC<ActionProps> = ({
             <em>
               <strong>
                 Sorry! You can’t access or start this project right now.<br />
-                Danilo is aware and working on it. Please try again later.
+                  Please try again later.
               </strong>
             </em>
           </div>
