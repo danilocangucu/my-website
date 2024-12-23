@@ -2,9 +2,13 @@ import React from 'react';
 
 import useFadeInAnimation from '../hooks/useFadeInAnimation';
 
-function Footer() {
+type FooterProp = {
+    delay?: number;
+};
+
+function Footer({ delay = 4000 }: FooterProp) {
     const { sectionRef, isVisible } = useFadeInAnimation({
-        delay: 5900,
+        delay,
     });
 
     if (!isVisible) {
