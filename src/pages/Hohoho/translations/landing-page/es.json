@@ -2,7 +2,7 @@
   "intro-h1": "¡Ho! ¡Ho! ¡Ho!",
   "intro-h2": "Un sitio web gratis como regalo de Navidad",
   "intro-p1": "Este proyecto ha finalizado. Después de revisar todas las aplicaciones, se ha elegido un ganador y actualmente estoy trabajando en la creación de su sitio web personalizado como regalo de Navidad para 2024. Ha sido una experiencia increíble y estoy emocionado de dar vida al sitio web del ganador.",
-  "intro-p2": "Aunque el proceso de selección ha finalizado, aún puedes explorar el sitio web y ver los <CustomLink text='Resultados' url='/results' />, donde se presentan la aplicación ganadora y pronto algunas estadísticas, las <CustomLink text='Directrices' url='/guidelines' /> con los detalles de la selección y la página <CustomLink text='Mi Propuesta' url='/my-application' />, que contiene el formulario de propuestas.",
+  "intro-p2": "Aunque el proceso de selección ha finalizado, aún puedes explorar el sitio web y ver los <CustomLink text='Resultados' url='/results' />, donde la aplicación ganadora puede ser vista y pronto algunas estadísticas, las <CustomLink text='Directrices' url='/guidelines' /> con los detalles de la selección y la página <CustomLink text='Mi Propuesta' url='/my-application' />, que contiene el formulario de propuestas.",
   "intro-p3": "Gracias a todxs lxs que participaron. Agradezco a todos los que participaron. Estoy ansioso por publicar el sitio web terminado y ver cómo beneficia al ganador en su proceso.",
   "intro-p4": "Saludos,",
   "intro-p5": "Danilo"
