@@ -2,7 +2,7 @@
   "intro-h1": "Ho! Ho! Ho!",
   "intro-h2": "A website for free as a Christmas gift",
   "intro-p1": "This project has now ended. After reviewing all the applications, a winner has been chosen, and I’m currently working on creating their custom website as a Christmas gift for 2024. It’s been an amazing experience, and I’m excited to bring the winner's website to life.",
-  "intro-p2": "Although the selection process is complete, you can still explore the website and check out the <CustomLink text='Results' url='/results' />, where the winning application and soon some statistics will be featured, the <CustomLink text='Guidelines' url='/guidelines' />, and the <CustomLink text='My Application' url='/my-application' />, which contains the application form.",
+  "intro-p2": "Although the selection process is complete, you can still explore the website and check out the <CustomLink text='Results' url='/results' />, where the winning application is now featured, with statistics coming soon, the <CustomLink text='Guidelines' url='/guidelines' />, and the <CustomLink text='My Application' url='/my-application' />, which contains the application form.",
   "intro-p3": "Thank you to everyone who participated. I appreciate all the submissions, and I’m looking forward to publishing the final website online and seeing how it helps the winner in their journey.",
   "intro-p4": "Greetings,",
   "intro-p5": "Danilo"
