@@ -1,8 +1,8 @@
 {
   "intro-h1": "Ho! Ho! Ho!",
-  "intro-h2": "Que tal ganhar um site grátis de presente de Natal?",
+  "intro-h2": "Um site grátis de presente de Natal",
   "intro-p1": "Este projeto foi finalizado. Após ler todas as inscrições, um vencedor foi escolhido e atualmente estou trabalhando na criação de um site personalizado para ele como presente de Natal para 2024. Foi uma experiência incrível e estou animado para dar vida ao site do vencedor.",
-  "intro-p2": "Embora o processo de seleção tenha terminado, você ainda pode explorar o site e conferir os <CustomLink text='Resultados' url='/results' />, onde a proposta vencedora e em breve algumas estatísticas serão apresentadas, as <CustomLink text='Diretrizes' url='/guidelines' /> com os detalhes da seleção e a página <CustomLink text='Minha Proposta' url='/my-application' />, que contém o formulário de proposta.",
+  "intro-p2": "Embora o processo de seleção tenha terminado, você ainda pode explorar o site e conferir os <CustomLink text='Resultados' url='/results' />, onde a proposta vencedora já está em destaque e em breve algumas estatísticas serão apresentadas, as <CustomLink text='Diretrizes' url='/guidelines' /> com os detalhes da seleção e a página <CustomLink text='Minha Proposta' url='/my-application' />, que contém o formulário de proposta.",
   "intro-p3": "Obrigado a todes que participaram. Agradeço todas as inscrições e estou ansioso para publicar o site final online e ver como ele ajuda o vencedor em sua jornada.",
   "intro-p4": "Saudações,",
   "intro-p5": "Danilo"
